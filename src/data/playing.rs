@@ -1,8 +1,14 @@
+use serde::{Deserialize, Serialize};
 
+#[derive(Serialize, Deserialize)]
 pub enum PlayType {
-    SMART,QUICK,SUPREME,SLOW
+    SMART,
+    QUICK,
+    SUPREME,
+    SLOW,
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct GameView{
     scan:i8,
     predicting:i8,
