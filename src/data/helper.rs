@@ -5,12 +5,15 @@ use crate::data::projection::{
     DevelopmentCurve, DevelopmentProfile, DraftProjection, ProjMax, Projection,
 };
 use crate::data::stats::{GoalieStats, PlayerStats};
+use serde::{Deserialize, Serialize};
 
+#[derive(Serialize, Deserialize)]
 pub enum DraftStatus {
     Undrafted,
     Drafted(DraftData),
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct DraftData {
     draft_year: i16,
     draft_round: i8,
@@ -18,6 +21,7 @@ pub struct DraftData {
     team: String,
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct PlayerRecord {
     name: String,
     age: i8,
