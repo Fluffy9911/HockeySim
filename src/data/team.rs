@@ -1,0 +1,201 @@
+use crate::data::contract::TeamContractSettings;
+use crate::data::helper::PlayerRecord;
+use crate::data::staff::{StaffMember, StaffRole};
+use crate::data::stats::TeamStats;
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
+pub enum TeamLevel {
+    MAJOR_PRO,
+    MINOR_PRO,
+    JUNIOR,
+    COLLEGE,
+    INTERNATIONAL,
+    OTHER,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum Conference {
+    EAST,
+    WEST,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum Division {
+    ATLANTIC,
+    METROPOLITAN,
+    CENTRAL,
+    PACIFIC,
+    OTHER,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct TeamIdentity {
+    city: String,
+    name: String,
+    abbreviation: String,
+    conference: Conference,
+    division: Division,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Team {
+    identity: TeamIdentity,
+    level: TeamLevel,
+    roster: Vec<PlayerRecord>,
+    staff: Vec<StaffMember>,
+    team_stats: TeamStats,
+    contract_settings: TeamContractSettings,
+    affiliate_team_abbreviations: Vec<String>,
+}
+
+impl TeamIdentity {
+    pub fn new(
+        city: String,
+        name: String,
+        abbreviation: String,
+        conference: Conference,
+        division: Division,
+    ) -> TeamIdentity {
+        TeamIdentity { city, name, abbreviation, conference, division }
+    }
+
+    pub fn city(&self) -> &str { &self.city }
+    pub fn name(&self) -> &str { &self.name }
+    pub fn abbreviation(&self) -> &str { &self.abbreviation }
+    pub fn conference(&self) -> &Conference { &self.conference }
+    pub fn division(&self) -> &Division { &self.division }
+}
+
+impl Team {
+    pub fn new(identity: TeamIdentity, roster: Vec<PlayerRecord>, staff: Vec<StaffMember>) -> Team {
+        Team {
+            identity,
+            level: TeamLevel::MAJOR_PRO,
+            roster,
+            staff,
+            team_stats: TeamStats::default(),
+            contract_settings: TeamContractSettings::nhl_default(),
+            affiliate_team_abbreviations: Vec::new(),
+        }
+    }
+
+    pub fn new_with_stats(
+        identity: TeamIdentity,
+        roster: Vec<PlayerRecord>,
+        staff: Vec<StaffMember>,
+        team_stats: TeamStats,
+    ) -> Team {
+        Team {
+            identity,
+            level: TeamLevel::MAJOR_PRO,
+            roster,
+            staff,
+            team_stats,
+            contract_settings: TeamContractSettings::nhl_default(),
+            affiliate_team_abbreviations: Vec::new(),
+        }
+    }
+
+    pub fn new_with_contract_settings(
+        identity: TeamIdentity,
+        roster: Vec<PlayerRecord>,
+        staff: Vec<StaffMember>,
+        team_stats: TeamStats,
+        contract_settings: TeamContractSettings,
+    ) -> Team {
+        Team {
+            identity,
+            level: TeamLevel::MAJOR_PRO,
+            roster,
+            staff,
+            team_stats,
+            contract_settings,
+            affiliate_team_abbreviations: Vec::new(),
+        }
+    }
+
+    pub fn new_full(
+        identity: TeamIdentity,
+        level: TeamLevel,
+        roster: Vec<PlayerRecord>,
+        staff: Vec<StaffMember>,
+        team_stats: TeamStats,
+        contract_settings: TeamContractSettings,
+        affiliate_team_abbreviations: Vec<String>,
+    ) -> Team {
+        Team { identity, level, roster, staff, team_stats, contract_settings, affiliate_team_abbreviations }
+    }
+
+    pub fn identity(&self) -> &TeamIdentity { &self.identity }
+    pub fn roster(&self) -> &[PlayerRecord] { &self.roster }
+    pub fn roster_mut(&mut self) -> &mut [PlayerRecord] { &mut self.roster }
+    pub fn level(&self) -> &TeamLevel { &self.level }
+    pub fn staff(&self) -> &[StaffMember] { &self.staff }
+    pub fn staff_mut(&mut self) -> &mut [StaffMember] { &mut self.staff }
+    pub fn team_stats(&self) -> &TeamStats { &self.team_stats }
+    pub fn team_stats_mut(&mut self) -> &mut TeamStats { &mut self.team_stats }
+    pub fn contract_settings(&self) -> &TeamContractSettings { &self.contract_settings }
+
+    pub fn set_contract_settings(&mut self, contract_settings: TeamContractSettings) {
+        self.contract_settings = contract_settings;
+    }
+
+    pub fn affiliate_team_abbreviations(&self) -> &[String] { &self.affiliate_team_abbreviations }
+
+    pub fn add_affiliate_team(&mut self, abbreviation: String) {
+        if !self.affiliate_team_abbreviations.iter().any(|existing| existing == &abbreviation) {
+            self.affiliate_team_abbreviations.push(abbreviation);
+        }
+    }
+
+    pub fn add_player(&mut self, player: PlayerRecord) {
+        self.roster.push(player);
+    }
+
+    pub fn add_staff_member(&mut self, staff_member: StaffMember) {
+        self.staff.push(staff_member);
+    }
+
+    pub fn head_coach(&self) -> Option<&StaffMember> {
+        self.staff.iter().find(|m| matches!(m.role(), StaffRole::HEAD_COACH))
+    }
+
+    pub fn head_scout(&self) -> Option<&StaffMember> {
+        self.staff.iter().find(|m| matches!(m.role(), StaffRole::HEAD_SCOUT))
+    }
+
+    pub fn development_coaches(&self) -> Vec<&StaffMember> {
+        self.staff
+            .iter()
+            .filter(|m| {
+                matches!(
+                    m.role(),
+                    StaffRole::DEVELOPMENT_COACH
+                        | StaffRole::GOALIE_COACH
+                        | StaffRole::SKATING_COACH
+                        | StaffRole::DIRECTOR_OF_PLAYER_DEVELOPMENT
+                )
+            })
+            .collect()
+    }
+
+    pub fn scouts(&self) -> Vec<&StaffMember> {
+        self.staff
+            .iter()
+            .filter(|m| matches!(m.role(), StaffRole::HEAD_SCOUT | StaffRole::SCOUT))
+            .collect()
+    }
+
+    pub fn active_contract_count(&self) -> usize {
+        self.roster.iter().filter(|p| p.contract().is_some()).count()
+    }
+
+    pub fn total_cap_hit_millions(&self) -> f32 {
+        self.roster
+            .iter()
+            .filter_map(|p| p.contract())
+            .map(|c| c.cap_hit_millions())
+            .sum()
+    }
+}
