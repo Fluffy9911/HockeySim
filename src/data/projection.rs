@@ -53,6 +53,7 @@ pub struct Projection {
     development_profile: DevelopmentProfile,
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct ProjectionGenerationSettings {
     actualization: f32,
     certainty: f32,
