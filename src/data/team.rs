@@ -3,6 +3,7 @@ use crate::data::helper::PlayerRecord;
 use crate::data::staff::{StaffMember, StaffRole};
 use crate::data::stats::TeamStats;
 use serde::{Deserialize, Serialize};
+use crate::data::game::names::*;
 
 #[derive(Serialize, Deserialize)]
 pub enum TeamLevel {
@@ -14,20 +15,9 @@ pub enum TeamLevel {
     OTHER,
 }
 
-#[derive(Serialize, Deserialize)]
-pub enum Conference {
-    EAST,
-    WEST,
-}
 
-#[derive(Serialize, Deserialize)]
-pub enum Division {
-    ATLANTIC,
-    METROPOLITAN,
-    CENTRAL,
-    PACIFIC,
-    OTHER,
-}
+
+
 
 #[derive(Serialize, Deserialize)]
 pub struct TeamIdentity {
