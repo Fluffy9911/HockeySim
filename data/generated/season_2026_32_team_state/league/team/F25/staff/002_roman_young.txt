@@ -1,0 +1,11 @@
+name=Roman Young
+age=40
+role=ASSISTANT_COACH
+teaching=68
+tactical=67
+evaluation=64
+leadership=70
+current_level=67
+potential=75
+growth_rate=18
+consistency=60

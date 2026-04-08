@@ -1,0 +1,11 @@
+name=Reid Ulrich
+age=46
+role=GOALIE_COACH
+teaching=75
+tactical=69
+evaluation=70
+leadership=75
+current_level=72
+potential=75
+growth_rate=18
+consistency=60

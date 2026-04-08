@@ -1,0 +1,11 @@
+name=Drew Gallagher
+age=44
+role=SCOUT
+teaching=75
+tactical=75
+evaluation=75
+leadership=75
+current_level=75
+potential=75
+growth_rate=18
+consistency=60

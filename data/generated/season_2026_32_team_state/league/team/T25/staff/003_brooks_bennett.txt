@@ -1,0 +1,11 @@
+name=Brooks Bennett
+age=44
+role=ASSISTANT_COACH
+teaching=74
+tactical=73
+evaluation=70
+leadership=75
+current_level=73
+potential=75
+growth_rate=18
+consistency=60

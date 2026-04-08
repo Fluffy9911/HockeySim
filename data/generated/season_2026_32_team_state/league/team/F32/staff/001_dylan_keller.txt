@@ -1,0 +1,11 @@
+name=Dylan Keller
+age=39
+role=HEAD_COACH
+teaching=68
+tactical=72
+evaluation=66
+leadership=73
+current_level=69
+potential=75
+growth_rate=18
+consistency=60

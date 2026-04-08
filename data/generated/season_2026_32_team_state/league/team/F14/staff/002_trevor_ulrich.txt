@@ -1,0 +1,11 @@
+name=Trevor Ulrich
+age=40
+role=ASSISTANT_COACH
+teaching=75
+tactical=74
+evaluation=71
+leadership=75
+current_level=73
+potential=75
+growth_rate=18
+consistency=60

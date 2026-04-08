@@ -1,0 +1,21 @@
+Alex Ovechkin|LW|SNIPER|0.03
+Dylan Strome|CENTER|PLAYMAKER|0.00
+Aliaksei Protas|RW|PWF|0.01
+Tom Wilson|RW|PWF|-0.01
+Pierre-Luc Dubois|CENTER|DF|-0.01
+Connor McMichael|CENTER|PLAYMAKER|-0.01
+Andrew Mangiapane|LW|SNIPER|-0.03
+Lars Eller|CENTER|DF|-0.05
+Brandon Duhaime|LW|PWF|-0.05
+Nic Dowd|CENTER|DF|-0.05
+Taylor Raddysh|RW|PWF|-0.06
+Anthony Beauvillier|LW|SNIPER|-0.05
+John Carlson|RD|OFD|0.01
+Jakob Chychrun|LD|DFD|0.00
+Rasmus Sandin|LD|OFD|-0.01
+Matt Roy|RD|DFD|0.00
+Trevor van Riemsdyk|RD|DFD|-0.03
+Martin Fehervary|LD|DFD|-0.02
+Alexander Alexeyev|LD|DFD|-0.05
+Logan Thompson|GOALIE|HYBRID|0.02
+Charlie Lindgren|GOALIE|HYBRID|0.00

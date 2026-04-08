@@ -1,0 +1,21 @@
+Kirill Kaprizov|LW|SNIPER|0.04
+Matt Boldy|LW|PLAYMAKER|0.01
+Joel Eriksson Ek|CENTER|DF|0.00
+Marco Rossi|CENTER|PLAYMAKER|-0.01
+Mats Zuccarello|RW|PLAYMAKER|-0.02
+Frederick Gaudreau|CENTER|DF|-0.04
+Marcus Foligno|LW|PWF|-0.04
+Ryan Hartman|CENTER|PWF|-0.04
+Marcus Johansson|LW|SNIPER|-0.05
+Yakov Trenin|LW|PWF|-0.05
+Vinnie Hinostroza|RW|SNIPER|-0.05
+Justin Brazeau|RW|PWF|-0.05
+Brock Faber|RD|DFD|0.01
+Jonas Brodin|LD|DFD|0.00
+Jake Middleton|LD|DFD|-0.01
+Jared Spurgeon|RD|OFD|-0.01
+Declan Chisholm|LD|OFD|-0.05
+Zach Bogosian|RD|DFD|-0.05
+Jon Merrill|LD|DFD|-0.06
+Filip Gustavsson|GOALIE|HYBRID|0.02
+Marc-Andre Fleury|GOALIE|HYBRID|-0.01

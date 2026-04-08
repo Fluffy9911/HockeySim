@@ -1,0 +1,3 @@
+year=2026
+games_per_matchup=82
+completed_games=1312

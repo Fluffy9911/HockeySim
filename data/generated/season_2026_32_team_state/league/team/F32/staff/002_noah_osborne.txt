@@ -1,0 +1,11 @@
+name=Noah Osborne
+age=40
+role=ASSISTANT_COACH
+teaching=69
+tactical=68
+evaluation=65
+leadership=71
+current_level=68
+potential=75
+growth_rate=18
+consistency=60

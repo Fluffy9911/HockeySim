@@ -1,0 +1,11 @@
+name=Matt York
+age=44
+role=SCOUT
+teaching=68
+tactical=62
+evaluation=73
+leadership=69
+current_level=68
+potential=75
+growth_rate=18
+consistency=60
