@@ -1134,6 +1134,8 @@ impl SimRng {
 
 trait TeamLevelClone {
     fn clone_level(&self) -> TeamLevel;
+
+
 }
 
 impl TeamLevelClone for TeamLevel {

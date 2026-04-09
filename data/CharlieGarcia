@@ -1,0 +1,37 @@
+{
+  "first_name": "Charlie",
+  "last_name": "Garcia",
+  "age": 19,
+  "overall": 45,
+  "player_type": "SKATER",
+  "position": "RD",
+  "play_type": "DFD",
+  "skate_stats": {
+    "speed": 38,
+    "edges": 20,
+    "acceleration": 78,
+    "skate_type": "STRONG"
+  },
+  "goalie_movement": null,
+  "projection": {
+    "draft_projection": {
+      "draft_round_grade": 6,
+      "overall_pick_estimate": 185,
+      "projection_confidence": 71,
+      "scouting_visibility": 60,
+      "max_projection": "MINOR_TOP"
+    },
+    "development_profile": {
+      "ceiling": 50,
+      "floor": 28,
+      "growth_rate": 41,
+      "consistency": 68,
+      "coachability": 55,
+      "work_ethic": 55,
+      "injury_risk": 30,
+      "growth_window_start": 18,
+      "growth_window_end": 27,
+      "curve": "LINEAR"
+    }
+  }
+}

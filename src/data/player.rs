@@ -413,4 +413,10 @@ impl Player {
         Some(sum as f64 / nums.len() as f64)
     }
 
+    pub fn name(&self)-> String{
+        format!("{}{}",self.first_name,self.last_name)
+        
+    }
+    
+    
 }

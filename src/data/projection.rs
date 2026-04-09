@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::randoms::choices::{biased_random, biased_random_range};
 
 #[derive(Serialize, Deserialize)]
 pub enum ProjMax {
@@ -172,7 +173,7 @@ impl Projection {
         quality: f32,
         settings: ProjectionGenerationSettings,
     ) -> Projection {
-        let normalized_quality = clamp_unit(quality);
+        let normalized_quality = clamp_unit(biased_random(quality));
         let actualization = settings.actualization();
         let certainty = settings.certainty();
         let visibility = settings.visibility();
@@ -188,7 +189,7 @@ impl Projection {
             scale_to_i8(0.35 + 0.35 * certainty + 0.30 * normalized_quality, 35, 99);
         let scouting_visibility = scale_to_i8(visibility, 20, 99);
 
-        let ceiling = scale_to_i8(normalized_quality, 25, 99);
+        let ceiling = biased_random_range(25,99,normalized_quality);
         let realized_band = 0.15 + (0.75 * actualization);
         let floor_target = (ceiling as f32) * realized_band;
         let floor = floor_target.round().clamp(10.0, ceiling as f32) as i8;
@@ -210,7 +211,7 @@ impl Projection {
         );
 
         let development_profile = DevelopmentProfile::new(
-            ceiling,
+            ceiling as i8,
             floor,
             growth_rate,
             consistency,

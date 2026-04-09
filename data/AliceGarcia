@@ -1,0 +1,37 @@
+{
+  "first_name": "Alice",
+  "last_name": "Garcia",
+  "age": 19,
+  "overall": 70,
+  "player_type": "SKATER",
+  "position": "LD",
+  "play_type": "PLAYMAKER",
+  "skate_stats": {
+    "speed": 30,
+    "edges": 88,
+    "acceleration": 93,
+    "skate_type": "QUICK"
+  },
+  "goalie_movement": null,
+  "projection": {
+    "draft_projection": {
+      "draft_round_grade": 4,
+      "overall_pick_estimate": 85,
+      "projection_confidence": 78,
+      "scouting_visibility": 60,
+      "max_projection": "TOP2"
+    },
+    "development_profile": {
+      "ceiling": 59,
+      "floor": 33,
+      "growth_rate": 57,
+      "consistency": 68,
+      "coachability": 55,
+      "work_ethic": 55,
+      "injury_risk": 30,
+      "growth_window_start": 18,
+      "growth_window_end": 27,
+      "curve": "LINEAR"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "first_name": "Ian",
+  "last_name": "Taylor",
+  "age": 19,
+  "overall": 64,
+  "player_type": "SKATER",
+  "position": "LD",
+  "play_type": "SNIPER",
+  "skate_stats": {
+    "speed": 72,
+    "edges": 63,
+    "acceleration": 56,
+    "skate_type": "SLOW"
+  },
+  "goalie_movement": null,
+  "projection": {
+    "draft_projection": {
+      "draft_round_grade": 3,
+      "overall_pick_estimate": 40,
+      "projection_confidence": 83,
+      "scouting_visibility": 60,
+      "max_projection": "SUPERSTAR"
+    },
+    "development_profile": {
+      "ceiling": 97,
+      "floor": 55,
+      "growth_rate": 67,
+      "consistency": 68,
+      "coachability": 55,
+      "work_ethic": 55,
+      "injury_risk": 30,
+      "growth_window_start": 18,
+      "growth_window_end": 27,
+      "curve": "LINEAR"
+    }
+  }
+}
