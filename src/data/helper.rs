@@ -164,3 +164,7 @@ impl PlayerRecord {
 
     // ... rest of the file remains unchanged
 }
+
+fn default_stats_for_player(p0: &Player) -> PlayerStats{
+    PlayerStats::skater_default()
+}
