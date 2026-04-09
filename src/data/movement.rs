@@ -1,5 +1,7 @@
+use rand::random_range;
 use serde::{Deserialize, Serialize};
 use randoms::choices::*;
+use crate::data::movement::SkatingType::{QUICK, SLOW};
 use crate::randoms;
 
 #[derive(Serialize, Deserialize)]
@@ -12,7 +14,19 @@ pub enum SkatingType {
 
 impl SkatingType {
 
-    
+    pub fn random() -> SkatingType{
+        let i = random_range(1..=4);
+        match i {
+            1=> SkatingType::QUICK,
+            2=>SkatingType::SLOW,
+            3=>SkatingType::NIMBLE,
+            4=>SkatingType::STRONG,
+            _=>SkatingType::QUICK,
+
+        }
+
+
+    }
 
 }
 #[derive(Serialize, Deserialize)]
@@ -74,6 +88,12 @@ impl GoalieMovement {
         GoalieMovement { side, up_down, push }
     }
 
+    pub fn random(bias:f32)-> GoalieMovement{
+        
+        Self::new(biased_random_range(0, 100, bias) as i8, biased_random_range(0, 100, bias) as i8, biased_random_range(0, 100, bias) as i8)
+        
+    }
+    
     pub fn side(&self) -> i8 {
         self.side
     }

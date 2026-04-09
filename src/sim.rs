@@ -965,12 +965,13 @@ fn style_bias(roster: &[PlayerRecord], staff: &[StaffMember], settings: &Simulat
     let player_bias = roster
         .iter()
         .map(|player| match player.player().play_type() {
-            PlayType::SNIPER | PlayType::OFD | PlayType::PLAYMAKER => 0.18,
+            PlayType::SNIPER | PlayType::OFD | PlayType::PLAYMAKER| PlayType::TWD => 0.18,
             PlayType::PWF => 0.10,
             PlayType::DFD | PlayType::DF => -0.10,
             PlayType::BUTTERFLY => -0.03,
             PlayType::REACTIVE => -0.01,
             PlayType::HYBRID => 0.04,
+
         })
         .sum::<f32>()
         / roster.len() as f32;

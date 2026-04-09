@@ -1,8 +1,15 @@
+use std::option::Option;
 use crate::data::movement::{GoalieMovement, SkatingStats, SkatingType};
 use serde::{Deserialize, Serialize};
 use crate::data::projection::Projection;
 use crate::data::projection::DevelopmentCurve;
 use crate::randoms::choices;
+use rand::{random_range, random_ratio, rng};
+use rand::prelude::IndexedRandom;
+use serde::de::Unexpected::Option as OtherOption;
+use crate::data::player::Type::{GOALIE, SKATER};
+use crate::data::projection;
+use crate::randoms::choices::biased_random_range;
 
 #[derive(Serialize, Deserialize)]
 pub enum Type {
@@ -27,13 +34,140 @@ pub enum PlayType {
     DFD,
     PWF,
     DF,
+    TWD,
     PLAYMAKER,
     BUTTERFLY,
     REACTIVE,
     HYBRID,
 }
 
+pub fn random_type() -> Type{
 
+    let r = random_ratio(1,2);
+    match r {
+        true => {
+
+            SKATER
+
+        }
+        false =>{
+
+            GOALIE
+        }
+
+
+    }
+}
+
+
+pub fn random_position(ig:bool)-> Position{
+
+    let i = random_range(1..=6);
+
+    match i {
+        1=> Position::CENTER,
+        2=> Position::RW,
+        3=>Position::LW,
+        4=>Position::LD,
+        5=>Position::RD,
+        6=>{
+            if ig {
+                Position::GOALIE
+            }else{
+                //re-roll so we don't bias
+                random_position(ig)
+
+            }
+        }
+
+        _ => {
+            Position::CENTER
+        }
+    }
+
+
+}
+
+pub fn random_playtype_from_pos(pos: &Position) -> PlayType{
+
+    match pos {
+
+        Position::GOALIE => {
+            let g = random_range(1..=3);
+            match g {
+                1=> PlayType::BUTTERFLY,
+                2=>PlayType::HYBRID,
+                3=>PlayType::REACTIVE,
+
+                _ => {PlayType::HYBRID}
+            }
+
+        }
+        (Position::CENTER|Position::LW|Position::RW)=>{
+            let p = random_range(1..=4);
+
+match p {
+
+    1=> PlayType::PLAYMAKER,
+    2=>PlayType::PWF,
+    3=>PlayType::SNIPER,
+    4=>PlayType::DF,
+    _=>PlayType::SNIPER
+}
+
+        }
+
+        (Position::RD|Position::LD) =>{
+
+            let d = random_range(1..=4);
+
+            match d {
+                1=>PlayType::SNIPER,
+                2=>PlayType::PLAYMAKER,
+                3=>PlayType::DFD,
+                4=>PlayType::OFD,
+                5=>PlayType::TWD,
+_=>PlayType::OFD
+
+
+            }
+
+
+        }
+
+
+
+    }
+
+
+
+}
+
+pub fn random_prospect(quality:f32,goalie:bool)-> Player {
+    let age = random_range(17..=19);
+    let overall = biased_random_range(50,100,quality);
+    let pt: Type;
+    let mut gm: Option<GoalieMovement> = None;
+    if goalie {
+        pt = GOALIE;
+        gm = Option::Some(GoalieMovement::random(quality));
+    }
+    else{
+        pt = SKATER;
+    }
+    let pos = random_position(goalie);
+    let play = random_playtype_from_pos(&pos);
+    let proj = projection::Projection::from_quality(quality);
+let name = Player::random_name();
+    let skat_type = SkatingType::random();
+    let skating = SkatingStats::random(quality,skat_type);
+
+    let mut p = Player::new(name.0, name.1, /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj);
+p.guess_overall();
+    p
+
+
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct Player {
@@ -49,6 +183,12 @@ pub struct Player {
 
     projection:
     Projection,
+}
+
+impl Player {
+    pub fn overall(&self) -> i8 {
+       self.overall
+    }
 }
 
 impl Player {
@@ -73,7 +213,24 @@ impl Player {
             projection
         }
     }
+    pub fn random_name() -> (String, String) {
+        let first_names = [
+            "Alice", "Bob", "Charlie", "Diana", "Ethan",
+            "Fiona", "George", "Hannah", "Ian", "Julia"
+        ];
 
+        let last_names = [
+            "Smith", "Johnson", "Williams", "Brown", "Jones",
+            "Garcia", "Miller", "Davis", "Martinez", "Taylor"
+        ];
+
+        let mut rng = rand::rng();
+
+        let first = first_names.choose(&mut rng).unwrap().to_string();
+        let last = last_names.choose(&mut rng).unwrap().to_string();
+
+        (first, last)
+    }
     pub fn new_skater(first_name: String, last_name: String, age:i8,overall:i8,
         position: Position,
         play_type: PlayType,
@@ -171,6 +328,12 @@ impl Player {
     }
 
 
+    pub fn age_develop(&mut self,cb:i8){
+
+        self.develop(cb,self.age+1);
+        self.age=self.age+1;
+        self.guess_overall();
+    }
     pub fn develop(&mut self, coaching_bonus: i8, age: i8) {
         let in_window = age >= self.projection().development_profile().growth_window_start() && age <= self.projection().development_profile().growth_window_end();
         let age_factor = if in_window { 2 } else if age < self.projection().development_profile().growth_window_start() { 1 } else { -1 };
@@ -215,6 +378,39 @@ impl Player {
 
         &self.projection
 
+    }
+
+
+    pub fn guess_overall(&mut self) {
+        let mut values: Vec<i32> = Vec::new();
+
+        // Collect skating stats (adjust these based on your actual struct fields)
+        values.push(self.skate_stats.speed() as i32);
+        values.push(self.skate_stats.acceleration() as i32);
+        values.push(self.skate_stats.edges() as i32);
+
+        // If goalie, include goalie movement stats
+        if let Some(movement) = &self.goalie_movement {
+            values.push(movement.push() as i32);
+            values.push(movement.side() as i32);
+            values.push(movement.up_down() as i32);
+        }
+
+        // Compute average
+        if let Some(avg) = Self::average(&values) {
+            self.overall = avg.round() as i8;
+        }
+
+
+    }
+
+    fn average(nums: &[i32]) -> Option<f64> {
+        if nums.is_empty() {
+            return None;
+        }
+
+        let sum: i32 = nums.iter().sum();
+        Some(sum as f64 / nums.len() as f64)
     }
 
 }
