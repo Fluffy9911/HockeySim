@@ -35,7 +35,6 @@ pub struct Player {
     player_type: Type,
     position: Position,
     play_type: PlayType,
-    skate_type: SkatingType,
     skate_stats: SkatingStats,
     goalie_movement: Option<GoalieMovement>,
 }
@@ -45,7 +44,6 @@ impl Player {
         player_type: Type,
         position: Position,
         play_type: PlayType,
-        skate_type: SkatingType,
         skate_stats: SkatingStats,
         goalie_movement: Option<GoalieMovement>,
     ) -> Player {
@@ -53,7 +51,7 @@ impl Player {
             player_type,
             position,
             play_type,
-            skate_type,
+
             skate_stats,
             goalie_movement,
         }
@@ -62,14 +60,14 @@ impl Player {
     pub fn new_skater(
         position: Position,
         play_type: PlayType,
-        skate_type: SkatingType,
+
         skate_stats: SkatingStats,
     ) -> Player {
         Player {
             player_type: Type::SKATER,
             position,
             play_type,
-            skate_type,
+
             skate_stats,
             goalie_movement: None,
         }
@@ -85,7 +83,7 @@ impl Player {
             player_type: Type::GOALIE,
             position: Position::GOALIE,
             play_type,
-            skate_type,
+
             skate_stats,
             goalie_movement: Some(goalie_movement),
         }
@@ -103,9 +101,7 @@ impl Player {
         &self.play_type
     }
 
-    pub fn skate_type(&self) -> &SkatingType {
-        &self.skate_type
-    }
+  
 
     pub fn skate_stats(&self) -> &SkatingStats {
         &self.skate_stats
