@@ -1,4 +1,6 @@
 use serde::{Deserialize, Serialize};
+use randoms::choices::*;
+use crate::randoms;
 
 #[derive(Serialize, Deserialize)]
 pub enum SkatingType {
@@ -8,6 +10,11 @@ pub enum SkatingType {
     NIMBLE,
 }
 
+impl SkatingType {
+
+    
+
+}
 #[derive(Serialize, Deserialize)]
 pub struct SkatingStats {
     speed: i8,
@@ -31,6 +38,12 @@ impl SkatingStats {
             acceleration,
             skate_type,
         }
+    }
+
+    pub fn random(bias:f32,st:SkatingType) -> SkatingStats {
+
+
+        Self::new(biased_random_range(0, 100, bias) as i8, biased_random_range(0, 100, bias) as i8, biased_random_range(0, 100, bias) as i8, st)
     }
 
     pub fn speed(&self) -> i8 {

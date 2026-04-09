@@ -10,7 +10,16 @@ max:i32
 
 }
 
+pub fn random_range_inclusive(min:i32, max:i32) -> i32{
+    let mut r = rand::rng();
+    r.random_range(min..=max)
 
+}
+pub fn random_range_exclusive(min:i32, max:i32) -> i32{
+    let mut r = rand::rng();
+    r.random_range(min..max)
+
+}
 pub fn biased_random(bias:f32) -> f32{
    let mut r = rand::rng();
     let num: f32 = r.random_range(0.0..=1.0);

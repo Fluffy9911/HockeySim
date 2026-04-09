@@ -36,8 +36,7 @@ pub struct LeagueRules {
 
 pub struct LeagueTeamEntry {
     team_abbreviation: String,
-    level: TeamLevel,
-    affiliate_team_abbreviations: Vec<String>,
+    level: TeamLevel
 }
 
 pub struct TeamStanding {
@@ -481,21 +480,19 @@ impl LeagueRules {
 impl LeagueTeamEntry {
     pub fn new(
         team_abbreviation: String,
-        level: TeamLevel,
-        affiliate_team_abbreviations: Vec<String>,
+        level: TeamLevel
+
     ) -> LeagueTeamEntry {
         LeagueTeamEntry {
             team_abbreviation,
-            level,
-            affiliate_team_abbreviations,
+            level
         }
     }
 
     pub fn from_team(team: &Team) -> LeagueTeamEntry {
         LeagueTeamEntry {
             team_abbreviation: team.identity().abbreviation().to_string(),
-            level: team.level().clone_level(),
-            affiliate_team_abbreviations: team.affiliate_team_abbreviations().to_vec(),
+            level: team.level().clone_level()
         }
     }
 
@@ -507,9 +504,7 @@ impl LeagueTeamEntry {
         &self.level
     }
 
-    pub fn affiliate_team_abbreviations(&self) -> &[String] {
-        &self.affiliate_team_abbreviations
-    }
+ 
 }
 
 impl TeamStanding {
@@ -852,7 +847,7 @@ fn offense_score(roster: &[PlayerRecord]) -> f32 {
         .map(|player| {
             let skating = player.player().skate_stats();
             let base = (skating.speed() as f32 + skating.edges() as f32 + skating.acceleration() as f32) / 300.0;
-            let projection = player.projection().development_profile().ceiling() as f32 / 100.0;
+            let projection = player.player().projection().development_profile().ceiling() as f32 / 100.0;
             let style = match player.player().play_type() {
                 PlayType::SNIPER | PlayType::PLAYMAKER | PlayType::OFD => 0.10,
                 PlayType::PWF => 0.07,

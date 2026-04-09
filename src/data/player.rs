@@ -1,5 +1,8 @@
 use crate::data::movement::{GoalieMovement, SkatingStats, SkatingType};
 use serde::{Deserialize, Serialize};
+use crate::data::projection::Projection;
+use crate::data::projection::DevelopmentCurve;
+use crate::randoms::choices;
 
 #[derive(Serialize, Deserialize)]
 pub enum Type {
@@ -30,139 +33,114 @@ pub enum PlayType {
     HYBRID,
 }
 
-#[derive(Serialize, Deserialize)]
-pub enum DevelopmentCurve {
-    EARLY,
-    LINEAR,
-    LATE,
-    BOOM_BUST,
-}
+
 
 #[derive(Serialize, Deserialize)]
 pub struct Player {
+    first_name: String,
+    last_name: String,
+    age:i8,
+    overall:i8,
     player_type: Type,
     position: Position,
     play_type: PlayType,
     skate_stats: SkatingStats,
     goalie_movement: Option<GoalieMovement>,
-    // Development-related fields
-    ceiling: i8,
-    floor: i8,
-    growth_rate: i8,
-    consistency: i8,
-    coachability: i8,
-    work_ethic: i8,
-    injury_risk: i8,
-    growth_window_start: i8,
-    growth_window_end: i8,
-    curve: DevelopmentCurve,
+
+    projection:
+    Projection,
 }
 
 impl Player {
-    pub fn new(
+    pub fn new(first_name: String, last_name: String, age:i8,overall:i8,
         player_type: Type,
         position: Position,
         play_type: PlayType,
         skate_stats: SkatingStats,
         goalie_movement: Option<GoalieMovement>,
-        ceiling: i8,
-        floor: i8,
-        growth_rate: i8,
-        consistency: i8,
-        coachability: i8,
-        work_ethic: i8,
-        injury_risk: i8,
-        growth_window_start: i8,
-        growth_window_end: i8,
-        curve: DevelopmentCurve,
+        projection: Projection
     ) -> Player {
         Player {
+            first_name,
+            last_name,
+            age,
+            overall,
             player_type,
             position,
             play_type,
             skate_stats,
             goalie_movement,
-            ceiling,
-            floor,
-            growth_rate,
-            consistency,
-            coachability,
-            work_ethic,
-            injury_risk,
-            growth_window_start,
-            growth_window_end,
-            curve,
+            projection
         }
     }
 
-    pub fn new_skater(
+    pub fn new_skater(first_name: String, last_name: String, age:i8,overall:i8,
         position: Position,
         play_type: PlayType,
         skate_stats: SkatingStats,
-        ceiling: i8,
-        floor: i8,
-        growth_rate: i8,
-        consistency: i8,
-        coachability: i8,
-        work_ethic: i8,
-        injury_risk: i8,
-        growth_window_start: i8,
-        growth_window_end: i8,
-        curve: DevelopmentCurve,
+
+       projection: Projection
     ) -> Player {
         Player {
+            first_name,
+            last_name,
+            age,
+            overall,
             player_type: Type::SKATER,
             position,
             play_type,
             skate_stats,
             goalie_movement: None,
-            ceiling,
-            floor,
-            growth_rate,
-            consistency,
-            coachability,
-            work_ethic,
-            injury_risk,
-            growth_window_start,
-            growth_window_end,
-            curve,
+           projection
         }
     }
 
-    pub fn new_goalie(
+    pub fn new_goalie(first_name: String, last_name: String, age:i8,overall:i8,
         play_type: PlayType,
         skate_type: SkatingType,
         skate_stats: SkatingStats,
         goalie_movement: GoalieMovement,
-        ceiling: i8,
-        floor: i8,
-        growth_rate: i8,
-        consistency: i8,
-        coachability: i8,
-        work_ethic: i8,
-        injury_risk: i8,
-        growth_window_start: i8,
-        growth_window_end: i8,
-        curve: DevelopmentCurve,
+
+        projection: Projection
     ) -> Player {
         Player {
+            first_name,
+            last_name,
+            age,
+            overall,
             player_type: Type::GOALIE,
             position: Position::GOALIE,
             play_type,
             skate_stats,
             goalie_movement: Some(goalie_movement),
-            ceiling,
-            floor,
-            growth_rate,
-            consistency,
-            coachability,
-            work_ethic,
-            injury_risk,
-            growth_window_start,
-            growth_window_end,
-            curve,
+
+            projection
         }
     }
+    pub fn new_random_overrall_goalie(first_name: String, last_name: String, age:i8,
+                                      play_type: PlayType,
+                                      skate_type: SkatingType,
+                                      skate_stats: SkatingStats,
+                                      goalie_movement: GoalieMovement,
+
+                                      projection: Projection)-> Player {
+
+        Self::new_goalie(first_name, last_name, age, choices::random_range_inclusive(0, 100) as i8, play_type, skate_type, skate_stats, goalie_movement, projection)
+    }
+    pub fn new_random_overrall_player(first_name: String, last_name: String, age:i8,
+                                      position: Position,
+                                      play_type: PlayType,
+                                      skate_stats: SkatingStats,
+
+
+
+
+                                      projection: Projection)-> Player {
+
+        Self::new_skater(first_name, last_name, age, choices::random_range_inclusive(0, 100) as i8, position,play_type, skate_stats, projection)
+    }
+
+
 
     pub fn player_type(&self) -> &Type {
         &self.player_type
@@ -192,52 +170,11 @@ impl Player {
         self.goalie_movement.as_mut()
     }
 
-    // Development-related getters
-    pub fn ceiling(&self) -> i8 {
-        self.ceiling
-    }
 
-    pub fn floor(&self) -> i8 {
-        self.floor
-    }
-
-    pub fn growth_rate(&self) -> i8 {
-        self.growth_rate
-    }
-
-    pub fn consistency(&self) -> i8 {
-        self.consistency
-    }
-
-    pub fn coachability(&self) -> i8 {
-        self.coachability
-    }
-
-    pub fn work_ethic(&self) -> i8 {
-        self.work_ethic
-    }
-
-    pub fn injury_risk(&self) -> i8 {
-        self.injury_risk
-    }
-
-    pub fn growth_window_start(&self) -> i8 {
-        self.growth_window_start
-    }
-
-    pub fn growth_window_end(&self) -> i8 {
-        self.growth_window_end
-    }
-
-    pub fn curve(&self) -> &DevelopmentCurve {
-        &self.curve
-    }
-
-    // Development method
     pub fn develop(&mut self, coaching_bonus: i8, age: i8) {
-        let in_window = age >= self.growth_window_start() && age <= self.growth_window_end();
-        let age_factor = if in_window { 2 } else if age < self.growth_window_start() { 1 } else { -1 };
-        let curve_bonus = match self.curve() {
+        let in_window = age >= self.projection().development_profile().growth_window_start() && age <= self.projection().development_profile().growth_window_end();
+        let age_factor = if in_window { 2 } else if age < self.projection().development_profile().growth_window_start() { 1 } else { -1 };
+        let curve_bonus = match self.projection().development_profile().curve() {
             DevelopmentCurve::EARLY => {
                 if age <= 22 { 1 } else { 0 }
             }
@@ -246,16 +183,16 @@ impl Player {
                 if age >= 24 { 1 } else { 0 }
             }
             DevelopmentCurve::BOOM_BUST => {
-                if self.consistency() >= 60 { 1 } else { -1 }
+                if self.projection().development_profile().consistency() >= 60 { 1 } else { -1 }
             }
         };
-        let growth_pressure = ((self.growth_rate() as i16
-            + self.coachability() as i16
-            + self.work_ethic() as i16
+        let growth_pressure = ((self.projection().development_profile().growth_rate() as i16
+            + self.projection().development_profile().coachability() as i16
+            + self.projection().development_profile().work_ethic() as i16
             + coaching_bonus as i16)
             / 45) as i8;
-        let total_delta = age_factor + curve_bonus + growth_pressure - Self::injury_penalty(self.injury_risk());
-        let max_rating = self.ceiling().max(self.floor());
+        let total_delta = age_factor + curve_bonus + growth_pressure - Self::injury_penalty(self.projection().development_profile().injury_risk());
+        let max_rating = self.projection().development_profile().ceiling().max(self.projection().development_profile().floor());
 
         self.skate_stats_mut().apply_delta(total_delta, total_delta, total_delta, max_rating);
 
@@ -273,4 +210,11 @@ impl Player {
             0
         }
     }
+
+    pub fn projection(&self) -> &Projection {
+
+        &self.projection
+
+    }
+
 }

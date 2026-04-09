@@ -15,10 +15,6 @@ pub enum TeamLevel {
     OTHER,
 }
 
-
-
-
-
 #[derive(Serialize, Deserialize)]
 pub struct TeamIdentity {
     city: String,
@@ -35,9 +31,12 @@ pub struct Team {
     roster: Vec<PlayerRecord>,
     staff: Vec<StaffMember>,
     team_stats: TeamStats,
-    contract_settings: TeamContractSettings,
-    affiliate_team_abbreviations: Vec<String>,
+    contract_settings: TeamContractSettings
 }
+
+
+
+
 
 impl TeamIdentity {
     pub fn new(
@@ -65,8 +64,7 @@ impl Team {
             roster,
             staff,
             team_stats: TeamStats::default(),
-            contract_settings: TeamContractSettings::nhl_default(),
-            affiliate_team_abbreviations: Vec::new(),
+            contract_settings: TeamContractSettings::nhl_default()
         }
     }
 
@@ -82,8 +80,7 @@ impl Team {
             roster,
             staff,
             team_stats,
-            contract_settings: TeamContractSettings::nhl_default(),
-            affiliate_team_abbreviations: Vec::new(),
+            contract_settings: TeamContractSettings::nhl_default()
         }
     }
 
@@ -100,8 +97,7 @@ impl Team {
             roster,
             staff,
             team_stats,
-            contract_settings,
-            affiliate_team_abbreviations: Vec::new(),
+            contract_settings
         }
     }
 
@@ -111,10 +107,9 @@ impl Team {
         roster: Vec<PlayerRecord>,
         staff: Vec<StaffMember>,
         team_stats: TeamStats,
-        contract_settings: TeamContractSettings,
-        affiliate_team_abbreviations: Vec<String>,
+        contract_settings: TeamContractSettings
     ) -> Team {
-        Team { identity, level, roster, staff, team_stats, contract_settings, affiliate_team_abbreviations }
+        Team { identity, level, roster, staff, team_stats, contract_settings }
     }
 
     pub fn identity(&self) -> &TeamIdentity { &self.identity }
@@ -131,13 +126,7 @@ impl Team {
         self.contract_settings = contract_settings;
     }
 
-    pub fn affiliate_team_abbreviations(&self) -> &[String] { &self.affiliate_team_abbreviations }
-
-    pub fn add_affiliate_team(&mut self, abbreviation: String) {
-        if !self.affiliate_team_abbreviations.iter().any(|existing| existing == &abbreviation) {
-            self.affiliate_team_abbreviations.push(abbreviation);
-        }
-    }
+   
 
     pub fn add_player(&mut self, player: PlayerRecord) {
         self.roster.push(player);

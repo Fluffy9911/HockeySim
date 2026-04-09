@@ -1,6 +1,6 @@
 use crate::data::contract::{Contract, ContractType};
 use crate::data::movement::{GoalieMovement, SkatingStats, SkatingType};
-use crate::data::player::{PlayType as PlayerPlayType, PlayType, Player, Position, Type, DevelopmentCurve};
+use crate::data::player::{PlayType as PlayerPlayType, PlayType, Player, Position, Type};
 use crate::data::stats::{GoalieStats, PlayerStats};
 use serde::{Deserialize, Serialize};
 
