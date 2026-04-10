@@ -1,7 +1,0 @@
-# Run with: cargo run -- test-league
-league_name=Autobuilt Test League
-team_count=6
-season_year=2026
-games_per_matchup=4
-base_quality=0.58
-quality_step=0.04

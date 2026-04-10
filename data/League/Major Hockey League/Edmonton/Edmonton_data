@@ -1,0 +1,3259 @@
+{
+  "identity": {
+    "city": "Edmonton",
+    "name": "Edmonton",
+    "abbreviation": "EDM",
+    "conference": {
+      "name": "East"
+    },
+    "division": {
+      "name": "Pacific",
+      "teams": 8
+    }
+  },
+  "level": "MAJOR_PRO",
+  "roster": [
+    {
+      "name": "CharlieTaylor",
+      "age": 18,
+      "player": {
+        "first_name": "Charlie",
+        "last_name": "Taylor",
+        "age": 18,
+        "overall": 81,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 78,
+          "edges": 71,
+          "acceleration": 94,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 31,
+            "projection_confidence": 83,
+            "scouting_visibility": 60,
+            "max_projection": "SUPERSTAR"
+          },
+          "development_profile": {
+            "ceiling": 90,
+            "floor": 51,
+            "growth_rate": 69,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeWilliams",
+      "age": 18,
+      "player": {
+        "first_name": "George",
+        "last_name": "Williams",
+        "age": 18,
+        "overall": 44,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 21,
+          "edges": 48,
+          "acceleration": 62,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 88,
+            "projection_confidence": 78,
+            "scouting_visibility": 60,
+            "max_projection": "TOP2"
+          },
+          "development_profile": {
+            "ceiling": 58,
+            "floor": 33,
+            "growth_rate": 57,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeSmith",
+      "age": 18,
+      "player": {
+        "first_name": "George",
+        "last_name": "Smith",
+        "age": 18,
+        "overall": 70,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 55,
+          "edges": 69,
+          "acceleration": 87,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 44,
+            "projection_confidence": 82,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 64,
+            "floor": 36,
+            "growth_rate": 66,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "DianaBrown",
+      "age": 17,
+      "player": {
+        "first_name": "Diana",
+        "last_name": "Brown",
+        "age": 17,
+        "overall": 57,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 99,
+          "edges": 41,
+          "acceleration": 32,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 9,
+            "projection_confidence": 86,
+            "scouting_visibility": 60,
+            "max_projection": "GENERATIONAL"
+          },
+          "development_profile": {
+            "ceiling": 97,
+            "floor": 55,
+            "growth_rate": 75,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "FionaDavis",
+      "age": 19,
+      "player": {
+        "first_name": "Fiona",
+        "last_name": "Davis",
+        "age": 19,
+        "overall": 83,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 92,
+          "edges": 73,
+          "acceleration": 85,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 5,
+            "overall_pick_estimate": 113,
+            "projection_confidence": 76,
+            "scouting_visibility": 60,
+            "max_projection": "TOP4"
+          },
+          "development_profile": {
+            "ceiling": 44,
+            "floor": 25,
+            "growth_rate": 52,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "EthanMiller",
+      "age": 19,
+      "player": {
+        "first_name": "Ethan",
+        "last_name": "Miller",
+        "age": 19,
+        "overall": 54,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 69,
+          "edges": 48,
+          "acceleration": 46,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 5,
+            "overall_pick_estimate": 114,
+            "projection_confidence": 76,
+            "scouting_visibility": 60,
+            "max_projection": "TOP4"
+          },
+          "development_profile": {
+            "ceiling": 97,
+            "floor": 55,
+            "growth_rate": 52,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeMiller",
+      "age": 18,
+      "player": {
+        "first_name": "George",
+        "last_name": "Miller",
+        "age": 18,
+        "overall": 56,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 19,
+          "edges": 61,
+          "acceleration": 88,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 49,
+            "projection_confidence": 82,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 87,
+            "floor": 49,
+            "growth_rate": 65,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "FionaSmith",
+      "age": 19,
+      "player": {
+        "first_name": "Fiona",
+        "last_name": "Smith",
+        "age": 19,
+        "overall": 71,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "OFD",
+        "skate_stats": {
+          "speed": 67,
+          "edges": 71,
+          "acceleration": 75,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 83,
+            "projection_confidence": 79,
+            "scouting_visibility": 60,
+            "max_projection": "TOP2"
+          },
+          "development_profile": {
+            "ceiling": 77,
+            "floor": 43,
+            "growth_rate": 58,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaMartinez",
+      "age": 18,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Martinez",
+        "age": 18,
+        "overall": 66,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 98,
+          "edges": 12,
+          "acceleration": 88,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 16,
+            "projection_confidence": 85,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 89,
+            "floor": 50,
+            "growth_rate": 73,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "IanSmith",
+      "age": 17,
+      "player": {
+        "first_name": "Ian",
+        "last_name": "Smith",
+        "age": 17,
+        "overall": 70,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 61,
+          "edges": 80,
+          "acceleration": 70,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 1,
+            "overall_pick_estimate": 7,
+            "projection_confidence": 86,
+            "scouting_visibility": 60,
+            "max_projection": "GENERATIONAL"
+          },
+          "development_profile": {
+            "ceiling": 98,
+            "floor": 55,
+            "growth_rate": 76,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "FionaMartinez",
+      "age": 18,
+      "player": {
+        "first_name": "Fiona",
+        "last_name": "Martinez",
+        "age": 18,
+        "overall": 73,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 51,
+          "edges": 78,
+          "acceleration": 89,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 74,
+            "projection_confidence": 79,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 91,
+            "floor": 51,
+            "growth_rate": 59,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "HannahSmith",
+      "age": 17,
+      "player": {
+        "first_name": "Hannah",
+        "last_name": "Smith",
+        "age": 17,
+        "overall": 66,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 96,
+          "edges": 23,
+          "acceleration": 79,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 58,
+            "projection_confidence": 81,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 51,
+            "floor": 29,
+            "growth_rate": 63,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "EthanGarcia",
+      "age": 18,
+      "player": {
+        "first_name": "Ethan",
+        "last_name": "Garcia",
+        "age": 18,
+        "overall": 73,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 86,
+          "edges": 79,
+          "acceleration": 55,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 48,
+            "projection_confidence": 82,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 92,
+            "floor": 52,
+            "growth_rate": 65,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "BobMartinez",
+      "age": 17,
+      "player": {
+        "first_name": "Bob",
+        "last_name": "Martinez",
+        "age": 17,
+        "overall": 64,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 70,
+          "edges": 44,
+          "acceleration": 79,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 5,
+            "overall_pick_estimate": 134,
+            "projection_confidence": 75,
+            "scouting_visibility": 60,
+            "max_projection": "MID_6"
+          },
+          "development_profile": {
+            "ceiling": 26,
+            "floor": 15,
+            "growth_rate": 49,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "EthanBrown",
+      "age": 17,
+      "player": {
+        "first_name": "Ethan",
+        "last_name": "Brown",
+        "age": 17,
+        "overall": 80,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 96,
+          "edges": 47,
+          "acceleration": 97,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 59,
+            "projection_confidence": 81,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 83,
+            "floor": 47,
+            "growth_rate": 63,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaJohnson",
+      "age": 19,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Johnson",
+        "age": 19,
+        "overall": 73,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 40,
+          "edges": 96,
+          "acceleration": 83,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 18,
+            "projection_confidence": 85,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 91,
+            "floor": 51,
+            "growth_rate": 72,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeTaylor",
+      "age": 18,
+      "player": {
+        "first_name": "George",
+        "last_name": "Taylor",
+        "age": 18,
+        "overall": 65,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "OFD",
+        "skate_stats": {
+          "speed": 34,
+          "edges": 97,
+          "acceleration": 65,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 21,
+            "projection_confidence": 85,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 86,
+            "floor": 48,
+            "growth_rate": 72,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaBrown",
+      "age": 18,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Brown",
+        "age": 18,
+        "overall": 50,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 21,
+          "edges": 73,
+          "acceleration": 56,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 58,
+            "projection_confidence": 81,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 86,
+            "floor": 48,
+            "growth_rate": 63,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeBrown",
+      "age": 19,
+      "player": {
+        "first_name": "George",
+        "last_name": "Brown",
+        "age": 19,
+        "overall": 66,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 98,
+          "edges": 52,
+          "acceleration": 47,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 77,
+            "projection_confidence": 79,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 80,
+            "floor": 45,
+            "growth_rate": 59,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaJones",
+      "age": 18,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Jones",
+        "age": 18,
+        "overall": 47,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 19,
+          "edges": 93,
+          "acceleration": 30,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 1,
+            "overall_pick_estimate": 3,
+            "projection_confidence": 87,
+            "scouting_visibility": 60,
+            "max_projection": "GENERATIONAL"
+          },
+          "development_profile": {
+            "ceiling": 97,
+            "floor": 55,
+            "growth_rate": 77,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "AliceMartinez",
+      "age": 19,
+      "player": {
+        "first_name": "Alice",
+        "last_name": "Martinez",
+        "age": 19,
+        "overall": 71,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 78,
+          "edges": 85,
+          "acceleration": 50,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 73,
+            "projection_confidence": 80,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 41,
+            "floor": 23,
+            "growth_rate": 60,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "FionaTaylor",
+      "age": 18,
+      "player": {
+        "first_name": "Fiona",
+        "last_name": "Taylor",
+        "age": 18,
+        "overall": 57,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 25,
+          "edges": 67,
+          "acceleration": 80,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 97,
+            "projection_confidence": 78,
+            "scouting_visibility": 60,
+            "max_projection": "TOP2"
+          },
+          "development_profile": {
+            "ceiling": 40,
+            "floor": 23,
+            "growth_rate": 55,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "HannahTaylor",
+      "age": 19,
+      "player": {
+        "first_name": "Hannah",
+        "last_name": "Taylor",
+        "age": 19,
+        "overall": 48,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "OFD",
+        "skate_stats": {
+          "speed": 47,
+          "edges": 55,
+          "acceleration": 43,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 68,
+            "projection_confidence": 80,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 97,
+            "floor": 55,
+            "growth_rate": 61,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "HannahTaylor",
+      "age": 18,
+      "player": {
+        "first_name": "Hannah",
+        "last_name": "Taylor",
+        "age": 18,
+        "overall": 58,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 71,
+          "edges": 27,
+          "acceleration": 76,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 59,
+            "projection_confidence": 81,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 97,
+            "floor": 55,
+            "growth_rate": 63,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "DianaJohnson",
+      "age": 17,
+      "player": {
+        "first_name": "Diana",
+        "last_name": "Johnson",
+        "age": 17,
+        "overall": 77,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 87,
+          "edges": 61,
+          "acceleration": 83,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 16,
+            "projection_confidence": 85,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 90,
+            "floor": 51,
+            "growth_rate": 73,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "BobMiller",
+      "age": 18,
+      "player": {
+        "first_name": "Bob",
+        "last_name": "Miller",
+        "age": 18,
+        "overall": 55,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 63,
+          "edges": 52,
+          "acceleration": 49,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 1,
+            "overall_pick_estimate": 6,
+            "projection_confidence": 87,
+            "scouting_visibility": 60,
+            "max_projection": "GENERATIONAL"
+          },
+          "development_profile": {
+            "ceiling": 98,
+            "floor": 55,
+            "growth_rate": 76,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaBrown",
+      "age": 19,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Brown",
+        "age": 19,
+        "overall": 82,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 86,
+          "edges": 65,
+          "acceleration": 94,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 21,
+            "projection_confidence": 85,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 89,
+            "floor": 50,
+            "growth_rate": 71,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "HannahJohnson",
+      "age": 18,
+      "player": {
+        "first_name": "Hannah",
+        "last_name": "Johnson",
+        "age": 18,
+        "overall": 66,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 92,
+          "edges": 49,
+          "acceleration": 58,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 78,
+            "projection_confidence": 79,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 81,
+            "floor": 46,
+            "growth_rate": 59,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "BobDavis",
+      "age": 18,
+      "player": {
+        "first_name": "Bob",
+        "last_name": "Davis",
+        "age": 18,
+        "overall": 63,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 30,
+          "edges": 71,
+          "acceleration": 87,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 104,
+            "projection_confidence": 77,
+            "scouting_visibility": 60,
+            "max_projection": "TOP4"
+          },
+          "development_profile": {
+            "ceiling": 76,
+            "floor": 43,
+            "growth_rate": 54,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "BobGarcia",
+      "age": 18,
+      "player": {
+        "first_name": "Bob",
+        "last_name": "Garcia",
+        "age": 18,
+        "overall": 50,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "OFD",
+        "skate_stats": {
+          "speed": 85,
+          "edges": 52,
+          "acceleration": 13,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 89,
+            "projection_confidence": 78,
+            "scouting_visibility": 60,
+            "max_projection": "TOP2"
+          },
+          "development_profile": {
+            "ceiling": 47,
+            "floor": 26,
+            "growth_rate": 57,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "CharlieJones",
+      "age": 17,
+      "player": {
+        "first_name": "Charlie",
+        "last_name": "Jones",
+        "age": 17,
+        "overall": 78,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 66,
+          "edges": 89,
+          "acceleration": 78,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 85,
+            "projection_confidence": 78,
+            "scouting_visibility": 60,
+            "max_projection": "TOP2"
+          },
+          "development_profile": {
+            "ceiling": 49,
+            "floor": 28,
+            "growth_rate": 57,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeJones",
+      "age": 17,
+      "player": {
+        "first_name": "George",
+        "last_name": "Jones",
+        "age": 17,
+        "overall": 86,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "DFD",
+        "skate_stats": {
+          "speed": 94,
+          "edges": 97,
+          "acceleration": 67,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 12,
+            "projection_confidence": 86,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 96,
+            "floor": 54,
+            "growth_rate": 74,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "FionaBrown",
+      "age": 18,
+      "player": {
+        "first_name": "Fiona",
+        "last_name": "Brown",
+        "age": 18,
+        "overall": 77,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "DFD",
+        "skate_stats": {
+          "speed": 84,
+          "edges": 84,
+          "acceleration": 63,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 46,
+            "projection_confidence": 82,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 75,
+            "floor": 42,
+            "growth_rate": 65,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "IanSmith",
+      "age": 18,
+      "player": {
+        "first_name": "Ian",
+        "last_name": "Smith",
+        "age": 18,
+        "overall": 73,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 84,
+          "edges": 63,
+          "acceleration": 72,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 87,
+            "projection_confidence": 78,
+            "scouting_visibility": 60,
+            "max_projection": "TOP2"
+          },
+          "development_profile": {
+            "ceiling": 43,
+            "floor": 24,
+            "growth_rate": 57,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "EthanGarcia",
+      "age": 17,
+      "player": {
+        "first_name": "Ethan",
+        "last_name": "Garcia",
+        "age": 17,
+        "overall": 87,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 89,
+          "edges": 81,
+          "acceleration": 90,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 5,
+            "overall_pick_estimate": 148,
+            "projection_confidence": 74,
+            "scouting_visibility": 60,
+            "max_projection": "BOTTOM_6"
+          },
+          "development_profile": {
+            "ceiling": 49,
+            "floor": 28,
+            "growth_rate": 46,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "FionaJohnson",
+      "age": 18,
+      "player": {
+        "first_name": "Fiona",
+        "last_name": "Johnson",
+        "age": 18,
+        "overall": 84,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "DFD",
+        "skate_stats": {
+          "speed": 98,
+          "edges": 77,
+          "acceleration": 77,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 1,
+            "overall_pick_estimate": 4,
+            "projection_confidence": 87,
+            "scouting_visibility": 60,
+            "max_projection": "GENERATIONAL"
+          },
+          "development_profile": {
+            "ceiling": 97,
+            "floor": 55,
+            "growth_rate": 77,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeSmith",
+      "age": 18,
+      "player": {
+        "first_name": "George",
+        "last_name": "Smith",
+        "age": 18,
+        "overall": 77,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "OFD",
+        "skate_stats": {
+          "speed": 82,
+          "edges": 94,
+          "acceleration": 54,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 43,
+            "projection_confidence": 82,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 51,
+            "floor": 29,
+            "growth_rate": 66,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaGarcia",
+      "age": 19,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Garcia",
+        "age": 19,
+        "overall": 59,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 48,
+          "edges": 73,
+          "acceleration": 55,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 74,
+            "projection_confidence": 79,
+            "scouting_visibility": 60,
+            "max_projection": "TOP1"
+          },
+          "development_profile": {
+            "ceiling": 77,
+            "floor": 43,
+            "growth_rate": 60,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaMartinez",
+      "age": 17,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Martinez",
+        "age": 17,
+        "overall": 68,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 64,
+          "edges": 41,
+          "acceleration": 99,
+          "skate_type": "SLOW"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 5,
+            "overall_pick_estimate": 124,
+            "projection_confidence": 75,
+            "scouting_visibility": 60,
+            "max_projection": "MID_6"
+          },
+          "development_profile": {
+            "ceiling": 86,
+            "floor": 48,
+            "growth_rate": 50,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "JuliaWilliams",
+      "age": 18,
+      "player": {
+        "first_name": "Julia",
+        "last_name": "Williams",
+        "age": 18,
+        "overall": 68,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 83,
+          "edges": 78,
+          "acceleration": 42,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 16,
+            "projection_confidence": 85,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 88,
+            "floor": 50,
+            "growth_rate": 73,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "HannahGarcia",
+      "age": 18,
+      "player": {
+        "first_name": "Hannah",
+        "last_name": "Garcia",
+        "age": 18,
+        "overall": 81,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 77,
+          "edges": 66,
+          "acceleration": 99,
+          "skate_type": "STRONG"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 5,
+            "overall_pick_estimate": 136,
+            "projection_confidence": 75,
+            "scouting_visibility": 60,
+            "max_projection": "MID_6"
+          },
+          "development_profile": {
+            "ceiling": 66,
+            "floor": 37,
+            "growth_rate": 49,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "DianaWilliams",
+      "age": 17,
+      "player": {
+        "first_name": "Diana",
+        "last_name": "Williams",
+        "age": 17,
+        "overall": 61,
+        "player_type": "SKATER",
+        "position": "LD",
+        "play_type": "OFD",
+        "skate_stats": {
+          "speed": 68,
+          "edges": 67,
+          "acceleration": 48,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 4,
+            "overall_pick_estimate": 80,
+            "projection_confidence": 79,
+            "scouting_visibility": 60,
+            "max_projection": "TOP2"
+          },
+          "development_profile": {
+            "ceiling": 84,
+            "floor": 47,
+            "growth_rate": 58,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "BobWilliams",
+      "age": 18,
+      "player": {
+        "first_name": "Bob",
+        "last_name": "Williams",
+        "age": 18,
+        "overall": 48,
+        "player_type": "SKATER",
+        "position": "CENTER",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 51,
+          "edges": 85,
+          "acceleration": 8,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 40,
+            "projection_confidence": 82,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 60,
+            "floor": 34,
+            "growth_rate": 67,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "IanDavis",
+      "age": 19,
+      "player": {
+        "first_name": "Ian",
+        "last_name": "Davis",
+        "age": 19,
+        "overall": 72,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "PWF",
+        "skate_stats": {
+          "speed": 58,
+          "edges": 73,
+          "acceleration": 84,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 55,
+            "projection_confidence": 81,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 53,
+            "floor": 30,
+            "growth_rate": 63,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeBrown",
+      "age": 19,
+      "player": {
+        "first_name": "George",
+        "last_name": "Brown",
+        "age": 19,
+        "overall": 67,
+        "player_type": "SKATER",
+        "position": "RW",
+        "play_type": "DF",
+        "skate_stats": {
+          "speed": 62,
+          "edges": 45,
+          "acceleration": 95,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 16,
+            "projection_confidence": 85,
+            "scouting_visibility": 60,
+            "max_projection": "ELITE"
+          },
+          "development_profile": {
+            "ceiling": 96,
+            "floor": 54,
+            "growth_rate": 73,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "BobTaylor",
+      "age": 18,
+      "player": {
+        "first_name": "Bob",
+        "last_name": "Taylor",
+        "age": 18,
+        "overall": 73,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "PLAYMAKER",
+        "skate_stats": {
+          "speed": 93,
+          "edges": 85,
+          "acceleration": 40,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 5,
+            "overall_pick_estimate": 151,
+            "projection_confidence": 73,
+            "scouting_visibility": 60,
+            "max_projection": "BOTTOM_6"
+          },
+          "development_profile": {
+            "ceiling": 88,
+            "floor": 50,
+            "growth_rate": 46,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "AliceMiller",
+      "age": 19,
+      "player": {
+        "first_name": "Alice",
+        "last_name": "Miller",
+        "age": 19,
+        "overall": 61,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "OFD",
+        "skate_stats": {
+          "speed": 37,
+          "edges": 52,
+          "acceleration": 93,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 51,
+            "projection_confidence": 81,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 96,
+            "floor": 54,
+            "growth_rate": 64,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "GeorgeBrown",
+      "age": 18,
+      "player": {
+        "first_name": "George",
+        "last_name": "Brown",
+        "age": 18,
+        "overall": 60,
+        "player_type": "SKATER",
+        "position": "LW",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 49,
+          "edges": 90,
+          "acceleration": 40,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 3,
+            "overall_pick_estimate": 50,
+            "projection_confidence": 82,
+            "scouting_visibility": 60,
+            "max_projection": "FRANCHISE"
+          },
+          "development_profile": {
+            "ceiling": 88,
+            "floor": 50,
+            "growth_rate": 65,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "IanJones",
+      "age": 18,
+      "player": {
+        "first_name": "Ian",
+        "last_name": "Jones",
+        "age": 18,
+        "overall": 45,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 29,
+          "edges": 13,
+          "acceleration": 92,
+          "skate_type": "NIMBLE"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 1,
+            "overall_pick_estimate": 7,
+            "projection_confidence": 86,
+            "scouting_visibility": 60,
+            "max_projection": "GENERATIONAL"
+          },
+          "development_profile": {
+            "ceiling": 92,
+            "floor": 52,
+            "growth_rate": 76,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    },
+    {
+      "name": "FionaDavis",
+      "age": 19,
+      "player": {
+        "first_name": "Fiona",
+        "last_name": "Davis",
+        "age": 19,
+        "overall": 45,
+        "player_type": "SKATER",
+        "position": "RD",
+        "play_type": "SNIPER",
+        "skate_stats": {
+          "speed": 20,
+          "edges": 41,
+          "acceleration": 74,
+          "skate_type": "QUICK"
+        },
+        "goalie_movement": null,
+        "projection": {
+          "draft_projection": {
+            "draft_round_grade": 2,
+            "overall_pick_estimate": 34,
+            "projection_confidence": 83,
+            "scouting_visibility": 60,
+            "max_projection": "SUPERSTAR"
+          },
+          "development_profile": {
+            "ceiling": 93,
+            "floor": 52,
+            "growth_rate": 68,
+            "consistency": 68,
+            "coachability": 55,
+            "work_ethic": 55,
+            "injury_risk": 30,
+            "growth_window_start": 18,
+            "growth_window_end": 27,
+            "curve": "LINEAR"
+          }
+        }
+      },
+      "stats": {
+        "games_played": 0,
+        "goals": 0,
+        "assists": 0,
+        "plus_minus": 0,
+        "penalty_minutes": 0,
+        "shots": 0,
+        "power_play_goals": 0,
+        "power_play_assists": 0,
+        "short_handed_goals": 0,
+        "short_handed_assists": 0,
+        "game_winning_goals": 0,
+        "overtime_goals": 0,
+        "faceoff_wins": 0,
+        "faceoff_losses": 0,
+        "hits": 0,
+        "blocked_shots": 0,
+        "takeaways": 0,
+        "giveaways": 0,
+        "time_on_ice_minutes": 0,
+        "goalie_stats": null
+      },
+      "contract": null
+    }
+  ],
+  "staff": [],
+  "team_stats": {
+    "games_played": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtime_losses": 0,
+    "points": 0,
+    "goals_for": 0,
+    "goals_against": 0,
+    "shots_for": 0,
+    "shots_against": 0,
+    "power_play_goals": 0,
+    "power_play_opportunities": 0,
+    "penalty_kill_goals_against": 0,
+    "penalty_kill_opportunities": 0,
+    "faceoff_wins": 0,
+    "faceoff_losses": 0,
+    "hits": 0,
+    "blocked_shots": 0
+  },
+  "contract_settings": {
+    "salary_cap_max_millions": 88.0,
+    "salary_floor_min_millions": 65.0,
+    "max_contracts": 50,
+    "max_retained_salary_slots": 3,
+    "limits": {
+      "min_years": 1,
+      "max_years": 8,
+      "min_cap_hit_millions": 0.775,
+      "max_cap_hit_millions": 18.0,
+      "min_salary_millions": 0.775,
+      "max_salary_millions": 16.0,
+      "min_signing_bonus_millions": 0.0,
+      "max_signing_bonus_millions": 15.0,
+      "min_performance_bonus_millions": 0.0,
+      "max_performance_bonus_millions": 5.0,
+      "min_no_trade_clauses": 0,
+      "max_no_trade_clauses": 1,
+      "min_no_move_clauses": 0,
+      "max_no_move_clauses": 1
+    }
+  }
+}

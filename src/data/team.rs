@@ -18,7 +18,7 @@ pub enum TeamLevel {
 #[derive(Serialize, Deserialize)]
 pub struct TeamIdentity {
     city: String,
-    name: String,
+   pub name: String,
     abbreviation: String,
     conference: Conference,
     division: Division,
@@ -26,7 +26,7 @@ pub struct TeamIdentity {
 
 #[derive(Serialize, Deserialize)]
 pub struct Team {
-    identity: TeamIdentity,
+   pub identity: TeamIdentity,
     level: TeamLevel,
     roster: Vec<PlayerRecord>,
     staff: Vec<StaffMember>,

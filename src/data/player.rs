@@ -173,7 +173,7 @@ p.guess_overall();
 pub struct Player {
     first_name: String,
     last_name: String,
-    age:i8,
+    pub age:i8,
     overall:i8,
     player_type: Type,
     position: Position,

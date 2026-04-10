@@ -29,3 +29,13 @@ impl Conference{
 
 }
 
+impl Division{
+
+    pub fn pacific()-> Division{
+
+
+        Division{name: "Pacific".parse().unwrap(), teams:8}
+    }
+
+
+}

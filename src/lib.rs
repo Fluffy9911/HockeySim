@@ -3,3 +3,4 @@ pub mod season;
 pub mod sim;
 
 pub mod randoms;
+pub mod testing;

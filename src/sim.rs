@@ -16,7 +16,7 @@ pub struct SimulationSettings {
 }
 
 pub struct League {
-    name: String,
+    pub name: String,
     level: TeamLevel,
     rules: LeagueRules,
     team_registry: Vec<LeagueTeamEntry>,
