@@ -7,6 +7,7 @@ use HockeySim::data::player::{PlayType, Player, Position};
 use HockeySim::data::projection::{DevelopmentCurve, Projection};
 use HockeySim::data::{player, team};
 use HockeySim::data::contract::Contract;
+use HockeySim::data::draft::Draft;
 use HockeySim::data::game::names::{Conference, Division};
 use HockeySim::data::helper::DraftStatus::Drafted;
 use HockeySim::data::helper::{DraftStatus, PlayerRecord};
@@ -21,6 +22,8 @@ let league = sim::League::empty("Major Hockey League".parse().unwrap());
 
     let mut team = Team::new(/* TeamIdentity */TeamIdentity::new("Edmonton".parse().unwrap(), "Edmonton".parse().unwrap(), /* String */"EDM".parse().unwrap(), Conference::east(), Division::pacific()), /* Vec<PlayerRecord> */Vec::new(), /* Vec<StaffMember> */Vec::new());
 
+    let mut draft = Draft::new_draft_with_bias(0.1,4);
+
     for i in 1..=50
     {
         let pl = player::random_prospect(0.5,false);
@@ -30,7 +33,9 @@ let league = sim::League::empty("Major Hockey League".parse().unwrap());
 league_helper::allocate_league(&league).expect("TODO: panic message");
 league_helper::allocate_team(&league, &team);
     league_helper::write_team_data(&league, &team);
+    league_helper::write_draft("Draft_data.json".parse().unwrap(), &draft,league);
 }
+
 
 
 

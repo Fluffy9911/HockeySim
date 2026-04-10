@@ -1,4 +1,5 @@
 use std::fs;
+use crate::data::draft::Draft;
 use crate::data::team::Team;
 use crate::sim::League;
 
@@ -34,4 +35,11 @@ pub fn write_team_data(l:&League, team:&Team) -> std::io::Result<()> {
     fs::write(team_path(l,team)+"/"+ &*team.identity().name().to_owned() +"_data", serde_json::to_string_pretty(&team).unwrap())
 
 
+}
+
+pub fn write_draft(pth:String ,draft:&Draft,l:League){
+    let p = league_path(&l)+"/"+ &*pth;
+    
+    fs::write(p,serde_json::to_string_pretty(draft).unwrap()).expect("Error LOL")
+    
 }

@@ -8,3 +8,4 @@ pub mod staff;
 pub mod stats;
 pub mod team;
 pub mod game;
+pub mod draft;

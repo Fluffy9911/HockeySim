@@ -68,7 +68,7 @@ pub fn distanced_biased_random(start:i32,val:i32,max:i32,bias:f32) -> f32{
 
     let mut r = rand::rng();
 
-    let hb = r.random_ratio((start - val).abs() as u32,max as u32);
+    let hb = r.random_ratio((start - val).abs().min(max) as u32,max as u32);
 
     let mut bv = biased_random(bias);
 
@@ -79,24 +79,33 @@ pub fn distanced_biased_random(start:i32,val:i32,max:i32,bias:f32) -> f32{
     }
     return biased_random(bv);
 }
-pub fn distanced_biased_falloff_random(start:i32,val:i32,max:i32,bias:f32,falloff:f32) -> f32{
+pub fn distanced_biased_falloff_random(
+    start: i32,
+    val: i32,
+    max: i32,
+    bias: f32,
+    falloff: f32
+) -> f32 {
+    let mut rng = rand::rng();
 
-    let mut r = rand::rng();
+    // Distance from start (0 at start, increases outward)
+    let distance = (val - start).abs() as f32;
 
-    let hb = r.random_ratio(((start as f32) as i32- val).abs() as u32,max as u32);
+    // Normalize distance to 0.0 → 1.0
+    let norm_dist = (distance / max as f32).min(1.0);
 
-    let mut bv = biased_random(bias);
+    // Falloff factor (higher distance → lower multiplier)
+    let falloff_factor = (1.0 - norm_dist).powf(falloff);
 
-    if hb {
+    // Base biased value
+    let base = biased_random(bias);
 
-        bv = (bv.powf(2.0));
+    // Apply falloff
+    let result = base * falloff_factor;
 
-        bv*=(1.0/(falloff));
-        bv = bv.min(1.0);
-    }
-
-    return biased_random(bv);
-}pub fn test_distribution() {
+    result.clamp(0.0, 1.0)
+}
+pub fn test_distribution() {
     let start = 0;
     let max = 1000;
     let samples = 10_000;

@@ -335,9 +335,34 @@ impl Player {
         self.guess_overall();
     }
     pub fn develop(&mut self, coaching_bonus: i8, age: i8) {
-        let in_window = age >= self.projection().development_profile().growth_window_start() && age <= self.projection().development_profile().growth_window_end();
-        let age_factor = if in_window { 2 } else if age < self.projection().development_profile().growth_window_start() { 1 } else { -1 };
-        let curve_bonus = match self.projection().development_profile().curve() {
+        let in_window = self.is_in_growth_window(age);
+        let age_factor = self.age_factor(age, in_window);
+        let curve_bonus = self.get_curve_bonus(age);
+        let growth_pressure = self.growth_pressure(coaching_bonus);
+        let total_delta = age_factor + curve_bonus + growth_pressure - Self::injury_penalty(self.projection().development_profile().injury_risk());
+        let max_rating = self.get_max_rating();
+
+        self.skate_stats_mut().apply_delta(total_delta, total_delta, total_delta, max_rating);
+
+        if let Some(movement) = self.goalie_movement_mut() {
+            movement.apply_delta(total_delta, total_delta, total_delta, max_rating);
+        }
+    }
+
+    pub fn get_max_rating(&mut self) -> i8 {
+        self.projection().development_profile().ceiling().max(self.projection().development_profile().floor())
+    }
+
+    pub fn growth_pressure(&mut self, coaching_bonus: i8) -> i8 {
+        ((self.projection().development_profile().growth_rate() as i16
+            + self.projection().development_profile().coachability() as i16
+            + self.projection().development_profile().work_ethic() as i16
+            + coaching_bonus as i16)
+            / 45) as i8
+    }
+
+    pub fn get_curve_bonus(&mut self, age: i8) -> i8 {
+        match self.projection().development_profile().curve() {
             DevelopmentCurve::EARLY => {
                 if age <= 22 { 1 } else { 0 }
             }
@@ -348,21 +373,31 @@ impl Player {
             DevelopmentCurve::BOOM_BUST => {
                 if self.projection().development_profile().consistency() >= 60 { 1 } else { -1 }
             }
-        };
-        let growth_pressure = ((self.projection().development_profile().growth_rate() as i16
-            + self.projection().development_profile().coachability() as i16
-            + self.projection().development_profile().work_ethic() as i16
-            + coaching_bonus as i16)
-            / 45) as i8;
-        let total_delta = age_factor + curve_bonus + growth_pressure - Self::injury_penalty(self.projection().development_profile().injury_risk());
-        let max_rating = self.projection().development_profile().ceiling().max(self.projection().development_profile().floor());
-
-        self.skate_stats_mut().apply_delta(total_delta, total_delta, total_delta, max_rating);
-
-        if let Some(movement) = self.goalie_movement_mut() {
-            movement.apply_delta(total_delta, total_delta, total_delta, max_rating);
         }
     }
+
+    fn age_factor(&mut self, age: i8, in_window: bool) -> i8 {
+        if in_window { 2 } else if age < self.projection().development_profile().growth_window_start() { 1 } else { -1 }
+    }
+
+    pub fn is_in_growth_window(&mut self, age: i8) -> bool {
+        age >= self.projection().development_profile().growth_window_start() && age <= self.projection().development_profile().growth_window_end()
+    }
+
+    pub fn coach_skating(&mut self,coach: i8){
+        let age = self.is_in_growth_window(self.age);
+       
+        if age {
+
+
+
+
+
+        }
+
+
+    }
+
 
     fn injury_penalty(injury_risk: i8) -> i8 {
         if injury_risk >= 80 {
