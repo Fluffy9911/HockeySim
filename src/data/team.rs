@@ -5,7 +5,7 @@ use crate::data::stats::TeamStats;
 use serde::{Deserialize, Serialize};
 use crate::data::game::names::*;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize,Copy,Clone)]
 pub enum TeamLevel {
     MAJOR_PRO,
     MINOR_PRO,

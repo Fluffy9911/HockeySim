@@ -5,106 +5,69 @@
       "round": 1,
       "players": [
         {
-          "first_name": "Diana",
-          "last_name": "Brown",
-          "age": 19,
-          "overall": 64,
+          "first_name": "Ethan",
+          "last_name": "Martinez",
+          "age": 17,
+          "overall": 71,
           "player_type": "SKATER",
           "position": "RD",
-          "play_type": "OFD",
+          "play_type": "DFD",
           "skate_stats": {
-            "speed": 80,
-            "edges": 39,
-            "acceleration": 73,
+            "speed": 58,
+            "edges": 72,
+            "acceleration": 84,
+            "skate_type": "NIMBLE"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 5,
+              "overall_pick_estimate": 123,
+              "projection_confidence": 76,
+              "scouting_visibility": 60,
+              "max_projection": "MID_6"
+            },
+            "development_profile": {
+              "ceiling": 77,
+              "floor": 43,
+              "growth_rate": 51,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Bob",
+          "last_name": "Miller",
+          "age": 18,
+          "overall": 93,
+          "player_type": "SKATER",
+          "position": "LW",
+          "play_type": "SNIPER",
+          "skate_stats": {
+            "speed": 98,
+            "edges": 98,
+            "acceleration": 83,
             "skate_type": "SLOW"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
               "draft_round_grade": 2,
-              "overall_pick_estimate": 9,
+              "overall_pick_estimate": 13,
               "projection_confidence": 86,
               "scouting_visibility": 60,
-              "max_projection": "GENERATIONAL"
-            },
-            "development_profile": {
-              "ceiling": 97,
-              "floor": 55,
-              "growth_rate": 75,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Alice",
-          "last_name": "Brown",
-          "age": 17,
-          "overall": 62,
-          "player_type": "SKATER",
-          "position": "RD",
-          "play_type": "PLAYMAKER",
-          "skate_stats": {
-            "speed": 86,
-            "edges": 44,
-            "acceleration": 56,
-            "skate_type": "STRONG"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 38,
-              "projection_confidence": 83,
-              "scouting_visibility": 60,
-              "max_projection": "SUPERSTAR"
-            },
-            "development_profile": {
-              "ceiling": 41,
-              "floor": 23,
-              "growth_rate": 67,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Fiona",
-          "last_name": "Taylor",
-          "age": 17,
-          "overall": 65,
-          "player_type": "SKATER",
-          "position": "LD",
-          "play_type": "PLAYMAKER",
-          "skate_stats": {
-            "speed": 52,
-            "edges": 68,
-            "acceleration": 75,
-            "skate_type": "SLOW"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 2,
-              "overall_pick_estimate": 29,
-              "projection_confidence": 84,
-              "scouting_visibility": 60,
-              "max_projection": "SUPERSTAR"
+              "max_projection": "ELITE"
             },
             "development_profile": {
               "ceiling": 91,
               "floor": 51,
-              "growth_rate": 69,
+              "growth_rate": 74,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -116,32 +79,32 @@
           }
         },
         {
-          "first_name": "Julia",
-          "last_name": "Davis",
+          "first_name": "Ethan",
+          "last_name": "Jones",
           "age": 18,
-          "overall": 53,
+          "overall": 55,
           "player_type": "SKATER",
-          "position": "RD",
+          "position": "LD",
           "play_type": "PLAYMAKER",
           "skate_stats": {
-            "speed": 68,
-            "edges": 22,
-            "acceleration": 69,
-            "skate_type": "STRONG"
+            "speed": 80,
+            "edges": 40,
+            "acceleration": 45,
+            "skate_type": "NIMBLE"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
               "draft_round_grade": 4,
-              "overall_pick_estimate": 82,
-              "projection_confidence": 79,
+              "overall_pick_estimate": 95,
+              "projection_confidence": 78,
               "scouting_visibility": 60,
               "max_projection": "TOP2"
             },
             "development_profile": {
-              "ceiling": 46,
-              "floor": 26,
-              "growth_rate": 58,
+              "ceiling": 83,
+              "floor": 47,
+              "growth_rate": 56,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -153,32 +116,69 @@
           }
         },
         {
-          "first_name": "Julia",
-          "last_name": "Smith",
-          "age": 18,
-          "overall": 45,
+          "first_name": "Bob",
+          "last_name": "Brown",
+          "age": 19,
+          "overall": 52,
           "player_type": "SKATER",
           "position": "LW",
-          "play_type": "SNIPER",
+          "play_type": "DF",
           "skate_stats": {
-            "speed": 46,
-            "edges": 65,
-            "acceleration": 24,
-            "skate_type": "SLOW"
+            "speed": 32,
+            "edges": 93,
+            "acceleration": 30,
+            "skate_type": "NIMBLE"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 66,
-              "projection_confidence": 80,
+              "draft_round_grade": 6,
+              "overall_pick_estimate": 152,
+              "projection_confidence": 73,
+              "scouting_visibility": 60,
+              "max_projection": "BOTTOM_6"
+            },
+            "development_profile": {
+              "ceiling": 41,
+              "floor": 23,
+              "growth_rate": 46,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Ian",
+          "last_name": "Miller",
+          "age": 17,
+          "overall": 47,
+          "player_type": "SKATER",
+          "position": "CENTER",
+          "play_type": "PLAYMAKER",
+          "skate_stats": {
+            "speed": 50,
+            "edges": 37,
+            "acceleration": 54,
+            "skate_type": "NIMBLE"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 4,
+              "overall_pick_estimate": 76,
+              "projection_confidence": 79,
               "scouting_visibility": 60,
               "max_projection": "TOP1"
             },
             "development_profile": {
-              "ceiling": 60,
-              "floor": 34,
-              "growth_rate": 61,
+              "ceiling": 69,
+              "floor": 39,
+              "growth_rate": 59,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -196,31 +196,31 @@
       "players": [
         {
           "first_name": "Fiona",
-          "last_name": "Davis",
-          "age": 18,
-          "overall": 79,
+          "last_name": "Miller",
+          "age": 19,
+          "overall": 45,
           "player_type": "SKATER",
-          "position": "RD",
+          "position": "CENTER",
           "play_type": "SNIPER",
           "skate_stats": {
-            "speed": 55,
-            "edges": 90,
-            "acceleration": 92,
+            "speed": 84,
+            "edges": 11,
+            "acceleration": 41,
             "skate_type": "NIMBLE"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 2,
-              "overall_pick_estimate": 28,
-              "projection_confidence": 84,
+              "draft_round_grade": 3,
+              "overall_pick_estimate": 50,
+              "projection_confidence": 82,
               "scouting_visibility": 60,
-              "max_projection": "SUPERSTAR"
+              "max_projection": "FRANCHISE"
             },
             "development_profile": {
-              "ceiling": 91,
-              "floor": 51,
-              "growth_rate": 69,
+              "ceiling": 65,
+              "floor": 37,
+              "growth_rate": 64,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -232,72 +232,35 @@
           }
         },
         {
-          "first_name": "Charlie",
+          "first_name": "Ethan",
           "last_name": "Garcia",
           "age": 18,
-          "overall": 49,
-          "player_type": "SKATER",
-          "position": "RD",
-          "play_type": "SNIPER",
+          "overall": 43,
+          "player_type": "GOALIE",
+          "position": "LW",
+          "play_type": "PWF",
           "skate_stats": {
-            "speed": 44,
-            "edges": 77,
-            "acceleration": 26,
+            "speed": 45,
+            "edges": 31,
+            "acceleration": 88,
             "skate_type": "QUICK"
           },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 5,
-              "overall_pick_estimate": 141,
-              "projection_confidence": 74,
-              "scouting_visibility": 60,
-              "max_projection": "MID_6"
-            },
-            "development_profile": {
-              "ceiling": 64,
-              "floor": 36,
-              "growth_rate": 48,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Ian",
-          "last_name": "Davis",
-          "age": 18,
-          "overall": 47,
-          "player_type": "GOALIE",
-          "position": "GOALIE",
-          "play_type": "BUTTERFLY",
-          "skate_stats": {
-            "speed": 59,
-            "edges": 19,
-            "acceleration": 38,
-            "skate_type": "STRONG"
-          },
           "goalie_movement": {
-            "side": 7,
-            "up_down": 62,
-            "push": 96
+            "side": 77,
+            "up_down": 10,
+            "push": 8
           },
           "projection": {
             "draft_projection": {
               "draft_round_grade": 4,
-              "overall_pick_estimate": 88,
+              "overall_pick_estimate": 90,
               "projection_confidence": 78,
               "scouting_visibility": 60,
               "max_projection": "TOP2"
             },
             "development_profile": {
-              "ceiling": 48,
-              "floor": 27,
+              "ceiling": 98,
+              "floor": 55,
               "growth_rate": 57,
               "consistency": 68,
               "coachability": 55,
@@ -311,31 +274,31 @@
         },
         {
           "first_name": "George",
-          "last_name": "Martinez",
-          "age": 17,
-          "overall": 37,
+          "last_name": "Davis",
+          "age": 19,
+          "overall": 65,
           "player_type": "SKATER",
-          "position": "LD",
-          "play_type": "OFD",
+          "position": "CENTER",
+          "play_type": "PLAYMAKER",
           "skate_stats": {
-            "speed": 21,
-            "edges": 68,
-            "acceleration": 22,
-            "skate_type": "NIMBLE"
+            "speed": 82,
+            "edges": 66,
+            "acceleration": 46,
+            "skate_type": "QUICK"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 7,
-              "overall_pick_estimate": 223,
-              "projection_confidence": 69,
+              "draft_round_grade": 2,
+              "overall_pick_estimate": 32,
+              "projection_confidence": 83,
               "scouting_visibility": 60,
-              "max_projection": "MINOR"
+              "max_projection": "SUPERSTAR"
             },
             "development_profile": {
-              "ceiling": 70,
-              "floor": 39,
-              "growth_rate": 35,
+              "ceiling": 98,
+              "floor": 55,
+              "growth_rate": 69,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -347,36 +310,69 @@
           }
         },
         {
-          "first_name": "George",
+          "first_name": "Bob",
           "last_name": "Martinez",
           "age": 18,
-          "overall": 52,
-          "player_type": "GOALIE",
+          "overall": 25,
+          "player_type": "SKATER",
+          "position": "RW",
+          "play_type": "DF",
+          "skate_stats": {
+            "speed": 7,
+            "edges": 52,
+            "acceleration": 15,
+            "skate_type": "QUICK"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 4,
+              "overall_pick_estimate": 89,
+              "projection_confidence": 78,
+              "scouting_visibility": 60,
+              "max_projection": "TOP2"
+            },
+            "development_profile": {
+              "ceiling": 84,
+              "floor": 47,
+              "growth_rate": 57,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Charlie",
+          "last_name": "Johnson",
+          "age": 19,
+          "overall": 42,
+          "player_type": "SKATER",
           "position": "LW",
           "play_type": "PWF",
           "skate_stats": {
-            "speed": 46,
-            "edges": 31,
-            "acceleration": 36,
-            "skate_type": "STRONG"
+            "speed": 53,
+            "edges": 70,
+            "acceleration": 3,
+            "skate_type": "QUICK"
           },
-          "goalie_movement": {
-            "side": 89,
-            "up_down": 60,
-            "push": 48
-          },
+          "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 5,
-              "overall_pick_estimate": 121,
-              "projection_confidence": 76,
+              "draft_round_grade": 1,
+              "overall_pick_estimate": 6,
+              "projection_confidence": 87,
               "scouting_visibility": 60,
-              "max_projection": "TOP4"
+              "max_projection": "GENERATIONAL"
             },
             "development_profile": {
-              "ceiling": 61,
-              "floor": 34,
-              "growth_rate": 51,
+              "ceiling": 95,
+              "floor": 53,
+              "growth_rate": 76,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -394,35 +390,31 @@
       "players": [
         {
           "first_name": "Alice",
-          "last_name": "Jones",
-          "age": 18,
-          "overall": 75,
-          "player_type": "GOALIE",
-          "position": "RW",
+          "last_name": "Smith",
+          "age": 17,
+          "overall": 34,
+          "player_type": "SKATER",
+          "position": "CENTER",
           "play_type": "SNIPER",
           "skate_stats": {
-            "speed": 79,
-            "edges": 52,
-            "acceleration": 91,
-            "skate_type": "SLOW"
+            "speed": 64,
+            "edges": 12,
+            "acceleration": 27,
+            "skate_type": "STRONG"
           },
-          "goalie_movement": {
-            "side": 72,
-            "up_down": 62,
-            "push": 94
-          },
+          "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 2,
-              "overall_pick_estimate": 31,
-              "projection_confidence": 83,
+              "draft_round_grade": 4,
+              "overall_pick_estimate": 107,
+              "projection_confidence": 77,
               "scouting_visibility": 60,
-              "max_projection": "SUPERSTAR"
+              "max_projection": "TOP4"
             },
             "development_profile": {
-              "ceiling": 95,
-              "floor": 53,
-              "growth_rate": 69,
+              "ceiling": 32,
+              "floor": 18,
+              "growth_rate": 53,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -435,109 +427,31 @@
         },
         {
           "first_name": "Julia",
-          "last_name": "Miller",
-          "age": 18,
-          "overall": 74,
+          "last_name": "Williams",
+          "age": 19,
+          "overall": 75,
           "player_type": "SKATER",
-          "position": "RD",
-          "play_type": "SNIPER",
-          "skate_stats": {
-            "speed": 46,
-            "edges": 94,
-            "acceleration": 82,
-            "skate_type": "NIMBLE"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 52,
-              "projection_confidence": 81,
-              "scouting_visibility": 60,
-              "max_projection": "FRANCHISE"
-            },
-            "development_profile": {
-              "ceiling": 89,
-              "floor": 50,
-              "growth_rate": 64,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Hannah",
-          "last_name": "Miller",
-          "age": 18,
-          "overall": 45,
-          "player_type": "GOALIE",
-          "position": "CENTER",
-          "play_type": "PLAYMAKER",
-          "skate_stats": {
-            "speed": 58,
-            "edges": 84,
-            "acceleration": 35,
-            "skate_type": "STRONG"
-          },
-          "goalie_movement": {
-            "side": 8,
-            "up_down": 50,
-            "push": 32
-          },
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 6,
-              "overall_pick_estimate": 199,
-              "projection_confidence": 70,
-              "scouting_visibility": 60,
-              "max_projection": "MINOR"
-            },
-            "development_profile": {
-              "ceiling": 71,
-              "floor": 40,
-              "growth_rate": 39,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Alice",
-          "last_name": "Johnson",
-          "age": 18,
-          "overall": 66,
-          "player_type": "SKATER",
-          "position": "RW",
+          "position": "LW",
           "play_type": "DF",
           "skate_stats": {
-            "speed": 83,
-            "edges": 96,
-            "acceleration": 19,
-            "skate_type": "QUICK"
+            "speed": 89,
+            "edges": 80,
+            "acceleration": 57,
+            "skate_type": "STRONG"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 1,
-              "overall_pick_estimate": 4,
-              "projection_confidence": 87,
+              "draft_round_grade": 4,
+              "overall_pick_estimate": 88,
+              "projection_confidence": 78,
               "scouting_visibility": 60,
-              "max_projection": "GENERATIONAL"
+              "max_projection": "TOP2"
             },
             "development_profile": {
-              "ceiling": 96,
-              "floor": 54,
-              "growth_rate": 77,
+              "ceiling": 56,
+              "floor": 32,
+              "growth_rate": 57,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -549,32 +463,106 @@
           }
         },
         {
-          "first_name": "Fiona",
-          "last_name": "Johnson",
+          "first_name": "Ethan",
+          "last_name": "Jones",
           "age": 19,
-          "overall": 38,
+          "overall": 28,
           "player_type": "SKATER",
-          "position": "LD",
-          "play_type": "SNIPER",
+          "position": "RW",
+          "play_type": "PLAYMAKER",
           "skate_stats": {
-            "speed": 35,
-            "edges": 36,
-            "acceleration": 43,
+            "speed": 24,
+            "edges": 26,
+            "acceleration": 34,
             "skate_type": "SLOW"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 5,
-              "overall_pick_estimate": 150,
-              "projection_confidence": 74,
+              "draft_round_grade": 6,
+              "overall_pick_estimate": 182,
+              "projection_confidence": 71,
               "scouting_visibility": 60,
-              "max_projection": "BOTTOM_6"
+              "max_projection": "MINOR_TOP"
             },
             "development_profile": {
-              "ceiling": 86,
-              "floor": 48,
-              "growth_rate": 46,
+              "ceiling": 38,
+              "floor": 21,
+              "growth_rate": 41,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Ian",
+          "last_name": "Smith",
+          "age": 18,
+          "overall": 40,
+          "player_type": "SKATER",
+          "position": "LD",
+          "play_type": "DFD",
+          "skate_stats": {
+            "speed": 28,
+            "edges": 1,
+            "acceleration": 90,
+            "skate_type": "NIMBLE"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 5,
+              "overall_pick_estimate": 127,
+              "projection_confidence": 75,
+              "scouting_visibility": 60,
+              "max_projection": "MID_6"
+            },
+            "development_profile": {
+              "ceiling": 89,
+              "floor": 50,
+              "growth_rate": 50,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Charlie",
+          "last_name": "Miller",
+          "age": 19,
+          "overall": 91,
+          "player_type": "SKATER",
+          "position": "RD",
+          "play_type": "SNIPER",
+          "skate_stats": {
+            "speed": 98,
+            "edges": 91,
+            "acceleration": 85,
+            "skate_type": "STRONG"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 5,
+              "overall_pick_estimate": 134,
+              "projection_confidence": 75,
+              "scouting_visibility": 60,
+              "max_projection": "MID_6"
+            },
+            "development_profile": {
+              "ceiling": 35,
+              "floor": 20,
+              "growth_rate": 49,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -591,36 +579,32 @@
       "round": 4,
       "players": [
         {
-          "first_name": "Ian",
-          "last_name": "Davis",
-          "age": 17,
-          "overall": 48,
-          "player_type": "GOALIE",
+          "first_name": "Alice",
+          "last_name": "Garcia",
+          "age": 18,
+          "overall": 85,
+          "player_type": "SKATER",
           "position": "CENTER",
-          "play_type": "PWF",
+          "play_type": "DF",
           "skate_stats": {
-            "speed": 33,
-            "edges": 42,
-            "acceleration": 6,
-            "skate_type": "SLOW"
+            "speed": 94,
+            "edges": 75,
+            "acceleration": 86,
+            "skate_type": "NIMBLE"
           },
-          "goalie_movement": {
-            "side": 24,
-            "up_down": 95,
-            "push": 89
-          },
+          "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 5,
-              "overall_pick_estimate": 129,
-              "projection_confidence": 75,
+              "draft_round_grade": 1,
+              "overall_pick_estimate": 2,
+              "projection_confidence": 88,
               "scouting_visibility": 60,
-              "max_projection": "MID_6"
+              "max_projection": "GENERATIONAL"
             },
             "development_profile": {
-              "ceiling": 37,
-              "floor": 21,
-              "growth_rate": 50,
+              "ceiling": 98,
+              "floor": 55,
+              "growth_rate": 78,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -632,36 +616,32 @@
           }
         },
         {
-          "first_name": "Fiona",
-          "last_name": "Martinez",
-          "age": 19,
-          "overall": 67,
-          "player_type": "GOALIE",
+          "first_name": "Ian",
+          "last_name": "Jones",
+          "age": 17,
+          "overall": 43,
+          "player_type": "SKATER",
           "position": "RW",
-          "play_type": "DF",
+          "play_type": "PLAYMAKER",
           "skate_stats": {
-            "speed": 53,
-            "edges": 53,
-            "acceleration": 70,
-            "skate_type": "STRONG"
+            "speed": 69,
+            "edges": 9,
+            "acceleration": 52,
+            "skate_type": "SLOW"
           },
-          "goalie_movement": {
-            "side": 62,
-            "up_down": 67,
-            "push": 97
-          },
+          "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 2,
-              "overall_pick_estimate": 16,
-              "projection_confidence": 85,
+              "draft_round_grade": 3,
+              "overall_pick_estimate": 38,
+              "projection_confidence": 83,
               "scouting_visibility": 60,
-              "max_projection": "ELITE"
+              "max_projection": "SUPERSTAR"
             },
             "development_profile": {
-              "ceiling": 93,
-              "floor": 52,
-              "growth_rate": 73,
+              "ceiling": 79,
+              "floor": 44,
+              "growth_rate": 67,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -674,105 +654,109 @@
         },
         {
           "first_name": "George",
-          "last_name": "Jones",
-          "age": 18,
-          "overall": 73,
-          "player_type": "SKATER",
-          "position": "LW",
-          "play_type": "PWF",
-          "skate_stats": {
-            "speed": 53,
-            "edges": 76,
-            "acceleration": 91,
-            "skate_type": "NIMBLE"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 41,
-              "projection_confidence": 82,
-              "scouting_visibility": 60,
-              "max_projection": "FRANCHISE"
-            },
-            "development_profile": {
-              "ceiling": 92,
-              "floor": 52,
-              "growth_rate": 66,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Charlie",
-          "last_name": "Smith",
-          "age": 18,
-          "overall": 41,
+          "last_name": "Williams",
+          "age": 19,
+          "overall": 44,
           "player_type": "SKATER",
           "position": "CENTER",
-          "play_type": "PWF",
+          "play_type": "DF",
           "skate_stats": {
-            "speed": 56,
-            "edges": 50,
-            "acceleration": 17,
-            "skate_type": "STRONG"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 5,
-              "overall_pick_estimate": 113,
-              "projection_confidence": 76,
-              "scouting_visibility": 60,
-              "max_projection": "TOP4"
-            },
-            "development_profile": {
-              "ceiling": 48,
-              "floor": 27,
-              "growth_rate": 52,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Charlie",
-          "last_name": "Jones",
-          "age": 17,
-          "overall": 62,
-          "player_type": "SKATER",
-          "position": "RW",
-          "play_type": "PWF",
-          "skate_stats": {
-            "speed": 97,
-            "edges": 15,
-            "acceleration": 74,
+            "speed": 45,
+            "edges": 10,
+            "acceleration": 76,
             "skate_type": "QUICK"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 64,
-              "projection_confidence": 80,
+              "draft_round_grade": 5,
+              "overall_pick_estimate": 135,
+              "projection_confidence": 75,
               "scouting_visibility": 60,
-              "max_projection": "TOP1"
+              "max_projection": "MID_6"
             },
             "development_profile": {
-              "ceiling": 89,
-              "floor": 50,
-              "growth_rate": 62,
+              "ceiling": 98,
+              "floor": 55,
+              "growth_rate": 49,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Hannah",
+          "last_name": "Garcia",
+          "age": 18,
+          "overall": 55,
+          "player_type": "GOALIE",
+          "position": "RW",
+          "play_type": "PLAYMAKER",
+          "skate_stats": {
+            "speed": 87,
+            "edges": 10,
+            "acceleration": 62,
+            "skate_type": "NIMBLE"
+          },
+          "goalie_movement": {
+            "side": 83,
+            "up_down": 81,
+            "push": 8
+          },
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 4,
+              "overall_pick_estimate": 104,
+              "projection_confidence": 77,
+              "scouting_visibility": 60,
+              "max_projection": "TOP4"
+            },
+            "development_profile": {
+              "ceiling": 51,
+              "floor": 29,
+              "growth_rate": 54,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Charlie",
+          "last_name": "Garcia",
+          "age": 17,
+          "overall": 40,
+          "player_type": "SKATER",
+          "position": "CENTER",
+          "play_type": "PLAYMAKER",
+          "skate_stats": {
+            "speed": 16,
+            "edges": 32,
+            "acceleration": 72,
+            "skate_type": "QUICK"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 1,
+              "overall_pick_estimate": 6,
+              "projection_confidence": 87,
+              "scouting_visibility": 60,
+              "max_projection": "GENERATIONAL"
+            },
+            "development_profile": {
+              "ceiling": 95,
+              "floor": 53,
+              "growth_rate": 76,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -789,184 +773,184 @@
       "round": 5,
       "players": [
         {
-          "first_name": "Julia",
-          "last_name": "Martinez",
-          "age": 17,
-          "overall": 24,
-          "player_type": "SKATER",
-          "position": "CENTER",
-          "play_type": "PWF",
-          "skate_stats": {
-            "speed": 2,
-            "edges": 24,
-            "acceleration": 46,
-            "skate_type": "QUICK"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 69,
-              "projection_confidence": 80,
-              "scouting_visibility": 60,
-              "max_projection": "TOP1"
-            },
-            "development_profile": {
-              "ceiling": 68,
-              "floor": 38,
-              "growth_rate": 60,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
           "first_name": "Ethan",
-          "last_name": "Williams",
-          "age": 19,
-          "overall": 48,
-          "player_type": "GOALIE",
-          "position": "RW",
-          "play_type": "DF",
-          "skate_stats": {
-            "speed": 74,
-            "edges": 25,
-            "acceleration": 64,
-            "skate_type": "NIMBLE"
-          },
-          "goalie_movement": {
-            "side": 60,
-            "up_down": 15,
-            "push": 49
-          },
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 48,
-              "projection_confidence": 82,
-              "scouting_visibility": 60,
-              "max_projection": "FRANCHISE"
-            },
-            "development_profile": {
-              "ceiling": 63,
-              "floor": 35,
-              "growth_rate": 65,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Bob",
-          "last_name": "Johnson",
-          "age": 19,
-          "overall": 23,
+          "last_name": "Davis",
+          "age": 17,
+          "overall": 45,
           "player_type": "SKATER",
-          "position": "RD",
+          "position": "LW",
           "play_type": "SNIPER",
           "skate_stats": {
-            "speed": 14,
-            "edges": 39,
-            "acceleration": 15,
-            "skate_type": "STRONG"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 2,
-              "overall_pick_estimate": 21,
-              "projection_confidence": 85,
-              "scouting_visibility": 60,
-              "max_projection": "ELITE"
-            },
-            "development_profile": {
-              "ceiling": 73,
-              "floor": 41,
-              "growth_rate": 71,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Charlie",
-          "last_name": "Brown",
-          "age": 17,
-          "overall": 48,
-          "player_type": "SKATER",
-          "position": "CENTER",
-          "play_type": "DF",
-          "skate_stats": {
-            "speed": 48,
-            "edges": 9,
-            "acceleration": 87,
-            "skate_type": "QUICK"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 2,
-              "overall_pick_estimate": 19,
-              "projection_confidence": 85,
-              "scouting_visibility": 60,
-              "max_projection": "ELITE"
-            },
-            "development_profile": {
-              "ceiling": 75,
-              "floor": 42,
-              "growth_rate": 72,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Fiona",
-          "last_name": "Miller",
-          "age": 17,
-          "overall": 39,
-          "player_type": "SKATER",
-          "position": "RD",
-          "play_type": "SNIPER",
-          "skate_stats": {
-            "speed": 5,
-            "edges": 83,
-            "acceleration": 29,
+            "speed": 54,
+            "edges": 37,
+            "acceleration": 45,
             "skate_type": "SLOW"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 62,
-              "projection_confidence": 80,
+              "draft_round_grade": 2,
+              "overall_pick_estimate": 27,
+              "projection_confidence": 84,
               "scouting_visibility": 60,
-              "max_projection": "TOP1"
+              "max_projection": "SUPERSTAR"
             },
             "development_profile": {
-              "ceiling": 95,
+              "ceiling": 96,
+              "floor": 54,
+              "growth_rate": 70,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Julia",
+          "last_name": "Garcia",
+          "age": 17,
+          "overall": 71,
+          "player_type": "SKATER",
+          "position": "RD",
+          "play_type": "OFD",
+          "skate_stats": {
+            "speed": 99,
+            "edges": 72,
+            "acceleration": 43,
+            "skate_type": "NIMBLE"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 3,
+              "overall_pick_estimate": 54,
+              "projection_confidence": 81,
+              "scouting_visibility": 60,
+              "max_projection": "FRANCHISE"
+            },
+            "development_profile": {
+              "ceiling": 69,
+              "floor": 39,
+              "growth_rate": 64,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Diana",
+          "last_name": "Miller",
+          "age": 19,
+          "overall": 61,
+          "player_type": "SKATER",
+          "position": "RD",
+          "play_type": "SNIPER",
+          "skate_stats": {
+            "speed": 60,
+            "edges": 55,
+            "acceleration": 69,
+            "skate_type": "QUICK"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 5,
+              "overall_pick_estimate": 146,
+              "projection_confidence": 74,
+              "scouting_visibility": 60,
+              "max_projection": "MID_6"
+            },
+            "development_profile": {
+              "ceiling": 94,
               "floor": 53,
-              "growth_rate": 62,
+              "growth_rate": 47,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Julia",
+          "last_name": "Williams",
+          "age": 17,
+          "overall": 35,
+          "player_type": "GOALIE",
+          "position": "RD",
+          "play_type": "PLAYMAKER",
+          "skate_stats": {
+            "speed": 31,
+            "edges": 12,
+            "acceleration": 54,
+            "skate_type": "QUICK"
+          },
+          "goalie_movement": {
+            "side": 9,
+            "up_down": 61,
+            "push": 41
+          },
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 1,
+              "overall_pick_estimate": 8,
+              "projection_confidence": 86,
+              "scouting_visibility": 60,
+              "max_projection": "GENERATIONAL"
+            },
+            "development_profile": {
+              "ceiling": 83,
+              "floor": 47,
+              "growth_rate": 75,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Diana",
+          "last_name": "Taylor",
+          "age": 17,
+          "overall": 59,
+          "player_type": "SKATER",
+          "position": "RD",
+          "play_type": "DFD",
+          "skate_stats": {
+            "speed": 82,
+            "edges": 8,
+            "acceleration": 86,
+            "skate_type": "SLOW"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 5,
+              "overall_pick_estimate": 148,
+              "projection_confidence": 74,
+              "scouting_visibility": 60,
+              "max_projection": "BOTTOM_6"
+            },
+            "development_profile": {
+              "ceiling": 93,
+              "floor": 52,
+              "growth_rate": 47,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -983,32 +967,151 @@
       "round": 6,
       "players": [
         {
-          "first_name": "Bob",
-          "last_name": "Jones",
-          "age": 17,
-          "overall": 45,
+          "first_name": "Alice",
+          "last_name": "Davis",
+          "age": 18,
+          "overall": 44,
           "player_type": "SKATER",
-          "position": "CENTER",
+          "position": "LW",
           "play_type": "DF",
           "skate_stats": {
-            "speed": 91,
-            "edges": 26,
-            "acceleration": 17,
+            "speed": 9,
+            "edges": 25,
+            "acceleration": 99,
             "skate_type": "SLOW"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 3,
-              "overall_pick_estimate": 50,
-              "projection_confidence": 82,
+              "draft_round_grade": 2,
+              "overall_pick_estimate": 24,
+              "projection_confidence": 84,
               "scouting_visibility": 60,
-              "max_projection": "FRANCHISE"
+              "max_projection": "SUPERSTAR"
             },
             "development_profile": {
-              "ceiling": 81,
-              "floor": 46,
-              "growth_rate": 64,
+              "ceiling": 94,
+              "floor": 53,
+              "growth_rate": 71,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Ethan",
+          "last_name": "Williams",
+          "age": 18,
+          "overall": 59,
+          "player_type": "GOALIE",
+          "position": "LD",
+          "play_type": "OFD",
+          "skate_stats": {
+            "speed": 95,
+            "edges": 64,
+            "acceleration": 85,
+            "skate_type": "SLOW"
+          },
+          "goalie_movement": {
+            "side": 53,
+            "up_down": 35,
+            "push": 21
+          },
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 6,
+              "overall_pick_estimate": 198,
+              "projection_confidence": 70,
+              "scouting_visibility": 60,
+              "max_projection": "MINOR"
+            },
+            "development_profile": {
+              "ceiling": 62,
+              "floor": 35,
+              "growth_rate": 39,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Fiona",
+          "last_name": "Martinez",
+          "age": 19,
+          "overall": 32,
+          "player_type": "SKATER",
+          "position": "RD",
+          "play_type": "SNIPER",
+          "skate_stats": {
+            "speed": 54,
+            "edges": 25,
+            "acceleration": 16,
+            "skate_type": "STRONG"
+          },
+          "goalie_movement": null,
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 7,
+              "overall_pick_estimate": 216,
+              "projection_confidence": 69,
+              "scouting_visibility": 60,
+              "max_projection": "MINOR"
+            },
+            "development_profile": {
+              "ceiling": 78,
+              "floor": 44,
+              "growth_rate": 36,
+              "consistency": 68,
+              "coachability": 55,
+              "work_ethic": 55,
+              "injury_risk": 30,
+              "growth_window_start": 18,
+              "growth_window_end": 27,
+              "curve": "LINEAR"
+            }
+          }
+        },
+        {
+          "first_name": "Bob",
+          "last_name": "Garcia",
+          "age": 17,
+          "overall": 43,
+          "player_type": "GOALIE",
+          "position": "GOALIE",
+          "play_type": "BUTTERFLY",
+          "skate_stats": {
+            "speed": 36,
+            "edges": 86,
+            "acceleration": 31,
+            "skate_type": "STRONG"
+          },
+          "goalie_movement": {
+            "side": 81,
+            "up_down": 10,
+            "push": 16
+          },
+          "projection": {
+            "draft_projection": {
+              "draft_round_grade": 7,
+              "overall_pick_estimate": 205,
+              "projection_confidence": 70,
+              "scouting_visibility": 60,
+              "max_projection": "MINOR"
+            },
+            "development_profile": {
+              "ceiling": 97,
+              "floor": 55,
+              "growth_rate": 38,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,
@@ -1021,146 +1124,31 @@
         },
         {
           "first_name": "George",
-          "last_name": "Jones",
-          "age": 17,
-          "overall": 51,
-          "player_type": "SKATER",
-          "position": "LW",
-          "play_type": "DF",
-          "skate_stats": {
-            "speed": 38,
-            "edges": 56,
-            "acceleration": 60,
-            "skate_type": "NIMBLE"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 4,
-              "overall_pick_estimate": 75,
-              "projection_confidence": 79,
-              "scouting_visibility": 60,
-              "max_projection": "TOP1"
-            },
-            "development_profile": {
-              "ceiling": 61,
-              "floor": 34,
-              "growth_rate": 59,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Charlie",
           "last_name": "Smith",
           "age": 18,
-          "overall": 41,
-          "player_type": "GOALIE",
-          "position": "RW",
-          "play_type": "DF",
-          "skate_stats": {
-            "speed": 4,
-            "edges": 68,
-            "acceleration": 50,
-            "skate_type": "QUICK"
-          },
-          "goalie_movement": {
-            "side": 97,
-            "up_down": 20,
-            "push": 9
-          },
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 5,
-              "overall_pick_estimate": 119,
-              "projection_confidence": 76,
-              "scouting_visibility": 60,
-              "max_projection": "TOP4"
-            },
-            "development_profile": {
-              "ceiling": 93,
-              "floor": 52,
-              "growth_rate": 51,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Julia",
-          "last_name": "Davis",
-          "age": 17,
-          "overall": 73,
+          "overall": 62,
           "player_type": "SKATER",
           "position": "LW",
-          "play_type": "PLAYMAKER",
+          "play_type": "SNIPER",
           "skate_stats": {
-            "speed": 72,
-            "edges": 64,
-            "acceleration": 82,
-            "skate_type": "NIMBLE"
+            "speed": 68,
+            "edges": 31,
+            "acceleration": 87,
+            "skate_type": "QUICK"
           },
           "goalie_movement": null,
           "projection": {
             "draft_projection": {
-              "draft_round_grade": 6,
-              "overall_pick_estimate": 159,
-              "projection_confidence": 73,
+              "draft_round_grade": 2,
+              "overall_pick_estimate": 12,
+              "projection_confidence": 86,
               "scouting_visibility": 60,
-              "max_projection": "BOTTOM_6"
+              "max_projection": "ELITE"
             },
             "development_profile": {
-              "ceiling": 68,
-              "floor": 38,
-              "growth_rate": 45,
-              "consistency": 68,
-              "coachability": 55,
-              "work_ethic": 55,
-              "injury_risk": 30,
-              "growth_window_start": 18,
-              "growth_window_end": 27,
-              "curve": "LINEAR"
-            }
-          }
-        },
-        {
-          "first_name": "Alice",
-          "last_name": "Brown",
-          "age": 18,
-          "overall": 33,
-          "player_type": "SKATER",
-          "position": "RW",
-          "play_type": "PLAYMAKER",
-          "skate_stats": {
-            "speed": 27,
-            "edges": 15,
-            "acceleration": 56,
-            "skate_type": "STRONG"
-          },
-          "goalie_movement": null,
-          "projection": {
-            "draft_projection": {
-              "draft_round_grade": 6,
-              "overall_pick_estimate": 164,
-              "projection_confidence": 73,
-              "scouting_visibility": 60,
-              "max_projection": "BOTTOM_6"
-            },
-            "development_profile": {
-              "ceiling": 66,
-              "floor": 37,
-              "growth_rate": 44,
+              "ceiling": 88,
+              "floor": 50,
+              "growth_rate": 74,
               "consistency": 68,
               "coachability": 55,
               "work_ethic": 55,

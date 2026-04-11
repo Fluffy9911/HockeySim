@@ -1,7 +1,7 @@
 use std::fs;
 use crate::data::draft::Draft;
 use crate::data::team::Team;
-use crate::sim::League;
+use crate::league_settings::League;
 
 
 pub static LEAGUES_DATA: &str = "Data/League";

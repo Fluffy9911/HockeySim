@@ -1,24 +1,20 @@
-use std::fmt::format;
 use std::fs;
-use std::fs::File;
 use std::io::Write;
-use HockeySim::data::movement::{SkatingStats, SkatingType};
-use HockeySim::data::player::{PlayType, Player, Position};
-use HockeySim::data::projection::{DevelopmentCurve, Projection};
-use HockeySim::data::{player, team};
-use HockeySim::data::contract::Contract;
+use HockeySim::data::player;
 use HockeySim::data::draft::Draft;
 use HockeySim::data::game::names::{Conference, Division};
-use HockeySim::data::helper::DraftStatus::Drafted;
 use HockeySim::data::helper::{DraftStatus, PlayerRecord};
 use HockeySim::data::stats::PlayerStats;
 use HockeySim::data::team::{Team, TeamIdentity};
-use HockeySim::sim;
-use HockeySim::sim::*;
+use HockeySim::league_settings;
 use HockeySim::testing::league_helper;
 fn main() {
 
-let league = sim::League::empty("Major Hockey League".parse().unwrap());
+    let mut name = player::NameData::read_or_new("names");
+
+   println!("Name, {}",name.random_full_name().unwrap());
+
+let league = league_settings::League::empty("Major Hockey League".parse().unwrap());
 
     let mut team = Team::new(/* TeamIdentity */TeamIdentity::new("Edmonton".parse().unwrap(), "Edmonton".parse().unwrap(), /* String */"EDM".parse().unwrap(), Conference::east(), Division::pacific()), /* Vec<PlayerRecord> */Vec::new(), /* Vec<StaffMember> */Vec::new());
 

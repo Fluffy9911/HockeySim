@@ -2,11 +2,9 @@ use crate::data::contract::{ContractLimits, TeamContractSettings};
 use crate::data::helper::PlayerRecord;
 use crate::data::staff::{StaffDevelopment, StaffMember, StaffRatings, StaffRole};
 use crate::data::stats::TeamStats;
-use crate::data::team::{ Team, TeamIdentity, TeamLevel};
-use crate::sim::{GameContext, League, LeagueRules, LeagueTeamEntry, SimulationEngine, SimulatedGame, TeamStanding};
+use crate::data::team::{Team, TeamLevel};
 use crate::data::game::names::*;
-use std::fs;
-use std::path::{Path, PathBuf};
+use crate::league_settings::{GameContext, League, SimulatedGame, SimulationEngine, TeamStanding};
 
 pub struct ScheduledGameResult {
     home_goals: i16,
