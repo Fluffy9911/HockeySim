@@ -9,7 +9,9 @@ use crate::randoms::choices;
 use rand::{random_range, random_ratio, rng};
 use rand::prelude::IndexedRandom;
 use serde::de::Unexpected::Option as OtherOption;
+use crate::data::helper::PlayerRecord;
 use crate::data::player::Type::{GOALIE, SKATER};
+use crate::data::playing::GameView;
 use crate::data::projection;
 use crate::randoms::choices::biased_random_range;
 
@@ -52,6 +54,9 @@ pub enum PlayType {
     REACTIVE,
     HYBRID,
 }
+
+
+
 
 pub fn random_type() -> Type{
 
@@ -192,9 +197,8 @@ pub struct Player {
     play_type: PlayType,
     skate_stats: SkatingStats,
     goalie_movement: Option<GoalieMovement>,
-
-    projection:
-    Projection,
+    projection: Projection,
+    view: GameView,
 }
 
 impl Player {
@@ -638,4 +642,11 @@ impl NameData {
     pub fn add_team_names(&mut self, names: Vec<String>) {
         self.team_names.extend(names);
     }
+}
+
+pub fn is_goalie(rec:&PlayerRecord) -> bool {
+
+     rec.player().goalie_movement.is_some()
+
+
 }

@@ -1,5 +1,6 @@
 use crate::data::helper::PlayerRecord;
-use crate::data::player::{PlayType, Position};
+use crate::data::player;
+use crate::data::player::{PlayType, Player, Position};
 use crate::data::staff::{StaffMember, StaffRole};
 use crate::data::team::{Team, TeamLevel};
 use crate::league_settings::{League, LeagueRules, SimulatedGame, SimulationSettings, TeamProfile, TeamStanding};
@@ -338,4 +339,45 @@ impl TeamLevelClone for TeamLevel {
             TeamLevel::OTHER => TeamLevel::OTHER,
         }
     }
+}
+
+pub fn analyze_team(team:&Team) -> (i8,i8,i8){
+
+let goale_power = team.roster().
+
+
+
+}
+
+pub fn get_goalies(team:&Team)-> (&PlayerRecord,&PlayerRecord){
+
+    let mut gs:Vec<&PlayerRecord> = Vec::new();
+
+    for player in team.roster(){
+
+        if player::is_goalie(player) {
+            gs.push(
+                player
+            );
+        }
+
+    }
+
+    if gs.len() < 2 {
+
+         ()
+
+    }
+
+    (gs[0], gs[1])
+
+
+}
+
+pub fn get_defense(player:&Player)-> i8{
+    
+    
+    
+    
+    
 }

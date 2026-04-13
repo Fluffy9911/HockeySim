@@ -15,6 +15,25 @@ pub struct GameView{
     smart:i8,
     play:PlayType
 }
+#[derive(Serialize, Deserialize)]
+pub struct Skills{
+    shot_accuracy:i8,
+    shot_power:i8,
+    offense:i8,
+    defense:i8,
+    hands:i8,
+    mentality:i8,
+    face_off:i8,
+    durability:i8,
+    passing:i8,
+    physicality:i8,
+    fighting:i8,
+    discipline:i8
+
+
+
+
+}
 
 impl GameView{
 
