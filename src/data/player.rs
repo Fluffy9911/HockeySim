@@ -11,8 +11,8 @@ use rand::prelude::IndexedRandom;
 use serde::de::Unexpected::Option as OtherOption;
 use crate::data::helper::PlayerRecord;
 use crate::data::player::Type::{GOALIE, SKATER};
-use crate::data::playing::GameView;
-use crate::data::projection;
+use crate::data::playing::{GameView, Skills};
+use crate::data::{player, projection};
 use crate::randoms::choices::biased_random_range;
 
 #[derive(Serialize, Deserialize)]
@@ -175,17 +175,47 @@ pub fn random_prospect(quality:f32,goalie:bool)-> Player {
     let pos = random_position(goalie);
     let play = random_playtype_from_pos(&pos);
     let proj = projection::Projection::from_quality(quality);
-let name = Player::random_name();
+    let name = Player::random_name();
     let skat_type = SkatingType::random();
     let skating = SkatingStats::random(quality,skat_type);
+    let view = GameView::biased(quality);
+    let skills = Skills::biased(quality);
+    let mut p = Player::new(name.0, name.1, /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj,view,skills);
+    p.guess_overall();
+    p
 
-    let mut p = Player::new(name.0, name.1, /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj);
-p.guess_overall();
+
+}
+pub fn random_prospect_of_position(quality:f32,goalie:bool,pos:Position)-> Player {
+    let age = random_range(17..=19);
+    let overall = biased_random_range(50,100,quality);
+    let pt: Type;
+    let mut gm: Option<GoalieMovement> = None;
+    if goalie {
+        pt = GOALIE;
+        gm = Option::Some(GoalieMovement::random(quality));
+    }
+    else{
+        pt = SKATER;
+    }
+
+    let play = random_playtype_from_pos(&pos);
+    let proj = Projection::from_quality(quality);
+    let name = Player::random_name();
+    let skat_type = SkatingType::random();
+    let skating = SkatingStats::random(quality,skat_type);
+    let view = GameView::biased(quality);
+    let skills = Skills::biased(quality);
+    let mut p = Player::new(name.0, name.1, /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj,view,skills);
+    p.guess_overall();
     p
 
 
 }
 
+pub fn generate_prospect_line(bias:f32) -> Vec<Player> {
+    vec![player::random_prospect_of_position(bias, false, Position::LW), random_prospect_of_position(bias, false, Position::CENTER), random_prospect_of_position(bias, false, Position::RW)]
+}
 #[derive(Serialize, Deserialize)]
 pub struct Player {
     first_name: String,
@@ -199,12 +229,11 @@ pub struct Player {
     goalie_movement: Option<GoalieMovement>,
     projection: Projection,
     view: GameView,
+    skills: Skills
 }
 
 impl Player {
-    pub fn overall(&self) -> i8 {
-       self.overall
-    }
+
 }
 
 impl Player {
@@ -214,7 +243,7 @@ impl Player {
         play_type: PlayType,
         skate_stats: SkatingStats,
         goalie_movement: Option<GoalieMovement>,
-        projection: Projection
+        projection: Projection,view: GameView,skills :Skills
     ) -> Player {
         Player {
             first_name,
@@ -226,7 +255,9 @@ impl Player {
             play_type,
             skate_stats,
             goalie_movement,
-            projection
+            projection,
+            view,
+            skills
         }
     }
     pub fn random_name() -> (String, String) {
@@ -252,7 +283,10 @@ impl Player {
         play_type: PlayType,
         skate_stats: SkatingStats,
 
-       projection: Projection
+
+       projection: Projection,
+                      view:GameView,
+                      skills: Skills
     ) -> Player {
         Player {
             first_name,
@@ -264,7 +298,9 @@ impl Player {
             play_type,
             skate_stats,
             goalie_movement: None,
-           projection
+           projection,
+            view,
+            skills
         }
     }
 
@@ -274,7 +310,9 @@ impl Player {
         skate_stats: SkatingStats,
         goalie_movement: GoalieMovement,
 
-        projection: Projection
+        projection: Projection,
+                      view:GameView,
+                      skills: Skills
     ) -> Player {
         Player {
             first_name,
@@ -287,7 +325,9 @@ impl Player {
             skate_stats,
             goalie_movement: Some(goalie_movement),
 
-            projection
+            projection,
+            view,
+            skills
         }
     }
     pub fn new_random_overrall_goalie(first_name: String, last_name: String, age:i8,
@@ -296,9 +336,11 @@ impl Player {
                                       skate_stats: SkatingStats,
                                       goalie_movement: GoalieMovement,
 
-                                      projection: Projection)-> Player {
+                                      projection: Projection,
+                                      view:GameView,
+                                      skills: Skills)-> Player {
 
-        Self::new_goalie(first_name, last_name, age, choices::random_range_inclusive(0, 100) as i8, play_type, skate_type, skate_stats, goalie_movement, projection)
+        Self::new_goalie(first_name, last_name, age, choices::random_range_inclusive(0, 100) as i8, play_type, skate_type, skate_stats, goalie_movement, projection,view,skills)
     }
     pub fn new_random_overrall_player(first_name: String, last_name: String, age:i8,
                                       position: Position,
@@ -308,9 +350,11 @@ impl Player {
 
 
 
-                                      projection: Projection)-> Player {
+                                      projection: Projection,
+                                      view:GameView,
+                                      skills: Skills)-> Player {
 
-        Self::new_skater(first_name, last_name, age, choices::random_range_inclusive(0, 100) as i8, position,play_type, skate_stats, projection)
+        Self::new_skater(first_name, last_name, age, choices::random_range_inclusive(0, 100) as i8, position,play_type, skate_stats, projection,view,skills)
     }
 
 
@@ -468,8 +512,26 @@ impl Player {
         format!("{}{}",self.first_name,self.last_name)
         
     }
-    
-    
+
+    pub fn first_name(&self) -> &str {
+        &self.first_name
+    }
+
+    pub fn last_name(&self) -> &str {
+        &self.last_name
+    }
+
+    pub fn overall(&self) -> i8 {
+        self.overall
+    }
+
+    pub fn view(&self) -> &GameView {
+        &self.view
+    }
+
+    pub fn skills(&self) -> &Skills {
+        &self.skills
+    }
 }
 
 

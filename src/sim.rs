@@ -1,6 +1,7 @@
+use rand::RngExt;
 use crate::data::helper::PlayerRecord;
 use crate::data::player;
-use crate::data::player::{PlayType, Player, Position};
+use crate::data::player::{PlayType, Player, Position, Type};
 use crate::data::staff::{StaffMember, StaffRole};
 use crate::data::team::{Team, TeamLevel};
 use crate::league_settings::{League, LeagueRules, SimulatedGame, SimulationSettings, TeamProfile, TeamStanding};
@@ -341,13 +342,6 @@ impl TeamLevelClone for TeamLevel {
     }
 }
 
-pub fn analyze_team(team:&Team) -> (i8,i8,i8){
-
-let goale_power = team.roster().
-
-
-
-}
 
 pub fn get_goalies(team:&Team)-> (&PlayerRecord,&PlayerRecord){
 
@@ -375,9 +369,378 @@ pub fn get_goalies(team:&Team)-> (&PlayerRecord,&PlayerRecord){
 }
 
 pub fn get_defense(player:&Player)-> i8{
+
+    let mut raw: i8 = player.skills().defense();
+
+    let pos = match player.position()
+    {
+        Position::LD => 1.1,
+        Position::RD => 1.1,
+        _=> 1.0,
+
+    };
+
+    let player_type_bonus = match player.play_type() {
+        PlayType::DFD => 1.15,
+        PlayType::TWD=> 1.1,
+        PlayType::DF=> 1.2,
+        PlayType::SNIPER => 0.9,
+        PlayType::PWF=> 1.01,
+        _=> 1.0
+    };
+
+    let type_bonus = match player.player_type(){
+        Type::GOALIE => 1.75,
+        _=> 1.0
+    };
+
+    let mut bonus_avg: f64 = (pos + (player_type_bonus*player_type_bonus)+type_bonus) / 3.0;
+    bonus_avg = bonus_avg.min(2.0);
+
+    raw = (raw as f64 * bonus_avg).min(100.0) as i8;
+
+    raw
     
     
     
-    
-    
+}
+
+pub fn get_offense(player: &Player) -> i8 {
+    let mut raw: i8 = player.skills().offense();
+
+    let pos = match player.position() {
+        Position::LW => 1.1,
+        Position::RW => 1.1,
+        Position::CENTER  => 1.15,
+        _ => 1.0,
+    };
+
+    let player_type_bonus = match player.play_type() {
+        PlayType::SNIPER => 1.2,
+        PlayType::PWF    => 1.1,
+        PlayType::TWD    => 1.05,
+        PlayType::DFD    => 0.9,
+        PlayType::DF     => 0.85,
+        _ => 1.0,
+    };
+
+    let type_bonus = match player.player_type() {
+        Type::GOALIE => 0.5,
+        _ => 1.0,
+    };
+
+    let mut bonus_avg: f64 =
+        (pos + (player_type_bonus * player_type_bonus) + type_bonus) / 3.0;
+
+    bonus_avg = bonus_avg.min(2.0);
+
+    raw = (raw as f64 * bonus_avg).min(100.0) as i8;
+
+    raw
+}
+
+pub fn get_line_bonus(player:&Player) -> f32{
+
+    let mut raw: f32 =( player.skills().passing()+player.view().predicting()+player.view().smart())as f32 / 3.0;
+
+    let pos = match player.position(){
+        Position::CENTER => 1.1,
+        _=>1.0
+    };
+
+    let type_bonus = match player.play_type(){
+
+        PlayType::PLAYMAKER=> 1.25,
+        PlayType::SNIPER=> 0.90,
+        PlayType::OFD=> 1.01,
+        PlayType::PWF=> 1.10,
+        _=> 1.0
+
+    };
+
+    let mut bonus_avg: f64 =
+        (pos + (type_bonus * type_bonus) + type_bonus) / 3.0;
+
+    bonus_avg = bonus_avg.min(2.0);
+
+    raw = (raw as f64 * bonus_avg).min(100.0) as f32;
+
+    raw
+
+
+}
+pub fn get_awareness_bonus(player: &Player) -> f32 {
+    let mut raw: f32 = (
+        player.view().scan() +
+            player.view().predicting() +
+            player.view().smart()
+    ) as f32 / 3.0;
+
+    let pos = match player.position() {
+        Position::CENTER => 1.1,
+        Position::LD | Position::RD => 1.05,
+        _ => 1.0,
+    };
+
+    let type_bonus = match player.play_type() {
+        PlayType::TWD => 1.15,
+        PlayType::PLAYMAKER => 1.1,
+        PlayType::DFD => 1.1,
+        _ => 1.0,
+    };
+
+    let mut bonus_avg: f32 =
+        (pos + (type_bonus * type_bonus) + type_bonus) / 3.0;
+
+    bonus_avg = bonus_avg.min(2.0);
+
+    raw = (raw as f64 * bonus_avg as f64).min(100.0) as f32;
+
+    raw
+}
+pub fn get_shooting_bonus(player: &Player) -> f32 {
+    let mut raw: f32 = (
+        player.skills().shot_accuracy() +
+            player.skills().shot_power()
+    ) as f32 / 2.0;
+
+    let pos = match player.position() {
+        Position::LW | Position::RW => 1.1,
+        _ => 1.0,
+    };
+
+    let type_bonus = match player.play_type() {
+        PlayType::SNIPER => 1.25,
+        PlayType::PWF => 1.1,
+        PlayType::PLAYMAKER => 1.05,
+        _ => 1.0,
+    };
+
+    let mut bonus_avg: f32 =
+        (pos + (type_bonus * type_bonus) + type_bonus) / 3.0;
+
+    bonus_avg = bonus_avg.min(2.0);
+
+    raw = (raw as f64 * bonus_avg as f64).min(100.0) as f32;
+
+    raw
+}
+
+pub fn get_play_driving_bonus(player: &Player) -> f32 {
+    let mut raw: f32 = (
+        player.skills().passing() +
+            player.skills().offense() +
+            player.view().smart()
+    ) as f32 / 3.0;
+
+    let pos = match player.position() {
+        Position::CENTER => 1.15,
+        _ => 1.0,
+    };
+
+    let type_bonus = match player.play_type() {
+        PlayType::PLAYMAKER => 1.25,
+        PlayType::TWD => 1.05,
+        PlayType::SNIPER => 0.95,
+        _ => 1.0,
+    };
+
+    let mut bonus_avg: f32 =
+        (pos + (type_bonus * type_bonus) + type_bonus) / 3.0;
+
+    bonus_avg = bonus_avg.min(2.0);
+
+    raw = (raw as f64 * bonus_avg as f64).min(100.0) as f32;
+
+    raw
+}
+
+fn avg(values: &[f32]) -> f32 {
+    values.iter().sum::<f32>() / values.len() as f32
+}
+
+pub fn forward_line_offense_bonus(line: &[Player]) -> f32 {
+    let base: Vec<f32> = line.iter()
+        .map(|p| get_offense(p) as f32)
+        .collect();
+
+    let mut raw = avg(&base);
+
+    // synergy: reward diversity (playmaker + sniper + power)
+    let mut has_playmaker = false;
+    let mut has_sniper = false;
+    let mut has_power = false;
+
+    for p in line {
+        match p.play_type() {
+            PlayType::PLAYMAKER => has_playmaker = true,
+            PlayType::SNIPER => has_sniper = true,
+            PlayType::PWF => has_power = true,
+            _ => {}
+        }
+    }
+
+    let synergy_bonus = match (has_playmaker, has_sniper, has_power) {
+        (true, true, true) => 1.15,
+        (true, true, _) => 1.1,
+        _ => 1.0,
+    };
+
+    raw *= synergy_bonus;
+
+    raw.min(100.0)
+}
+
+pub fn forward_line_defense_bonus(line: &[Player]) -> f32 {
+    let base: Vec<f32> = line.iter()
+        .map(|p| get_defense(p) as f32)
+        .collect();
+
+    let mut raw = avg(&base);
+
+    let mut defensive_players = 0;
+
+    for p in line {
+        match p.play_type() {
+            PlayType::TWD | PlayType::DF => defensive_players += 1,
+            _ => {}
+        }
+    }
+
+    let synergy_bonus = match defensive_players {
+        3 => 1.15,
+        2 => 1.1,
+        _ => 1.0,
+    };
+
+    raw *= synergy_bonus;
+
+    raw.min(100.0)
+}
+
+pub fn defense_pair_offense_bonus(pair: &[Player]) -> f32 {
+    let base: Vec<f32> = pair.iter()
+        .map(|p| get_offense(p) as f32)
+        .collect();
+
+    let mut raw = avg(&base);
+
+    let mut has_ofd = false;
+
+    for p in pair {
+        if let PlayType::OFD = p.play_type() {
+            has_ofd = true;
+        }
+    }
+
+    let synergy_bonus = if has_ofd { 1.1 } else { 1.0 };
+
+    raw *= synergy_bonus;
+
+    raw.min(100.0)
+}
+fn biased_vs(a: f32, b: f32) -> f32 {
+    let mut r = rand::rng();
+
+    // normalize difference into 0..1
+    let total = a + b;
+    let bias = if total == 0.0 { 0.5 } else { a / total };
+
+    // random roll (0..1), skew toward stronger side
+    let roll: f32 = r.random();
+    roll * (1.0 - bias) + bias
+}
+pub fn defense_pair_defense_bonus(pair: &[Player]) -> f32 {
+    let base: Vec<f32> = pair.iter()
+        .map(|p| get_defense(p) as f32)
+        .collect();
+
+    let mut raw = avg(&base);
+
+    let mut has_dfd = false;
+    let mut has_ofd = false;
+
+    for p in pair {
+        match p.play_type() {
+            PlayType::DFD => has_dfd = true,
+            PlayType::OFD => has_ofd = true,
+            _ => {}
+        }
+    }
+
+    // classic "stay-at-home + offensive D" pairing bonus
+    let synergy_bonus = match (has_dfd, has_ofd) {
+        (true, true) => 1.15,
+        (true, false) => 1.05,
+        _ => 1.0,
+    };
+
+    raw *= synergy_bonus;
+
+    raw.min(100.0)
+}
+
+pub fn simulate_matchup(
+    fwd_line_a: &[Player],
+    def_pair_a: &[Player],
+    fwd_line_b: &[Player],
+    def_pair_b: &[Player],
+) {
+    // --- TEAM A metrics ---
+    let a_off = forward_line_offense_bonus(fwd_line_a);
+    let a_def = forward_line_defense_bonus(fwd_line_a)
+        + defense_pair_defense_bonus(def_pair_a);
+
+    // --- TEAM B metrics ---
+    let b_off = forward_line_offense_bonus(fwd_line_b);
+    let b_def = forward_line_defense_bonus(fwd_line_b)
+        + defense_pair_defense_bonus(def_pair_b);
+
+    println!("--- MATCHUP ---");
+    println!("Team A Offense: {:.2}", a_off);
+    println!("Team A Defense: {:.2}", a_def);
+    println!("Team B Offense: {:.2}", b_off);
+    println!("Team B Defense: {:.2}", b_def);
+
+    // --- A attacking B ---
+    let a_attack_strength = a_off;
+    let b_defense_strength = b_def;
+
+    let a_roll = biased_vs(a_attack_strength, b_defense_strength);
+
+    // --- B attacking A ---
+    let b_attack_strength = b_off;
+    let a_defense_strength = a_def;
+
+    let b_roll = biased_vs(b_attack_strength, a_defense_strength);
+
+    println!("\n--- RESULTS ---");
+
+    // interpret rolls
+    if a_roll > 0.55 {
+        println!("Team A is likely to SCORE ⚡");
+    } else if a_roll > 0.48 {
+        println!("Team A generates a strong chance");
+    } else {
+        println!("Team A is shut down");
+    }
+
+    if b_roll > 0.55 {
+        println!("Team B is likely to SCORE ⚡");
+    } else if b_roll > 0.48 {
+        println!("Team B generates a strong chance");
+    } else {
+        println!("Team B is shut down");
+    }
+
+    // head-to-head comparison
+    println!("\n--- EDGE ---");
+
+    if a_roll > b_roll {
+        println!("➡ Team A has the edge");
+    } else if b_roll > a_roll {
+        println!("➡ Team B has the edge");
+    } else {
+        println!("➡ Even matchup");
+    }
 }

@@ -150,3 +150,21 @@ where
 }
 
 
+pub fn write_structs<T>(
+    config: &CoreConfig,
+    file_type: &FileType,
+    files: Vec<(String, T)>,
+) -> Result<(), Box<dyn Error>>
+where
+    T: Serialize,
+{
+    ensure_dir_type(config, file_type);
+
+    for (file, data) in files {
+        let path = file_path_from_type(config, file_type, file);
+        let json = serde_json::to_string_pretty(&data)?;
+        fs::write(path, json)?;
+    }
+
+    Ok(())
+}
