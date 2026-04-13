@@ -7,29 +7,26 @@ use HockeySim::data::helper::{DraftStatus, PlayerRecord};
 use HockeySim::data::stats::PlayerStats;
 use HockeySim::data::team::{Team, TeamIdentity};
 use HockeySim::league_settings;
+use HockeySim::savestate::savestate;
+use HockeySim::savestate::savestate::{CoreConfig, FileType};
 use HockeySim::testing::league_helper;
 fn main() {
+let core_data = CoreConfig{sim_id: "HockeySim".parse().unwrap(),data_id: "Sim".parse().unwrap(),game_id: "TestGame".parse().unwrap(),version_id: "0.10".parse().unwrap() };
 
-    let mut name = player::NameData::read_or_new("names");
+    savestate::ensure_dir_type(&core_data, &FileType::CORE_DATA);
 
-   println!("Name, {}",name.random_full_name().unwrap());
+    savestate::ensure_dir_type(&core_data, &FileType::TEAM_DATA);
 
-let league = league_settings::League::empty("Major Hockey League".parse().unwrap());
+    savestate::ensure_dir_type(&core_data, &FileType::PLAYER_DATA);
 
-    let mut team = Team::new(/* TeamIdentity */TeamIdentity::new("Edmonton".parse().unwrap(), "Edmonton".parse().unwrap(), /* String */"EDM".parse().unwrap(), Conference::east(), Division::pacific()), /* Vec<PlayerRecord> */Vec::new(), /* Vec<StaffMember> */Vec::new());
+    savestate::ensure_dir_type(&core_data, &FileType::LEAGUE_DATA);
 
-    let mut draft = Draft::new_draft_with_bias(0.1,4);
+    savestate::ensure_dir_type(&core_data, &FileType::SAVE_DATA);
 
-    for i in 1..=50
-    {
-        let pl = player::random_prospect(0.5,false);
-        team.add_player(PlayerRecord::new_with_contract(pl.name(), pl.age, pl, DraftStatus::Undrafted, /* PlayerStats */PlayerStats::skater_default(), /* Option<Contract> */None))
+    let name_data = core_data.load_name_data();
 
-    }
-league_helper::allocate_league(&league).expect("TODO: panic message");
-league_helper::allocate_team(&league, &team);
-    league_helper::write_team_data(&league, &team);
-    league_helper::write_draft("Draft_data.json".parse().unwrap(), &draft,league);
+
+
 }
 
 
