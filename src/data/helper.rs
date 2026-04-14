@@ -20,8 +20,6 @@ pub struct DraftData {
 
 #[derive(Serialize, Deserialize)]
 pub struct PlayerRecord {
-    name: String,
-    age: i8,
     player: Player,
     stats: PlayerStats,
     contract: Option<Contract>,
@@ -66,15 +64,13 @@ impl DraftStatus {
 
 impl PlayerRecord {
     pub fn new(
-        name: String,
-        age: i8,
+
         player: Player,
         draft_status: DraftStatus,
     ) -> PlayerRecord {
         let stats = default_stats_for_player(&player);
         PlayerRecord {
-            name,
-            age,
+
             player,
             stats,
             contract: None,
@@ -82,15 +78,13 @@ impl PlayerRecord {
     }
 
     pub fn new_with_stats(
-        name: String,
-        age: i8,
+
         player: Player,
         draft_status: DraftStatus,
         stats: PlayerStats,
     ) -> PlayerRecord {
         PlayerRecord {
-            name,
-            age,
+
             player,
             stats,
             contract: None,
@@ -98,33 +92,20 @@ impl PlayerRecord {
     }
 
     pub fn new_with_contract(
-        name: String,
-        age: i8,
+
         player: Player,
         draft_status: DraftStatus,
         stats: PlayerStats,
         contract: Option<Contract>,
     ) -> PlayerRecord {
         PlayerRecord {
-            name,
-            age,
+
             player,
             stats,
             contract,
         }
     }
 
-    pub fn name(&self) -> &str {
-        &self.name
-    }
-
-    pub fn age(&self) -> i8 {
-        self.age
-    }
-
-    pub fn age_one_year(&mut self) {
-        self.age += 1;
-    }
 
     pub fn player(&self) -> &Player {
         &self.player
@@ -150,9 +131,6 @@ impl PlayerRecord {
         self.contract = contract;
     }
 
-    pub fn develop(&mut self, coaching_bonus: i8) {
-        self.player.develop(coaching_bonus, self.age);
-    }
 
     fn default_stats_for_player(player: &Player) -> PlayerStats {
         if matches!(player.position(), Position::GOALIE) {
@@ -168,3 +146,4 @@ impl PlayerRecord {
 fn default_stats_for_player(p0: &Player) -> PlayerStats{
     PlayerStats::skater_default()
 }
+

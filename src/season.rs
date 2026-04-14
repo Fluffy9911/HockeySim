@@ -286,13 +286,13 @@ impl LeagueState {
                 / (development_coaches.len().max(1) as i16);
 
             for player in team.roster_mut().iter_mut() {
-                player.develop((coaching_bonus / 20) as i8);
-                player.age_one_year();
+
+
             }
 
             for staff_member in team.staff_mut().iter_mut() {
                 staff_member.develop();
-                staff_member.age_one_year();
+
             }
         }
     }

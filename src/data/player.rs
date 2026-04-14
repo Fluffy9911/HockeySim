@@ -1,3 +1,4 @@
+use std::cmp::min;
 use std::fs;
 use std::io::Write;
 use std::option::Option;
@@ -707,8 +708,47 @@ impl NameData {
 }
 
 pub fn is_goalie(rec:&PlayerRecord) -> bool {
-
      rec.player().goalie_movement.is_some()
-
-
 }
+
+pub fn scale(value:i8,percent:f32)-> i8{
+     min((value as f32*percent)as i8, 100)
+}
+pub fn develop_skating(skating:&mut SkatingStats,percent:f32){
+    skating.set_speed(scale(skating.speed(),percent));
+    skating.set_acceleration(scale(skating.acceleration(),percent));
+    skating.set_edges(scale(skating.edges(),percent));
+}
+
+pub fn develop_shooting(skills: &mut Skills, percent: f32) {
+    skills.set_shot_accuracy(scale(skills.shot_accuracy(), percent));
+    skills.set_shot_power(scale(skills.shot_power(), percent));
+}
+
+pub fn develop_offensive(skills: &mut Skills, percent: f32) {
+    skills.set_offense(scale(skills.offense(), percent));
+    skills.set_hands(scale(skills.hands(), percent));
+    skills.set_passing(scale(skills.passing(), percent));
+}
+
+pub fn develop_defensive(skills: &mut Skills, percent: f32) {
+    skills.set_defense(scale(skills.defense(), percent));
+    skills.set_discipline(scale(skills.discipline(), percent));
+}
+
+pub fn develop_physical(skills: &mut Skills, percent: f32) {
+    skills.set_physicality(scale(skills.physicality(), percent));
+    skills.set_fighting(scale(skills.fighting(), percent));
+    skills.set_durability(scale(skills.durability(), percent));
+}
+
+pub fn develop_mental(skills: &mut Skills, percent: f32) {
+    skills.set_mentality(scale(skills.mentality(), percent));
+    skills.set_discipline(scale(skills.discipline(), percent));
+}
+
+pub fn develop_faceoff(skills: &mut Skills, percent: f32) {
+    skills.set_face_off(scale(skills.face_off(), percent));
+    skills.set_mentality(scale(skills.mentality(), percent));
+}
+

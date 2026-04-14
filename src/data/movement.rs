@@ -81,6 +81,22 @@ impl SkatingStats {
         self.edges = adjust_rating(self.edges, edges_delta, max_rating);
         self.acceleration = adjust_rating(self.acceleration, acceleration_delta, max_rating);
     }
+
+    pub fn set_speed(&mut self, speed: i8) {
+        self.speed = speed;
+    }
+
+    pub fn set_edges(&mut self, edges: i8) {
+        self.edges = edges;
+    }
+
+    pub fn set_acceleration(&mut self, acceleration: i8) {
+        self.acceleration = acceleration;
+    }
+
+    pub fn set_skate_type(&mut self, skate_type: SkatingType) {
+        self.skate_type = skate_type;
+    }
 }
 
 impl GoalieMovement {

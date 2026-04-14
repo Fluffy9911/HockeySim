@@ -40,6 +40,11 @@ let core_data = CoreConfig{sim_id: "HockeySim".parse().unwrap(),data_id: "Sim".p
 
     savestate::write_struct(&core_data, &FileType::PLAYER_DATA, "testplayer.json", &line_a[0]);
 
+    let team = Team::new(TeamIdentity::new("Edmonton".parse().unwrap(), "Edmonton".parse().unwrap(), "EDM".parse().unwrap(), Conference::west(), Division::pacific()), /* Vec<PlayerRecord> */Vec::new(), /* Vec<StaffMember> */Vec::new());
+
+    
+
+
 }
 
 

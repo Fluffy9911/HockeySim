@@ -89,6 +89,8 @@ fn random_range_i8(p0: i32, p1: i32) -> i8 {
 }
 
 impl Skills {
+
+
     pub fn new(
         shot_accuracy: i8,
         shot_power: i8,
@@ -200,6 +202,54 @@ impl Skills {
 
     pub fn discipline(&self) -> i8 {
         self.discipline
+    }
+
+    pub fn set_shot_accuracy(&mut self, shot_accuracy: i8) {
+        self.shot_accuracy = shot_accuracy;
+    }
+
+    pub fn set_shot_power(&mut self, shot_power: i8) {
+        self.shot_power = shot_power;
+    }
+
+    pub fn set_offense(&mut self, offense: i8) {
+        self.offense = offense;
+    }
+
+    pub fn set_defense(&mut self, defense: i8) {
+        self.defense = defense;
+    }
+
+    pub fn set_hands(&mut self, hands: i8) {
+        self.hands = hands;
+    }
+
+    pub fn set_mentality(&mut self, mentality: i8) {
+        self.mentality = mentality;
+    }
+
+    pub fn set_face_off(&mut self, face_off: i8) {
+        self.face_off = face_off;
+    }
+
+    pub fn set_durability(&mut self, durability: i8) {
+        self.durability = durability;
+    }
+
+    pub fn set_passing(&mut self, passing: i8) {
+        self.passing = passing;
+    }
+
+    pub fn set_physicality(&mut self, physicality: i8) {
+        self.physicality = physicality;
+    }
+
+    pub fn set_fighting(&mut self, fighting: i8) {
+        self.fighting = fighting;
+    }
+
+    pub fn set_discipline(&mut self, discipline: i8) {
+        self.discipline = discipline;
     }
 }
 
