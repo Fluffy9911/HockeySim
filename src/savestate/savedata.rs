@@ -4,7 +4,7 @@ use std::fs;
 use std::path::Path;
 use serde::{Deserialize, Serialize};
 use crate::data::player::NameData;
-use crate::savestate::savestate;
+use crate::savestate::savedata;
 
 #[derive(Debug,Serialize,Deserialize)]
 pub struct CoreConfig{
@@ -211,15 +211,15 @@ where
     Ok(())
 }
 pub fn create_initial_state(core_data: &mut CoreConfig) -> NameData{
-    savestate::ensure_dir_type(&core_data, &FileType::CORE_DATA);
+    savedata::ensure_dir_type(&core_data, &FileType::CORE_DATA);
 
-    savestate::ensure_dir_type(&core_data, &FileType::TEAM_DATA);
+    savedata::ensure_dir_type(&core_data, &FileType::TEAM_DATA);
 
-    savestate::ensure_dir_type(&core_data, &FileType::PLAYER_DATA);
+    savedata::ensure_dir_type(&core_data, &FileType::PLAYER_DATA);
 
-    savestate::ensure_dir_type(&core_data, &FileType::LEAGUE_DATA);
+    savedata::ensure_dir_type(&core_data, &FileType::LEAGUE_DATA);
 
-    savestate::ensure_dir_type(&core_data, &FileType::SAVE_DATA);
+    savedata::ensure_dir_type(&core_data, &FileType::SAVE_DATA);
 
     core_data.load_name_data()
 }

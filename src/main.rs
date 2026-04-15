@@ -8,13 +8,13 @@ use HockeySim::data::player::{random_prospect_of_position, NameData, Player, Pos
 use HockeySim::data::stats::PlayerStats;
 use HockeySim::data::team::{Team, TeamIdentity};
 use HockeySim::{league_settings, sim};
-use HockeySim::savestate::savestate;
-use HockeySim::savestate::savestate::{CoreConfig, FileType};
+use HockeySim::savestate::savedata;
+use HockeySim::savestate::savedata::{CoreConfig, FileType};
 use HockeySim::testing::league_helper;
 fn main() {
 let mut core_data = CoreConfig{sim_id: "HockeySim".parse().unwrap(),data_id: "Sim".parse().unwrap(),game_id: "TestGame".parse().unwrap(),version_id: "0.10".parse().unwrap() };
 
-    savestate::create_initial_state(&mut core_data);
+    savedata::create_initial_state(&mut core_data);
 
     let line_a = player::generate_prospect_line(0.5);
 
@@ -28,7 +28,7 @@ let mut core_data = CoreConfig{sim_id: "HockeySim".parse().unwrap(),data_id: "Si
 
    // savestate::write_structs(&core_data, &FileType::PLAYER_DATA, vec![("test.json".parse().unwrap(), player::random_prospect_of_position(0.5, false, Position::CENTER))]).expect("REASON")
 
-    savestate::write_struct(&core_data, &FileType::PLAYER_DATA, "testplayer.json", &line_a[0]);
+    savedata::write_struct(&core_data, &FileType::PLAYER_DATA, "testplayer.json", &line_a[0]);
 
     let team = Team::new(TeamIdentity::new("Edmonton".parse().unwrap(), "Edmonton".parse().unwrap(), "EDM".parse().unwrap(), Conference::west(), Division::pacific()), /* Vec<PlayerRecord> */Vec::new(), /* Vec<StaffMember> */Vec::new());
 
