@@ -53,7 +53,7 @@ impl SaveInfo {
     pub fn new() -> SaveInfo {
         SaveInfo { saves: Vec::new() }
     }
-    pub fn create_save(&mut self, name: &str) {
+    pub fn create_save(&mut self, name: &str) -> CoreConfig{
         let saves_path = "data/saves";
         let index_path = "data/saves.json";
 
@@ -63,7 +63,7 @@ impl SaveInfo {
         // Prevent duplicates
         if self.saves.contains(&name.to_string()) {
             println!("Save already exists");
-            return;
+           
         }
 
         // Create save directory
@@ -89,6 +89,7 @@ impl SaveInfo {
             index_path,
             serde_json::to_string_pretty(self).unwrap()
         ).unwrap();
+        config
     }
 }
 
