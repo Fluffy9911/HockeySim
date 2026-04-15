@@ -27,34 +27,69 @@ pub struct SaveInfo{
 }
 
 
-impl SaveInfo{
+impl SaveInfo {
 
-    pub fn new()->SaveInfo{
-        SaveInfo{saves : Vec::new()}
-    }
-
-    pub fn create_save(&mut self,name: &str){
-
-        let config = CoreConfig::new(name.parse().unwrap());
-
+    pub fn load() -> SaveInfo {
         let path = "data/saves.json";
 
-        if !Path::new(path).exists(){
-            fs::create_dir_all(path).unwrap();
-            self.create_save(name);
-        }else{
+        if Path::new(path).exists() {
+            let data = fs::read_to_string(path)
+                .expect("Failed to read saves.json");
 
+            serde_json::from_str(&data)
+                .unwrap_or_else(|_| SaveInfo::new())
+        } else {
+            // create empty file
+            let info = SaveInfo::new();
 
+            fs::create_dir_all("data").unwrap();
+            fs::write(path, serde_json::to_string_pretty(&info).unwrap())
+                .expect("Failed to create saves.json");
 
-            write_struct(&config, &FileType::CORE_DATA, "core.json", &config).expect("TODO: panic message");
-fs::write(path,serde_json::to_string_pretty(self).unwrap());
+            info
         }
-
-
-
-
     }
 
+    pub fn new() -> SaveInfo {
+        SaveInfo { saves: Vec::new() }
+    }
+    pub fn create_save(&mut self, name: &str) {
+        let saves_path = "data/saves";
+        let index_path = "data/saves.json";
+
+        // Ensure directories exist
+        fs::create_dir_all(saves_path).unwrap();
+
+        // Prevent duplicates
+        if self.saves.contains(&name.to_string()) {
+            println!("Save already exists");
+            return;
+        }
+
+        // Create save directory
+        let save_dir = format!("{}/{}", saves_path, name);
+        fs::create_dir_all(&save_dir).unwrap();
+
+        // Create core config
+        let config = CoreConfig::new(name.to_string());
+
+        // Write core.json
+        write_struct(
+            &config,
+            &FileType::CORE_DATA,
+            &format!("{}/core.json", save_dir),
+            &config
+        ).expect("Failed to write core.json");
+
+        // Add to list
+        self.saves.push(name.to_string());
+
+        // Save index file
+        fs::write(
+            index_path,
+            serde_json::to_string_pretty(self).unwrap()
+        ).unwrap();
+    }
 }
 
 #[derive(Debug,Serialize,Deserialize)]
