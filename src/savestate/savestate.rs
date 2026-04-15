@@ -4,6 +4,7 @@ use std::fs;
 use std::path::Path;
 use serde::{Deserialize, Serialize};
 use crate::data::player::NameData;
+use crate::savestate::savestate;
 
 #[derive(Debug,Serialize,Deserialize)]
 pub struct CoreConfig{
@@ -19,6 +20,44 @@ pub game_id: String
 }
 
 #[derive(Debug,Serialize,Deserialize)]
+pub struct SaveInfo{
+
+    saves: Vec<String>
+
+}
+
+
+impl SaveInfo{
+
+    pub fn new()->SaveInfo{
+        SaveInfo{saves : Vec::new()}
+    }
+
+    pub fn create_save(&mut self,name: &str){
+
+        let config = CoreConfig::new(name.parse().unwrap());
+
+        let path = "data/saves.json";
+
+        if !Path::new(path).exists(){
+            fs::create_dir_all(path).unwrap();
+            self.create_save(name);
+        }else{
+
+
+
+            write_struct(&config, &FileType::CORE_DATA, "core.json", &config).expect("TODO: panic message");
+fs::write(path,serde_json::to_string_pretty(self).unwrap());
+        }
+
+
+
+
+    }
+
+}
+
+#[derive(Debug,Serialize,Deserialize)]
 pub enum FileType {
     PLAYER_DATA,SAVE_DATA,TEAM_DATA,LEAGUE_DATA,CORE_DATA
 
@@ -29,6 +68,9 @@ impl CoreConfig {
 
     pub fn new_def() -> CoreConfig {
         CoreConfig{sim_id: "HockeySim".parse().unwrap(), data_id: "SimData".parse().unwrap(),version_id: "0.1.0Alpha".parse().unwrap(), game_id: "HockeySim".parse().unwrap() }
+    }
+    pub fn new(name:String) -> CoreConfig {
+        CoreConfig{sim_id: name, data_id: "SimData".parse().unwrap(),version_id: "0.1.0Alpha".parse().unwrap(), game_id: "HockeySim".parse().unwrap() }
     }
 
     pub fn load_name_data(&self) -> NameData{
@@ -167,4 +209,17 @@ where
     }
 
     Ok(())
+}
+pub fn create_initial_state(core_data: &mut CoreConfig) -> NameData{
+    savestate::ensure_dir_type(&core_data, &FileType::CORE_DATA);
+
+    savestate::ensure_dir_type(&core_data, &FileType::TEAM_DATA);
+
+    savestate::ensure_dir_type(&core_data, &FileType::PLAYER_DATA);
+
+    savestate::ensure_dir_type(&core_data, &FileType::LEAGUE_DATA);
+
+    savestate::ensure_dir_type(&core_data, &FileType::SAVE_DATA);
+
+    core_data.load_name_data()
 }
