@@ -1,33 +1,61 @@
 use std::error::Error;
-use std::fmt::format;
 use std::fs;
 use std::path::Path;
+
 use serde::{Deserialize, Serialize};
+
 use crate::data::player::NameData;
 use crate::savestate::savedata;
 
-#[derive(Debug,Serialize,Deserialize)]
-pub struct CoreConfig{
+// =========================
+// CORE CONFIG
+// =========================
 
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct CoreConfig {
     pub sim_id: String,
-
     pub data_id: String,
-
     pub version_id: String,
-
-pub game_id: String
-
+    pub game_id: String,
 }
 
-#[derive(Debug,Serialize,Deserialize)]
-pub struct SaveInfo{
+impl CoreConfig {
+    pub fn new_def() -> CoreConfig {
+        CoreConfig {
+            sim_id: "HockeySim".to_string(),
+            data_id: "SimData".to_string(),
+            version_id: "0.1.0Alpha".to_string(),
+            game_id: "HockeySim".to_string(),
+        }
+    }
 
-    saves: Vec<String>
+    pub fn new(name: String) -> CoreConfig {
+        CoreConfig {
+            sim_id: name,
+            data_id: "SimData".to_string(),
+            version_id: "0.1.0Alpha".to_string(),
+            game_id: "HockeySim".to_string(),
+        }
+    }
 
+    pub fn load_name_data(&self) -> NameData {
+        NameData::read_or_new(format!("{}_names", self.game_id).as_str())
+    }
 }
 
+// =========================
+// SAVE INFO (INDEX FILE)
+// =========================
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct SaveInfo {
+    pub saves: Vec<String>,
+}
 
 impl SaveInfo {
+    pub fn new() -> SaveInfo {
+        SaveInfo { saves: Vec::new() }
+    }
 
     pub fn load() -> SaveInfo {
         let path = "data/saves.json";
@@ -39,7 +67,6 @@ impl SaveInfo {
             serde_json::from_str(&data)
                 .unwrap_or_else(|_| SaveInfo::new())
         } else {
-            // create empty file
             let info = SaveInfo::new();
 
             fs::create_dir_all("data").unwrap();
@@ -50,212 +77,226 @@ impl SaveInfo {
         }
     }
 
-    pub fn new() -> SaveInfo {
-        SaveInfo { saves: Vec::new() }
-    }
-    pub fn create_save(&mut self, name: &str) -> CoreConfig{
+    pub fn create_save(&mut self, name: &str) -> CoreConfig {
         let saves_path = "data/saves";
         let index_path = "data/saves.json";
 
-        // Ensure directories exist
         fs::create_dir_all(saves_path).unwrap();
 
-        // Prevent duplicates
         if self.saves.contains(&name.to_string()) {
-            println!("Save already exists");
-           
+            panic!("Save already exists");
         }
 
-        // Create save directory
         let save_dir = format!("{}/{}", saves_path, name);
         fs::create_dir_all(&save_dir).unwrap();
 
-        // Create core config
         let config = CoreConfig::new(name.to_string());
 
-        // Write core.json
-        write_struct(
-            &config,
-            &FileType::CORE_DATA,
-            &format!("{}/core.json", save_dir),
-            &config
-        ).expect(format!("Failed to write core.json file {}, {}", save_dir,&format!("{}/core.json", save_dir)).as_str());
+        fs::write(
+            format!("{}/core.json", save_dir),
+            serde_json::to_string_pretty(&config).unwrap(),
+        )
+            .unwrap();
 
-        // Add to list
         self.saves.push(name.to_string());
 
-        // Save index file
         fs::write(
             index_path,
-            serde_json::to_string_pretty(self).unwrap()
-        ).unwrap();
+            serde_json::to_string_pretty(self).unwrap(),
+        )
+            .unwrap();
+
         config
     }
 }
 
-#[derive(Debug,Serialize,Deserialize)]
+// =========================
+// FILE TYPES
+// =========================
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum FileType {
-    PLAYER_DATA,SAVE_DATA,TEAM_DATA,LEAGUE_DATA,CORE_DATA
-
-
+    PLAYER_DATA,
+    SAVE_DATA,
+    TEAM_DATA,
+    LEAGUE_DATA,
+    CORE_DATA,
 }
 
-impl CoreConfig {
+// =========================
+// PATH HELPERS
+// =========================
 
-    pub fn new_def() -> CoreConfig {
-        CoreConfig{sim_id: "HockeySim".parse().unwrap(), data_id: "SimData".parse().unwrap(),version_id: "0.1.0Alpha".parse().unwrap(), game_id: "HockeySim".parse().unwrap() }
+pub fn ensure_dir(path: &Path) {
+    if let Err(e) = fs::create_dir_all(path) {
+        panic!("couldn't create {}: {}", path.display(), e);
     }
-    pub fn new(name:String) -> CoreConfig {
-        CoreConfig{sim_id: name, data_id: "SimData".parse().unwrap(),version_id: "0.1.0Alpha".parse().unwrap(), game_id: "HockeySim".parse().unwrap() }
-    }
-
-    pub fn load_name_data(&self) -> NameData{
-
-        let data = NameData::read_or_new(format!("{}_names",self.game_id).as_str());
-
-
-        data
-
-    }
-
-
-
-
-
-
 }
 
-pub fn ensure_dir(path: &Path)  {
-
-    let dir = fs::create_dir_all(path);
-
-    match dir {
-
-        Err(why) => panic!("couldn't create {}: {}", path.display(), why),
-
-        Ok(_ok) => ()
-
-    }
-
-
-}
-
-pub fn create_path_for_type(core_config: &CoreConfig,t:&FileType)-> String {
-
+pub fn create_path_for_type(core: &CoreConfig, t: &FileType) -> String {
     match t {
-        FileType::CORE_DATA => format!("data/{}/{}",core_config.sim_id,core_config.game_id),
-        FileType::LEAGUE_DATA => format!("data/{}/{}/League",core_config.sim_id,core_config.game_id),
-        FileType::PLAYER_DATA => format!("data/{}/{}/Player",core_config.sim_id,core_config.game_id),
-        FileType::SAVE_DATA => format!("data/{}/{}/Save",core_config.sim_id,core_config.game_id),
-        FileType::TEAM_DATA => format!("data/{}/{}/Team",core_config.sim_id,core_config.game_id),
-
+        FileType::CORE_DATA => format!("data/{}/{}", core.sim_id, core.game_id),
+        FileType::LEAGUE_DATA => format!("data/{}/{}/League", core.sim_id, core.game_id),
+        FileType::PLAYER_DATA => format!("data/{}/{}/Player", core.sim_id, core.game_id),
+        FileType::SAVE_DATA => format!("data/{}/{}/Save", core.sim_id, core.game_id),
+        FileType::TEAM_DATA => format!("data/{}/{}/Team", core.sim_id, core.game_id),
     }
-
 }
 
-pub fn file_path_from_type(core_config: &CoreConfig,t:&FileType,file:String) -> String{
-    let pth = create_path_for_type(core_config,t);
-
-     format!("{}/{}",pth,file)
+pub fn file_path_from_type(core: &CoreConfig, t: &FileType, file: String) -> String {
+    format!("{}/{}", create_path_for_type(core, t), file)
 }
 
-pub fn ensure_dir_type(config:&CoreConfig, file_type:&FileType)  {
-
-    let path = create_path_for_type(config,file_type);
-
+pub fn ensure_dir_type(core: &CoreConfig, t: &FileType) {
+    let path = create_path_for_type(core, t);
     ensure_dir(Path::new(&path));
-
-
-
 }
 
+// =========================
+// SAVE CONTEXT (ACTIVE SAVE)
+// =========================
 
+pub struct SaveContext {
+    pub core: CoreConfig,
+}
 
-pub fn write_file(config:&CoreConfig, file_type:&FileType,file_dat: (String,String)){
-
-    ensure_dir_type(config,file_type);
-
-let file = file_path_from_type(config,file_type,file_dat.0);
-
-   let msg =  fs::write(&file, file_dat.1);
-
-    match msg {
-        Err(e) => panic!("couldn't write to {}: {}", file, e),
-        Ok(_ok) => ()
-
+impl SaveContext {
+    pub fn new(core: CoreConfig) -> Self {
+        Self { core }
     }
 
+    pub fn core(&self) -> &CoreConfig {
+        &self.core
+    }
 
+    // ---------- FILE OPS ----------
+
+    pub fn write_file(
+        &self,
+        file_type: FileType,
+        file: &str,
+        contents: &str,
+    ) -> Result<(), Box<dyn Error>> {
+        ensure_dir_type(&self.core, &file_type);
+        let path = file_path_from_type(&self.core, &file_type, file.to_string());
+        fs::write(path, contents)?;
+        Ok(())
+    }
+
+    pub fn read_file(
+        &self,
+        file_type: FileType,
+        file: &str,
+    ) -> Result<String, Box<dyn Error>> {
+        let path = file_path_from_type(&self.core, &file_type, file.to_string());
+        Ok(fs::read_to_string(path)?)
+    }
+
+    pub fn write_struct<T>(
+        &self,
+        file_type: FileType,
+        file: &str,
+        data: &T,
+    ) -> Result<(), Box<dyn Error>>
+    where
+        T: Serialize,
+    {
+        let json = serde_json::to_string_pretty(data)?;
+        self.write_file(file_type, file, &json)
+    }
+
+    pub fn read_struct<T>(
+        &self,
+        file_type: FileType,
+        file: &str,
+    ) -> Result<T, Box<dyn Error>>
+    where
+        T: for<'de> Deserialize<'de>,
+    {
+        let data = self.read_file(file_type, file)?;
+        Ok(serde_json::from_str(&data)?)
+    }
+
+    pub fn exists(&self, file_type: FileType, file: &str) -> bool {
+        let path = file_path_from_type(&self.core, &file_type, file.to_string());
+        Path::new(&path).exists()
+    }
 }
-pub fn query_file(config: &CoreConfig, file_type: &FileType, file: &str) -> bool {
-    let path = file_path_from_type(config, file_type, file.to_string());
-    Path::new(&path).exists()
-}
-pub fn read_file(config: &CoreConfig, file_type: &FileType, file: &str) -> Result<String, Box<dyn Error>> {
-    let path = file_path_from_type(config, file_type, file.to_string());
-    let contents = fs::read_to_string(path)?;
-    Ok(contents)
-}
-pub fn read_struct<T>(
-    config: &CoreConfig,
+
+// =========================
+// COPY UTILITIES
+// =========================
+
+pub fn copy_file_between_saves(
+    from: &CoreConfig,
+    to: &CoreConfig,
     file_type: &FileType,
     file: &str,
-) -> Result<T, Box<dyn Error>>
-where
-    T: for<'de> Deserialize<'de>,
-{
-    let data = read_file(config, file_type, file)?;
-    let parsed = serde_json::from_str::<T>(&data)?;
-    Ok(parsed)
+) -> Result<(), Box<dyn Error>> {
+    let src = file_path_from_type(from, file_type, file.to_string());
+    let dst = file_path_from_type(to, file_type, file.to_string());
+
+    if let Some(parent) = Path::new(&dst).parent() {
+        fs::create_dir_all(parent)?;
+    }
+
+    fs::copy(src, dst)?;
+    Ok(())
 }
-pub fn write_struct<T>(
-    config: &CoreConfig,
+
+pub fn copy_type_between_saves(
+    from: &CoreConfig,
+    to: &CoreConfig,
     file_type: &FileType,
-    file: &str,
-    data: &T,
-) -> Result<(), Box<dyn Error>>
-where
-    T: Serialize,
-{
-    ensure_dir_type(config, file_type);
+) -> Result<(), Box<dyn Error>> {
+    let src_dir = create_path_for_type(from, file_type);
+    let dst_dir = create_path_for_type(to, file_type);
 
-    let path = file_path_from_type(config, file_type, file.to_string());
+    fs::create_dir_all(&dst_dir)?;
 
-    let json = serde_json::to_string_pretty(data)?;
-    fs::write(path, json)?;
+    for entry in fs::read_dir(src_dir)? {
+        let entry = entry?;
+        let path = entry.path();
+
+        if path.is_file() {
+            let file_name = path.file_name().unwrap();
+            let dst_path = Path::new(&dst_dir).join(file_name);
+            fs::copy(path, dst_path)?;
+        }
+    }
 
     Ok(())
 }
 
+pub fn clone_save(
+    from: &CoreConfig,
+    to: &CoreConfig,
+) -> Result<(), Box<dyn Error>> {
+    let types = [
+        FileType::CORE_DATA,
+        FileType::PLAYER_DATA,
+        FileType::TEAM_DATA,
+        FileType::LEAGUE_DATA,
+        FileType::SAVE_DATA,
+    ];
 
-pub fn write_structs<T>(
-    config: &CoreConfig,
-    file_type: &FileType,
-    files: Vec<(String, T)>,
-) -> Result<(), Box<dyn Error>>
-where
-    T: Serialize,
-{
-    ensure_dir_type(config, file_type);
-
-    for (file, data) in files {
-        let path = file_path_from_type(config, file_type, file);
-        let json = serde_json::to_string_pretty(&data)?;
-        fs::write(path, json)?;
+    for t in types.iter() {
+        copy_type_between_saves(from, to, t)?;
     }
 
     Ok(())
 }
-pub fn create_initial_state(core_data: &mut CoreConfig) -> NameData{
-    savedata::ensure_dir_type(&core_data, &FileType::CORE_DATA);
 
-    savedata::ensure_dir_type(&core_data, &FileType::TEAM_DATA);
+// =========================
+// INITIAL SETUP
+// =========================
 
-    savedata::ensure_dir_type(&core_data, &FileType::PLAYER_DATA);
+pub fn create_initial_state(core: &mut CoreConfig) -> NameData {
+    savedata::ensure_dir_type(core, &FileType::CORE_DATA);
+    savedata::ensure_dir_type(core, &FileType::TEAM_DATA);
+    savedata::ensure_dir_type(core, &FileType::PLAYER_DATA);
+    savedata::ensure_dir_type(core, &FileType::LEAGUE_DATA);
+    savedata::ensure_dir_type(core, &FileType::SAVE_DATA);
 
-    savedata::ensure_dir_type(&core_data, &FileType::LEAGUE_DATA);
-
-    savedata::ensure_dir_type(&core_data, &FileType::SAVE_DATA);
-
-    core_data.load_name_data()
+    core.load_name_data()
 }
