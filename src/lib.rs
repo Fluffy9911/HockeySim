@@ -6,3 +6,4 @@ pub mod randoms;
 pub mod testing;
 pub mod league_settings;
 pub mod savestate;
+pub mod sim_engine;

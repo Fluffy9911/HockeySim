@@ -16,6 +16,8 @@ use crate::data::playing::{GameView, Skills};
 use crate::data::{player, projection};
 use crate::randoms::choices::biased_random_range;
 
+use crate::data::location::Places;
+
 #[derive(Serialize, Deserialize)]
 pub enum Type {
     SKATER,
@@ -35,7 +37,8 @@ pub enum Position {
 pub struct NameData{
     first_names: Vec<String>,
     last_names: Vec<String>,
-    team_names: Vec<String>
+    team_names: Vec<String>,
+    places: Vec<Places>
 
 
 
@@ -161,7 +164,7 @@ _=>PlayType::OFD
 
 }
 
-pub fn random_prospect(quality:f32,goalie:bool)-> Player {
+pub fn random_prospect(quality:f32,goalie:bool,names:&NameData)-> Player {
     let age = random_range(17..=19);
     let overall = biased_random_range(50,100,quality);
     let pt: Type;
@@ -176,18 +179,18 @@ pub fn random_prospect(quality:f32,goalie:bool)-> Player {
     let pos = random_position(goalie);
     let play = random_playtype_from_pos(&pos);
     let proj = projection::Projection::from_quality(quality);
-    let name = Player::random_name();
+    let name = names.random_full_name().unwrap();
     let skat_type = SkatingType::random();
     let skating = SkatingStats::random(quality,skat_type);
     let view = GameView::biased(quality);
     let skills = Skills::biased(quality);
-    let mut p = Player::new(name.0, name.1, /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj,view,skills);
+    let mut p = Player::new(name.clone(), name.clone(), /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj,view,skills);
     p.guess_overall();
     p
 
 
 }
-pub fn random_prospect_of_position(quality:f32,goalie:bool,pos:Position)-> Player {
+pub fn random_prospect_of_position(quality:f32,goalie:bool,pos:Position,names:&NameData)-> Player {
     let age = random_range(17..=19);
     let overall = biased_random_range(50,100,quality);
     let pt: Type;
@@ -202,20 +205,20 @@ pub fn random_prospect_of_position(quality:f32,goalie:bool,pos:Position)-> Playe
 
     let play = random_playtype_from_pos(&pos);
     let proj = Projection::from_quality(quality);
-    let name = Player::random_name();
+    let name = names.random_full_name().unwrap();
     let skat_type = SkatingType::random();
     let skating = SkatingStats::random(quality,skat_type);
     let view = GameView::biased(quality);
     let skills = Skills::biased(quality);
-    let mut p = Player::new(name.0, name.1, /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj,view,skills);
+    let mut p = Player::new(name.clone(), name.clone(), /* i8 */age, /* i8 */overall as i8, /* Type */pt, /* Position */pos, /* player::PlayType */play, /* SkatingStats */skating, /* std::option::Option<GoalieMovement> */gm, /* Projection */proj,view,skills);
     p.guess_overall();
     p
 
 
 }
 
-pub fn generate_prospect_line(bias:f32) -> Vec<Player> {
-    vec![player::random_prospect_of_position(bias, false, Position::LW), random_prospect_of_position(bias, false, Position::CENTER), random_prospect_of_position(bias, false, Position::RW)]
+pub fn generate_prospect_line(bias:f32, names:&NameData) -> Vec<Player> {
+    vec![player::random_prospect_of_position(bias, false, Position::LW,names), random_prospect_of_position(bias, false, Position::CENTER,names), random_prospect_of_position(bias, false, Position::RW,names)]
 }
 #[derive(Serialize, Deserialize)]
 pub struct Player {
@@ -538,7 +541,7 @@ impl Player {
 
 
 impl NameData {
-    pub fn new()-> NameData{ NameData{first_names:Vec::new(),last_names: Vec::new(),team_names: Vec::new()} }
+    pub fn new()-> NameData{ NameData{first_names:Vec::new(),last_names: Vec::new(),team_names: Vec::new(), places: Vec::new()} }
     fn get_path(name: &str) -> String {
         format!("data/NameData/{}.json", name)
     }
@@ -625,6 +628,18 @@ impl NameData {
 
     pub fn remove_team_name(&mut self, name: &str) {
         self.team_names.retain(|n| n != name);
+    }
+
+    pub fn add_place(&mut self, place :Places){
+
+        self.places.push(place);
+
+    }
+
+    pub fn random_place(&self) -> Option<&Places> {
+
+        self.places.choose(&mut rand::rng())
+
     }
 
     pub fn clear_all(&mut self) {

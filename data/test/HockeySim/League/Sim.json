@@ -1,0 +1,209 @@
+{
+  "current_date": {
+    "year": 2026,
+    "month": 9,
+    "day": 16
+  },
+  "leagues": [
+    {
+      "name": "Major Hockey League",
+      "level": "MAJOR_PRO",
+      "rules": {
+        "points_for_win": 2,
+        "points_for_overtime_loss": 1,
+        "points_for_loss": 0,
+        "max_roster_size": 23,
+        "playoff_series_length": 7,
+        "allow_shootout": true,
+        "parent_league": null,
+        "affiliated_minor_levels": [
+          "MINOR_PRO"
+        ]
+      },
+      "team_registry": [
+        {
+          "team_abbreviation": "EDM",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "CGY",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "VAN",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "SEA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "VGK",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "LAK",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "SJS",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "ANA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "TOR",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "MTL",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "BOS",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "OTT",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "TBL",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "FLA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "DET",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "EDM",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "CGY",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "VAN",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "SEA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "VGK",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "LAK",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "SJS",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "ANA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "TOR",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "MTL",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "BOS",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "OTT",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "TBL",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "FLA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "DET",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "EDM",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "CGY",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "VAN",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "SEA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "VGK",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "LAK",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "SJS",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "ANA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "TOR",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "MTL",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "BOS",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "OTT",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "TBL",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "FLA",
+          "level": "MAJOR_PRO"
+        },
+        {
+          "team_abbreviation": "DET",
+          "level": "MAJOR_PRO"
+        }
+      ],
+      "standings": [],
+      "free_agents": []
+    }
+  ]
+}

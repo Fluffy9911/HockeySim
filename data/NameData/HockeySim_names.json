@@ -1,5 +1,26 @@
 {
-  "first_names": [],
-  "last_names": [],
-  "team_names": []
+  "first_names": [
+    "Liam", "Olivia", "Noah", "Emma", "Oliver", "Ava", "Elijah", "Sophia",
+    "James", "Isabella", "William", "Mia", "Benjamin", "Charlotte",
+    "Lucas", "Amelia", "Henry", "Harper", "Alexander", "Evelyn",
+    "Daniel", "Abigail", "Matthew", "Ella", "Jackson", "Scarlett",
+    "Sebastian", "Grace", "David", "Chloe", "Joseph", "Victoria"
+  ],
+  "last_names": [
+    "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia",
+    "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez",
+    "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas",
+    "Taylor", "Moore", "Jackson", "Martin", "Lee", "Perez",
+    "Thompson", "White", "Harris", "Sanchez", "Clark",
+    "Ramirez", "Lewis", "Robinson"
+  ],
+  "team_names": [
+    "Lions", "Tigers", "Bears", "Wolves", "Eagles", "Sharks",
+    "Panthers", "Dragons", "Falcons", "Hawks", "Warriors",
+    "Knights", "Raptors", "Titans", "Spartans", "Bulldogs",
+    "Vikings", "Pirates", "Storm", "Thunder", "Blaze",
+    "Coyotes", "Rangers", "Jets", "Kings", "Giants"
+  ],
+  "places": [
+  ]
 }

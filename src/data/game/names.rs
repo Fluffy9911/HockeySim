@@ -9,6 +9,12 @@ teams:i32
 
 }
 
+impl Division {
+    pub fn atlantic() -> Division {
+        Division{name: "Atlantic".parse().unwrap(), teams:8}
+    }
+}
+
 #[derive(Serialize, Deserialize)]
 pub struct Conference{
 

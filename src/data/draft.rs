@@ -1,7 +1,7 @@
 
 use serde::{Deserialize, Serialize};
 use crate::data::player;
-use crate::data::player::Player;
+use crate::data::player::{NameData, Player};
 use crate::randoms::choices;
 
 #[derive(Serialize,Deserialize)]
@@ -36,14 +36,14 @@ impl Draft {
         Draft {growth_bias:growth,rounds : Vec::new(),picks_per_round : picks}
     }
 
-    pub fn new_draft_with_bias(bias:f32,teams:i8)-> Draft{
+    pub fn new_draft_with_bias(bias:f32,teams:i8,names:&NameData)-> Draft{
         let mut d = Draft::new_class(bias);
 
         for i in 1..7{
             d.create_round(i);
         }
 
-        d.create_class(bias,teams as i32);
+        d.create_class(bias,teams as i32,names);
         d
 
 
@@ -55,7 +55,7 @@ impl Draft {
 
     }
 
-    pub fn create_class(&mut self, bias:f32, teams:i32){
+    pub fn create_class(&mut self, bias:f32, teams:i32,names:&NameData){
         let mut index = 0;
         let rounds = self.rounds.len();
         for round in &mut self.rounds {
@@ -65,6 +65,7 @@ impl Draft {
                 index,
                 /* i32 */rounds as i32,
                 bias,
+                names
             );
         }
     }
@@ -75,7 +76,7 @@ impl Draft {
 
 impl Round {
 
-    pub fn generate_players(&mut self, amount:i32, round:i8,rounds:i32, bias: f32){
+    pub fn generate_players(&mut self, amount:i32, round:i8,rounds:i32, bias: f32,names:&NameData){
         let mut pos = round as i32;
         for i in 0..=amount {
             let pos = round as i32 + i;
@@ -89,7 +90,7 @@ impl Round {
                     /* f32 */32.0,
                 ),
 
-                rand::random_ratio(1,8)
+                rand::random_ratio(1,8),names
             );
 
             self.players.push(prospect);

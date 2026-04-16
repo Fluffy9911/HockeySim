@@ -11,3 +11,4 @@ pub mod game;
 pub mod draft;
 pub mod line;
 pub mod dates;
+pub mod location;

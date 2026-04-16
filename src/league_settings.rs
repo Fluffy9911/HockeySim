@@ -1,5 +1,8 @@
+use rand::RngExt;
+use serde::{Deserialize, Serialize};
 use crate::data::helper::PlayerRecord;
-use crate::data::player::Player;
+use crate::data::player;
+use crate::data::player::{NameData, Player};
 use crate::data::team::{Team, TeamLevel};
 use crate::sim;
 use crate::sim::SimRng;
@@ -16,6 +19,7 @@ pub struct SimulationSettings {
     pub randomness_weight: f32,
 }
 
+#[derive(Serialize,Deserialize)]
 pub struct League {
     pub name: String,
     level: TeamLevel,
@@ -24,7 +28,7 @@ pub struct League {
     standings: Vec<TeamStanding>,
     free_agents: Vec<Player>
 }
-
+#[derive(Serialize,Deserialize)]
 pub struct LeagueRules {
     points_for_win: i16,
     points_for_overtime_loss: i16,
@@ -35,12 +39,12 @@ pub struct LeagueRules {
     parent_league: Option<String>,
     affiliated_minor_levels: Vec<TeamLevel>,
 }
-
+#[derive(Serialize,Deserialize)]
 pub struct LeagueTeamEntry {
     team_abbreviation: String,
     level: TeamLevel
 }
-
+#[derive(Serialize,Deserialize)]
 pub struct TeamStanding {
     team_abbreviation: String,
     pub(crate) games_played: i16,
@@ -51,7 +55,7 @@ pub struct TeamStanding {
     pub(crate) goals_against: i16,
     pub(crate) points: i16,
 }
-
+#[derive(Serialize,Deserialize)]
 pub struct TeamProfile {
     overall: f32,
     offense: f32,
@@ -65,7 +69,7 @@ pub struct TeamProfile {
 pub struct GameContext {
     season_game_number: i16,
 }
-
+#[derive(Serialize,Deserialize)]
 pub struct SimulatedGame {
     home_team: String,
     away_team: String,
@@ -363,8 +367,14 @@ impl League {
             standings,
             free_agents:Vec::new()
         }
+
     }
 
+    pub fn add_team(&mut self,team:Team){
+        self.team_registry.push(LeagueTeamEntry::from_team(&team))
+
+
+    }
     pub fn name(&self) -> &str {
         &self.name
     }
@@ -829,5 +839,13 @@ pub fn add_free_agent(l: &mut League, p:Player){
 pub fn sort_agents_by_age(l: &mut League){
 
     l.free_agents.sort_by(|a, b| b.age.cmp(&a.age));
+
+}
+
+pub fn generate_free_agent(l:&mut League,quality:f32,names:&NameData){
+
+    let p= player::random_prospect(quality, /* bool */rand::rng().random_ratio(1,4), names);
+
+    add_free_agent(l,p);
 
 }
