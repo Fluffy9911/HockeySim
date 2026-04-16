@@ -79,7 +79,7 @@ impl SaveInfo {
             &FileType::CORE_DATA,
             &format!("{}/core.json", save_dir),
             &config
-        ).expect("Failed to write core.json");
+        ).expect(format!("Failed to write core.json file {}, {}", save_dir,&format!("{}/core.json", save_dir)).as_str());
 
         // Add to list
         self.saves.push(name.to_string());
