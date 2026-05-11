@@ -6,6 +6,9 @@ use crate::data::staff::{StaffMember, StaffRole};
 use crate::data::team::{Team, TeamLevel};
 use crate::league_settings::{League, LeagueRules, SimulatedGame, SimulationSettings, TeamProfile, TeamStanding};
 
+
+
+
 pub(crate) fn build_team_profile(team: &Team, league: Option<&League>, settings: &SimulationSettings) -> TeamProfile {
     let offense = offense_score(team.roster());
     let defense = defense_score(team.roster());

@@ -16,7 +16,7 @@ use crate::data::playing::{GameView, Skills};
 use crate::data::{player, projection};
 use crate::randoms::choices::biased_random_range;
 
-use crate::data::location::Places;
+use crate::data::location::{Location, Places};
 
 #[derive(Serialize, Deserialize)]
 pub enum Type {
@@ -225,6 +225,7 @@ pub struct Player {
     first_name: String,
     last_name: String,
     pub age:i8,
+    
     overall:i8,
     player_type: Type,
     position: Position,
@@ -234,12 +235,10 @@ pub struct Player {
     projection: Projection,
     view: GameView,
     skills: Skills
+
+
+
 }
-
-impl Player {
-
-}
-
 impl Player {
     pub fn new(first_name: String, last_name: String, age:i8,overall:i8,
         player_type: Type,

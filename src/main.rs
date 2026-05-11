@@ -31,6 +31,7 @@ savedata::create_initial_state(&mut ctx.core);
 
     let mut sim = sim_engine::Sim::create_or_load(&ctx);
 
+//sim.add_league(League::new("NHL".parse().unwrap(),Vec::new()));
 
     let t1 = Team::new(TeamIdentity::new("Edmonton".parse().unwrap(), "Edmonton Oilers".parse().unwrap(), "EDM".parse().unwrap(), Conference::west(), Division::pacific()), Vec::new(), Vec::new());
     let t2 = Team::new(TeamIdentity::new("Calgary".parse().unwrap(), "Calgary Flames".parse().unwrap(), "CGY".parse().unwrap(), Conference::west(), Division::pacific()), Vec::new(), Vec::new());
@@ -79,9 +80,7 @@ savedata::create_initial_state(&mut ctx.core);
         league.add_team(t13);
         league.add_team(t14);
         league.add_team(t15);
-        let s = sim_engine::Schedule::schedule_season_games(&GameDate::new(2025, 1, 1).unwrap(), &GameDate::new(2026, 1, 1).unwrap(), Vec::new(), league);
-
-        ctx.write_struct(FileType::LEAGUE_DATA, "schedule.json", &s);
+     
 
     }
 

@@ -4,8 +4,8 @@ use crate::data::helper::PlayerRecord;
 use crate::data::player;
 use crate::data::player::{NameData, Player};
 use crate::data::team::{Team, TeamLevel};
-use crate::sim;
-use crate::sim::SimRng;
+use crate::sim_helper;
+use crate::sim_helper::*;
 
 pub struct SimulationEngine {
     settings: SimulationSettings,
@@ -119,7 +119,7 @@ impl SimulationEngine {
     }
 
     pub fn analyze_team(&self, team: &Team, league: Option<&League>) -> TeamProfile {
-        sim::build_team_profile(team, league, &self.settings)
+        sim_helper::build_team_profile(team, league, &self.settings)
     }
 
     pub fn simulate_game(
@@ -134,14 +134,14 @@ impl SimulationEngine {
         let away_profile = self.analyze_team(away_team, league);
 
         let mut rng = SimRng::new(seed ^ context.season_game_number as u64);
-        let game_chaos = sim::centered_random(&mut rng) * self.settings.randomness_weight() * 0.55;
-        let home_variance = sim::centered_random(&mut rng) * self.settings.randomness_weight() * 0.75 + game_chaos;
-        let away_variance = sim::centered_random(&mut rng) * self.settings.randomness_weight() * 0.75 + game_chaos;
+        let game_chaos = sim_helper::centered_random(&mut rng) * self.settings.randomness_weight() * 0.55;
+        let home_variance = sim_helper::centered_random(&mut rng) * self.settings.randomness_weight() * 0.75 + game_chaos;
+        let away_variance = sim_helper::centered_random(&mut rng) * self.settings.randomness_weight() * 0.75 + game_chaos;
         let home_strength = home_profile.overall()
             + self.settings.home_ice_advantage()
-            + sim::weighted_gap(home_profile.coaching(), away_profile.coaching(), self.settings.coach_weight())
-            + sim::weighted_gap(home_profile.style_bias(), away_profile.style_bias(), self.settings.play_style_weight())
-            + sim::weighted_gap(
+            + sim_helper::weighted_gap(home_profile.coaching(), away_profile.coaching(), self.settings.coach_weight())
+            + sim_helper::weighted_gap(home_profile.style_bias(), away_profile.style_bias(), self.settings.play_style_weight())
+            + sim_helper::weighted_gap(
                 home_profile.standings_factor(),
                 away_profile.standings_factor(),
                 self.settings.standings_weight(),
@@ -149,21 +149,21 @@ impl SimulationEngine {
             + home_variance;
         let away_strength = away_profile.overall() + away_variance;
 
-        let base_home = sim::team_goal_expectancy(home_profile.offense(), away_profile.defense(), away_profile.goaltending());
-        let base_away = sim::team_goal_expectancy(away_profile.offense(), home_profile.defense(), home_profile.goaltending());
+        let base_home = sim_helper::team_goal_expectancy(home_profile.offense(), away_profile.defense(), away_profile.goaltending());
+        let base_away = sim_helper::team_goal_expectancy(away_profile.offense(), home_profile.defense(), home_profile.goaltending());
 
-        let home_goals = sim::finalize_goal_total(
+        let home_goals = sim_helper::finalize_goal_total(
             base_home + (home_strength - away_strength) * 1.1,
             &self.settings,
             &mut rng,
         );
-        let away_goals = sim::finalize_goal_total(
+        let away_goals = sim_helper::finalize_goal_total(
             base_away + (away_strength - home_strength) * 0.9,
             &self.settings,
             &mut rng,
         );
 
-        let (home_goals, away_goals, overtime, shootout) = sim::resolve_tie(home_goals, away_goals, &mut rng);
+        let (home_goals, away_goals, overtime, shootout) = sim_helper::resolve_tie(home_goals, away_goals, &mut rng);
 
         SimulatedGame {
             home_team: home_team.identity().abbreviation().to_string(),
@@ -229,7 +229,7 @@ impl SimulationEngine {
                 lower_seed_wins += 1;
             }
 
-            let decision = sim::format_decision(&game);
+            let decision = sim_helper::format_decision(&game);
             let matchup = format!(
                 "{} at {}",
                 game.away_team(),
@@ -258,8 +258,8 @@ impl SimulationEngine {
                 score_line,
                 decision,
                 momentum_note,
-                home_profile_summary: sim::summarize_profile(game.home_team(), game.home_profile()),
-                away_profile_summary: sim::summarize_profile(game.away_team(), game.away_profile()),
+                home_profile_summary: sim_helper::summarize_profile(game.home_team(), game.home_profile()),
+                away_profile_summary: sim_helper::summarize_profile(game.away_team(), game.away_profile()),
                 game,
             });
         }
@@ -419,7 +419,7 @@ impl League {
     }
 
     pub fn record_game(&mut self, game: &SimulatedGame) {
-        sim::update_standing(
+        sim_helper::update_standing(
             &mut self.standings,
             &self.rules,
             &game.home_team,
@@ -427,7 +427,7 @@ impl League {
             game.away_goals,
             game.overtime,
         );
-        sim::update_standing(
+        sim_helper::update_standing(
             &mut self.standings,
             &self.rules,
             &game.away_team,

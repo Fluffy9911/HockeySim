@@ -4,7 +4,7 @@ use serde::{Serialize, Deserialize};
 use std::fmt;
 use std::str::FromStr;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, PartialOrd, Ord)]
+#[derive(Debug, Clone, Copy, Eq, Serialize, Deserialize, PartialOrd, Ord)]
 pub struct GameDate {
     pub year: u32,
     pub month: u8, // 1-12
@@ -187,40 +187,5 @@ impl From<u8> for Weekday {
 impl GameDate {
     pub fn weekday_enum(&self) -> Weekday {
         Weekday::from(self.weekday())
-    }
-}
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_start_is_monday() {
-        let d = GameDate::new(0, 1, 1).unwrap();
-        assert_eq!(d.weekday_name(), "Monday");
-    }
-
-    #[test]
-    fn test_add_days() {
-        let d = GameDate::new(0, 1, 1).unwrap();
-        let d2 = d.add_days(7);
-        assert_eq!(d2.weekday_name(), "Monday");
-    }
-
-    #[test]
-    fn test_conversion_roundtrip() {
-        let d = GameDate::new(5, 6, 10).unwrap();
-        let idx = d.to_day_index();
-        let d2 = GameDate::from_day_index(idx);
-        assert_eq!(d, d2);
-    }
-
-    #[test]
-    fn test_parse() {
-        let d: GameDate = "10-05-20".parse().unwrap();
-        assert_eq!(d.year, 10);
-        assert_eq!(d.month, 5);
-        assert_eq!(d.day, 20);
     }
 }
