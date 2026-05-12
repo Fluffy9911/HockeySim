@@ -2,7 +2,7 @@ use std::sync::OnceLock;
 use serde::{Deserialize, Serialize};
 use crate::data::dates::GameDate;
 use crate::league_settings::{League, SimulatedGame, SimulationEngine};
-use crate::savestate::savedata::SaveContext;
+use crate::savestate::savedata::{SaveContext, SaveInfo};
 
 
 
@@ -24,7 +24,14 @@ static SIM_CONTEXT: OnceLock<SaveContext> = OnceLock::new();
 
 
 
+pub fn begin_sim(name:&str){
 
+println!("Creating Sim from ID: {}",name);
+    ENGINE.set(SimulationEngine::default());
+println!("loading Resources for sim...");
+    SIM_CONTEXT.set(SaveContext::new(SaveInfo::new().create_save(name)));
+
+}
 
 
 #[derive(Serialize,Deserialize)]

@@ -1,7 +1,8 @@
 use rand::RngExt;
+use crate::data::general_data::{PlayType, Position, Type};
 use crate::data::helper::PlayerRecord;
 use crate::data::player;
-use crate::data::player::{PlayType, Player, Position, Type};
+use crate::data::player::Player;
 use crate::data::staff::{StaffMember, StaffRole};
 use crate::data::team::{Team, TeamLevel};
 use crate::league_settings::{League, LeagueRules, SimulatedGame, SimulationSettings, TeamProfile, TeamStanding};

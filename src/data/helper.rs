@@ -1,8 +1,8 @@
-use crate::data::contract::{Contract, ContractType};
-use crate::data::movement::{GoalieMovement, SkatingStats, SkatingType};
-use crate::data::player::{PlayType as PlayerPlayType, PlayType, Player, Position, Type};
-use crate::data::stats::{GoalieStats, PlayerStats};
+use crate::data::contract::Contract;
+use crate::data::player::Player;
+use crate::data::stats::PlayerStats;
 use serde::{Deserialize, Serialize};
+use crate::data::general_data::Position;
 
 #[derive(Serialize, Deserialize)]
 pub enum DraftStatus {

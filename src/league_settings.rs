@@ -1,8 +1,8 @@
 use rand::RngExt;
 use serde::{Deserialize, Serialize};
-use crate::data::helper::PlayerRecord;
+use crate::data::general_data::NameData;
 use crate::data::player;
-use crate::data::player::{NameData, Player};
+use crate::data::player::Player;
 use crate::data::team::{Team, TeamLevel};
 use crate::sim_helper;
 use crate::sim_helper::*;

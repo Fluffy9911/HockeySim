@@ -4,7 +4,7 @@ use std::path::Path;
 
 use serde::{Deserialize, Serialize};
 
-use crate::data::player::NameData;
+use crate::data::general_data::NameData;
 use crate::savestate::savedata;
 
 // =========================

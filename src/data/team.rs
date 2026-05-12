@@ -5,7 +5,7 @@ use crate::data::stats::TeamStats;
 use serde::{Deserialize, Serialize};
 use crate::data::game::names::*;
 use crate::data::line::{GoalieTandem, Line, Loadout, Pairing};
-use crate::data::player::Position;
+use crate::data::general_data::Position;
 
 #[derive(Serialize, Deserialize,Copy,Clone)]
 pub enum TeamLevel {

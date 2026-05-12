@@ -1,7 +1,8 @@
 
 use serde::{Deserialize, Serialize};
+use crate::data::general_data::NameData;
 use crate::data::player;
-use crate::data::player::{NameData, Player};
+use crate::data::player::Player;
 use crate::randoms::choices;
 
 #[derive(Serialize,Deserialize)]
