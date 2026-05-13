@@ -61,6 +61,125 @@
     "Nova Blades"
   ],
   "places": [
-
+    {
+      "country": "Canada",
+      "places": [
+        "Vancouver",
+        "Toronto",
+        "Montreal",
+        "Calgary",
+        "Edmonton",
+        "Ottawa",
+        "Winnipeg",
+        "Halifax",
+        "Victoria",
+        "Quebec City",
+        "Saskatoon",
+        "Regina",
+        "Kelowna",
+        "Red Deer",
+        "St. John's"
+      ]
+    },
+    {
+      "country": "United States",
+      "places": [
+        "New York",
+        "Los Angeles",
+        "Chicago",
+        "Houston",
+        "Miami",
+        "Seattle",
+        "Denver",
+        "Boston",
+        "Dallas",
+        "Phoenix",
+        "Atlanta",
+        "San Francisco",
+        "Las Vegas",
+        "Portland",
+        "Detroit"
+      ]
+    },
+    {
+      "country": "United Kingdom",
+      "places": [
+        "London",
+        "Manchester",
+        "Liverpool",
+        "Birmingham",
+        "Leeds",
+        "Glasgow",
+        "Edinburgh",
+        "Bristol",
+        "Cardiff",
+        "Belfast"
+      ]
+    },
+    {
+      "country": "Germany",
+      "places": [
+        "Berlin",
+        "Munich",
+        "Hamburg",
+        "Frankfurt",
+        "Cologne",
+        "Stuttgart",
+        "Dortmund",
+        "Leipzig"
+      ]
+    },
+    {
+      "country": "Japan",
+      "places": [
+        "Tokyo",
+        "Osaka",
+        "Kyoto",
+        "Sapporo",
+        "Nagoya",
+        "Fukuoka",
+        "Yokohama",
+        "Kobe"
+      ]
+    },
+    {
+      "country": "Australia",
+      "places": [
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Perth",
+        "Adelaide",
+        "Canberra",
+        "Gold Coast",
+        "Hobart"
+      ]
+    },
+    {
+      "country": "Brazil",
+      "places": [
+        "Rio de Janeiro",
+        "Sao Paulo",
+        "Brasilia",
+        "Salvador",
+        "Fortaleza",
+        "Recife",
+        "Curitiba",
+        "Porto Alegre"
+      ]
+    },
+    {
+      "country": "France",
+      "places": [
+        "Paris",
+        "Lyon",
+        "Marseille",
+        "Nice",
+        "Toulouse",
+        "Bordeaux",
+        "Nantes",
+        "Lille"
+      ]
+    }
   ]
 }

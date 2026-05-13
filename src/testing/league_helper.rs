@@ -27,12 +27,12 @@ pub fn allocate_team(l:&League,team:&Team) ->  std::io::Result<()>{
 }
 
 pub fn team_path(l: &League, team: &Team) -> String {
-    league_path(l) + "/" + team.identity().name()
+    league_path(l) + "/" + team.name()
 }
 
 pub fn write_team_data(l:&League, team:&Team) -> std::io::Result<()> {
 
-    fs::write(team_path(l,team)+"/"+ &*team.identity().name().to_owned() +"_data", serde_json::to_string_pretty(&team).unwrap())
+    fs::write(team_path(l,team)+"/"+ &*team.name().to_owned() +"_data", serde_json::to_string_pretty(&team).unwrap())
 
 
 }

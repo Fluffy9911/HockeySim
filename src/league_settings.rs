@@ -1,9 +1,12 @@
 use rand::RngExt;
 use serde::{Deserialize, Serialize};
+use std::fs;
+use std::path::Path;
 use crate::data::general_data::NameData;
 use crate::data::player;
 use crate::data::player::Player;
 use crate::data::team::{Team, TeamLevel};
+use crate::savestate::savedata::{create_path_for_type, FileType, SaveContext};
 use crate::sim_helper;
 use crate::sim_helper::*;
 
@@ -24,7 +27,7 @@ pub struct League {
     pub name: String,
     level: TeamLevel,
     rules: LeagueRules,
-    team_registry: Vec<LeagueTeamEntry>,
+    teams: Vec<Team>,
     standings: Vec<TeamStanding>,
     free_agents: Vec<Player>
 }
@@ -38,11 +41,6 @@ pub struct LeagueRules {
     allow_shootout: bool,
     parent_league: Option<String>,
     affiliated_minor_levels: Vec<TeamLevel>,
-}
-#[derive(Serialize,Deserialize)]
-pub struct LeagueTeamEntry {
-    team_abbreviation: String,
-    level: TeamLevel
 }
 #[derive(Serialize,Deserialize)]
 pub struct TeamStanding {
@@ -101,6 +99,15 @@ pub struct SeriesGameLog {
     home_profile_summary: String,
     away_profile_summary: String,
     game: SimulatedGame,
+}
+
+#[derive(Serialize, Deserialize)]
+struct LeagueDiskData {
+    name: String,
+    level: TeamLevel,
+    rules: LeagueRules,
+    standings: Vec<TeamStanding>,
+    free_agents: Vec<Player>,
 }
 
 impl SimulationEngine {
@@ -166,8 +173,8 @@ impl SimulationEngine {
         let (home_goals, away_goals, overtime, shootout) = sim_helper::resolve_tie(home_goals, away_goals, &mut rng);
 
         SimulatedGame {
-            home_team: home_team.identity().abbreviation().to_string(),
-            away_team: away_team.identity().abbreviation().to_string(),
+            home_team: home_team.abbreviation().to_string(),
+            away_team: away_team.abbreviation().to_string(),
             home_goals,
             away_goals,
             overtime,
@@ -199,13 +206,13 @@ impl SimulationEngine {
                 (
                     higher_seed,
                     lower_seed,
-                    higher_seed.identity().abbreviation().to_string(),
+                    higher_seed.abbreviation().to_string(),
                 )
             } else {
                 (
                     lower_seed,
                     higher_seed,
-                    lower_seed.identity().abbreviation().to_string(),
+                    lower_seed.abbreviation().to_string(),
                 )
             };
 
@@ -245,9 +252,9 @@ impl SimulationEngine {
             let momentum_note = format!(
                 "Series after Game {}: {} {}, {} {}",
                 game_number,
-                higher_seed.identity().abbreviation(),
+                higher_seed.abbreviation(),
                 higher_seed_wins,
-                lower_seed.identity().abbreviation(),
+                lower_seed.abbreviation(),
                 lower_seed_wins,
             );
 
@@ -265,14 +272,14 @@ impl SimulationEngine {
         }
 
         let winner = if higher_seed_wins > lower_seed_wins {
-            higher_seed.identity().abbreviation().to_string()
+            higher_seed.abbreviation().to_string()
         } else {
-            lower_seed.identity().abbreviation().to_string()
+            lower_seed.abbreviation().to_string()
         };
 
         PlayoffSeries {
-            higher_seed: higher_seed.identity().abbreviation().to_string(),
-            lower_seed: lower_seed.identity().abbreviation().to_string(),
+            higher_seed: higher_seed.abbreviation().to_string(),
+            lower_seed: lower_seed.abbreviation().to_string(),
             wins_needed: 4,
             higher_seed_wins,
             lower_seed_wins,
@@ -336,7 +343,7 @@ impl League {
             name,
             level: TeamLevel::MAJOR_PRO,
             rules: LeagueRules::nhl_style(),
-            team_registry: Vec::new(),
+            teams: Vec::new(),
             standings,free_agents:Vec::new()
         }
     }
@@ -346,7 +353,7 @@ impl League {
             name,
             level: TeamLevel::MAJOR_PRO,
             rules: LeagueRules::nhl_style(),
-            team_registry: Vec::new(),
+            teams: Vec::new(),
             standings: Vec::new(),
             free_agents:Vec::new()
         }
@@ -356,14 +363,14 @@ impl League {
         name: String,
         level: TeamLevel,
         rules: LeagueRules,
-        team_registry: Vec<LeagueTeamEntry>,
+        teams: Vec<Team>,
         standings: Vec<TeamStanding>,
     ) -> League {
         League {
             name,
             level,
             rules,
-            team_registry,
+            teams,
             standings,
             free_agents:Vec::new()
         }
@@ -371,9 +378,14 @@ impl League {
     }
 
     pub fn add_team(&mut self,team:Team){
-        self.team_registry.push(LeagueTeamEntry::from_team(&team))
-
-
+        if self
+            .standing_for_team(team.abbreviation())
+            .is_none()
+        {
+            self.standings
+                .push(TeamStanding::new(team.abbreviation().to_string()));
+        }
+        self.teams.push(team)
     }
     pub fn name(&self) -> &str {
         &self.name
@@ -387,8 +399,12 @@ impl League {
         &self.rules
     }
 
-    pub fn team_registry(&self) -> &[LeagueTeamEntry] {
-        &self.team_registry
+    pub fn teams(&self) -> &[Team] {
+        &self.teams
+    }
+
+    pub fn teams_mut(&mut self) -> &mut [Team] {
+        &mut self.teams
     }
 
     pub fn standings(&self) -> &[TeamStanding] {
@@ -403,18 +419,11 @@ impl League {
 
     pub fn register_team(&mut self, team: &Team) {
         if self
-            .team_registry
+            .teams
             .iter()
-            .all(|entry| entry.team_abbreviation() != team.identity().abbreviation())
+            .all(|entry| entry.abbreviation() != team.abbreviation())
         {
-            self.team_registry.push(LeagueTeamEntry::from_team(team));
-        }
-        if self
-            .standing_for_team(team.identity().abbreviation())
-            .is_none()
-        {
-            self.standings
-                .push(TeamStanding::new(team.identity().abbreviation().to_string()));
+            self.add_team(clone_team(team));
         }
     }
 
@@ -443,6 +452,96 @@ impl League {
                 .then(right.wins().cmp(&left.wins()))
         });
     }
+
+    pub fn save_to_context(&self, ctx: &SaveContext) -> Result<(), String> {
+        let league_dir = self.league_dir(ctx);
+        let teams_dir = format!("{}/teams", league_dir);
+        fs::create_dir_all(&teams_dir).map_err(|error| error.to_string())?;
+
+        let disk_data = LeagueDiskData {
+            name: self.name.clone(),
+            level: self.level,
+            rules: clone_league_rules(&self.rules),
+            standings: clone_standings(&self.standings),
+            free_agents: clone_players(&self.free_agents),
+        };
+
+        let league_json = serde_json::to_string_pretty(&disk_data).map_err(|error| error.to_string())?;
+        fs::write(self.league_file_path(ctx), league_json).map_err(|error| error.to_string())?;
+
+        if Path::new(&teams_dir).exists() {
+            for entry in fs::read_dir(&teams_dir).map_err(|error| error.to_string())? {
+                let entry = entry.map_err(|error| error.to_string())?;
+                let path = entry.path();
+                if path.is_file() {
+                    fs::remove_file(path).map_err(|error| error.to_string())?;
+                }
+            }
+        }
+
+        for team in &self.teams {
+            let team_path = format!("{}/{}.json", teams_dir, team.abbreviation());
+            let team_json = serde_json::to_string_pretty(team).map_err(|error| error.to_string())?;
+            fs::write(team_path, team_json).map_err(|error| error.to_string())?;
+        }
+
+        Ok(())
+    }
+
+    pub fn load_from_context(ctx: &SaveContext, league_name: &str) -> Result<League, String> {
+        let league_root = create_path_for_type(ctx.core(), &FileType::LEAGUE_DATA);
+        let league_dir = format!("{}/{}", league_root, league_name);
+        let league_file = format!("{}/{}.json", league_dir, league_name);
+        let disk_data: LeagueDiskData = serde_json::from_str(
+            &fs::read_to_string(&league_file).map_err(|error| error.to_string())?,
+        )
+        .map_err(|error| error.to_string())?;
+
+        let teams_dir = format!("{}/teams", league_dir);
+        let mut teams = Vec::new();
+        if Path::new(&teams_dir).exists() {
+            let mut team_paths = fs::read_dir(&teams_dir)
+                .map_err(|error| error.to_string())?
+                .filter_map(|entry| entry.ok().map(|item| item.path()))
+                .filter(|path| path.is_file())
+                .collect::<Vec<_>>();
+            team_paths.sort();
+
+            for path in team_paths {
+                let team: Team = serde_json::from_str(
+                    &fs::read_to_string(path).map_err(|error| error.to_string())?,
+                )
+                .map_err(|error| error.to_string())?;
+                teams.push(team);
+            }
+        }
+
+        Ok(League {
+            name: disk_data.name,
+            level: disk_data.level,
+            rules: disk_data.rules,
+            teams,
+            standings: disk_data.standings,
+            free_agents: disk_data.free_agents,
+        })
+    }
+
+    fn league_dir(&self, ctx: &SaveContext) -> String {
+        format!(
+            "{}/{}",
+            create_path_for_type(ctx.core(), &FileType::LEAGUE_DATA),
+            self.name
+        )
+    }
+
+    fn league_file_path(&self, ctx: &SaveContext) -> String {
+        format!("{}/{}.json", self.league_dir(ctx), self.name)
+    }
+
+    pub fn add_new_free_agent(&mut self,new_free_agent:Player){
+        self.free_agents.push(new_free_agent);
+    }
+
 }
 
 impl LeagueRules {
@@ -489,36 +588,6 @@ impl LeagueRules {
     pub fn allow_shootout(&self) -> bool { self.allow_shootout }
     pub fn parent_league(&self) -> Option<&str> { self.parent_league.as_deref() }
     pub fn affiliated_minor_levels(&self) -> &[TeamLevel] { &self.affiliated_minor_levels }
-}
-
-impl LeagueTeamEntry {
-    pub fn new(
-        team_abbreviation: String,
-        level: TeamLevel
-
-    ) -> LeagueTeamEntry {
-        LeagueTeamEntry {
-            team_abbreviation,
-            level
-        }
-    }
-
-    pub fn from_team(team: &Team) -> LeagueTeamEntry {
-        LeagueTeamEntry {
-            team_abbreviation: team.identity().abbreviation().to_string(),
-            level: team.level().to_owned().clone()
-        }
-    }
-
-    pub fn team_abbreviation(&self) -> &str {
-        &self.team_abbreviation
-    }
-
-    pub fn level(&self) -> &TeamLevel {
-        &self.level
-    }
-
-
 }
 
 impl TeamStanding {
@@ -848,4 +917,46 @@ pub fn generate_free_agent(l:&mut League,quality:f32,names:&NameData){
 
     add_free_agent(l,p);
 
+}
+
+fn clone_league_rules(rules: &LeagueRules) -> LeagueRules {
+    LeagueRules::new(
+        rules.points_for_win,
+        rules.points_for_overtime_loss,
+        rules.points_for_loss,
+        rules.max_roster_size,
+        rules.playoff_series_length,
+        rules.allow_shootout,
+        rules.parent_league.clone(),
+        rules.affiliated_minor_levels.to_vec(),
+    )
+}
+
+fn clone_standings(standings: &[TeamStanding]) -> Vec<TeamStanding> {
+    standings
+        .iter()
+        .map(|standing| {
+            TeamStanding::new_full(
+                standing.team_abbreviation.clone(),
+                standing.games_played,
+                standing.wins,
+                standing.losses,
+                standing.overtime_losses,
+                standing.goals_for,
+                standing.goals_against,
+                standing.points,
+            )
+        })
+        .collect()
+}
+
+fn clone_players(players: &[Player]) -> Vec<Player> {
+    players
+        .iter()
+        .map(|player| serde_json::from_str(&serde_json::to_string(player).unwrap()).unwrap())
+        .collect()
+}
+
+fn clone_team(team: &Team) -> Team {
+    serde_json::from_str(&serde_json::to_string(team).unwrap()).unwrap()
 }

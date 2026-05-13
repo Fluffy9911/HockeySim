@@ -6,8 +6,8 @@ use crate::savestate::savedata::{SaveContext, SaveInfo};
 
 
 
-static ENGINE: OnceLock<SimulationEngine> = OnceLock::new();
-static SIM_CONTEXT: OnceLock<SaveContext> = OnceLock::new();
+pub static ENGINE: OnceLock<SimulationEngine> = OnceLock::new();
+pub static SIM_CONTEXT: OnceLock<SaveContext> = OnceLock::new();
 
 
 
@@ -140,7 +140,7 @@ impl Schedule {
     ) -> Schedule {
         let mut schedule = Schedule::new();
 
-        let team_count = league.team_registry().len();
+        let team_count = league.teams().len();
         let max_per_day = team_count / 2;
 
 

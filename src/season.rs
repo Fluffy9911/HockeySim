@@ -1,5 +1,6 @@
 use crate::data::contract::{ContractLimits, TeamContractSettings};
-use crate::data::helper::PlayerRecord;
+use crate::data::player::Player;
+use crate::data::general_data::Position;
 use crate::data::staff::{StaffDevelopment, StaffMember, StaffRatings, StaffRole};
 use crate::data::stats::TeamStats;
 use crate::data::team::{Team, TeamLevel};
@@ -116,14 +117,14 @@ impl LeagueState {
                 for game_number in 0..games_per_matchup {
                     let home_first = game_number % 2 == 0;
                     let home = if home_first {
-                        self.teams[i].identity().abbreviation().to_string()
+                        self.teams[i].abbreviation().to_string()
                     } else {
-                        self.teams[j].identity().abbreviation().to_string()
+                        self.teams[j].abbreviation().to_string()
                     };
                     let away = if home_first {
-                        self.teams[j].identity().abbreviation().to_string()
+                        self.teams[j].abbreviation().to_string()
                     } else {
-                        self.teams[i].identity().abbreviation().to_string()
+                        self.teams[i].abbreviation().to_string()
                     };
                     schedule.push(ScheduledGame::new(day, home, away));
                     day += 1;
@@ -160,14 +161,14 @@ impl LeagueState {
             for j in (i + 1)..team_count {
                 schedule.push(ScheduledGame::new(
                     day,
-                    self.teams[team_indices[i]].identity().abbreviation().to_string(),
-                    self.teams[team_indices[j]].identity().abbreviation().to_string(),
+                    self.teams[team_indices[i]].abbreviation().to_string(),
+                    self.teams[team_indices[j]].abbreviation().to_string(),
                 ));
                 day += 1;
                 schedule.push(ScheduledGame::new(
                     day,
-                    self.teams[team_indices[j]].identity().abbreviation().to_string(),
-                    self.teams[team_indices[i]].identity().abbreviation().to_string(),
+                    self.teams[team_indices[j]].abbreviation().to_string(),
+                    self.teams[team_indices[i]].abbreviation().to_string(),
                 ));
                 day += 1;
                 games_per_team[i] += 2;
@@ -188,13 +189,13 @@ impl LeagueState {
                     let home_is_left = (round + i + j) % 2 == 0;
                     let (home, away) = if home_is_left {
                         (
-                            self.teams[team_indices[i]].identity().abbreviation().to_string(),
-                            self.teams[team_indices[j]].identity().abbreviation().to_string(),
+                            self.teams[team_indices[i]].abbreviation().to_string(),
+                            self.teams[team_indices[j]].abbreviation().to_string(),
                         )
                     } else {
                         (
-                            self.teams[team_indices[j]].identity().abbreviation().to_string(),
-                            self.teams[team_indices[i]].identity().abbreviation().to_string(),
+                            self.teams[team_indices[j]].abbreviation().to_string(),
+                            self.teams[team_indices[i]].abbreviation().to_string(),
                         )
                     };
 
@@ -328,7 +329,7 @@ struct TeamBuilder {
     affiliate_team_abbreviations: Vec<String>,
     team_stats: TeamStats,
     contract_settings: TeamContractSettings,
-    roster: Vec<PlayerRecord>,
+    roster: Vec<Player>,
     staff: Vec<StaffMember>,
 }
 
@@ -742,13 +743,13 @@ fn apply_player_boxscore(team: &mut Team, goals_for: i16, goals_against: i16, sh
     let goalie_index = team
         .roster()
         .iter()
-        .position(|player| matches!(player.player().position(), crate::data::player::Position::GOALIE));
+        .position(|player| matches!(player.position(), Position::GOALIE));
     let skater_indices: Vec<usize> = team
         .roster()
         .iter()
         .enumerate()
         .filter_map(|(index, player)| {
-            if matches!(player.player().position(), crate::data::player::Position::GOALIE) {
+            if matches!(player.position(), Position::GOALIE) {
                 None
             } else {
                 Some(index)
@@ -873,7 +874,7 @@ fn write_staff(output: &mut String, staff_member: &StaffMember) {
 fn find_team_index(teams: &[Team], abbreviation: &str) -> Result<usize, String> {
     teams
         .iter()
-        .position(|team| team.identity().abbreviation() == abbreviation)
+        .position(|team| team.abbreviation() == abbreviation)
         .ok_or_else(|| format!("missing team: {abbreviation}"))
 }
 

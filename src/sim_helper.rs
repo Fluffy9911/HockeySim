@@ -1,6 +1,5 @@
 use rand::RngExt;
 use crate::data::general_data::{PlayType, Position, Type};
-use crate::data::helper::PlayerRecord;
 use crate::data::player;
 use crate::data::player::Player;
 use crate::data::staff::{StaffMember, StaffRole};
@@ -31,19 +30,19 @@ pub(crate) fn build_team_profile(team: &Team, league: Option<&League>, settings:
     )
 }
 
-fn offense_score(roster: &[PlayerRecord]) -> f32 {
+fn offense_score(roster: &[Player]) -> f32 {
     if roster.is_empty() {
         return 0.25;
     }
 
     let total = roster
         .iter()
-        .filter(|player| !matches!(player.player().position(), Position::GOALIE))
+        .filter(|player| !matches!(player.position(), Position::GOALIE))
         .map(|player| {
-            let skating = player.player().skate_stats();
+            let skating = player.skate_stats();
             let base = (skating.speed() as f32 + skating.edges() as f32 + skating.acceleration() as f32) / 300.0;
-            let projection = player.player().projection().development_profile().ceiling() as f32 / 100.0;
-            let style = match player.player().play_type() {
+            let projection = player.projection().development_profile().ceiling() as f32 / 100.0;
+            let style = match player.play_type() {
                 PlayType::SNIPER | PlayType::PLAYMAKER | PlayType::OFD => 0.10,
                 PlayType::PWF => 0.07,
                 _ => 0.03,
@@ -55,24 +54,24 @@ fn offense_score(roster: &[PlayerRecord]) -> f32 {
     (total / roster.len() as f32).clamp(0.0, 1.5)
 }
 
-fn defense_score(roster: &[PlayerRecord]) -> f32 {
+fn defense_score(roster: &[Player]) -> f32 {
     if roster.is_empty() {
         return 0.25;
     }
 
     let total = roster
         .iter()
-        .filter(|player| !matches!(player.player().position(), Position::GOALIE))
+        .filter(|player| !matches!(player.position(), Position::GOALIE))
         .map(|player| {
-            let skating = player.player().skate_stats();
+            let skating = player.skate_stats();
             let base = (skating.edges() as f32 * 0.45 + skating.acceleration() as f32 * 0.25 + skating.speed() as f32 * 0.20)
                 / 100.0;
-            let play_bonus = match player.player().play_type() {
+            let play_bonus = match player.play_type() {
                 PlayType::DFD | PlayType::DF => 0.18,
                 PlayType::PWF => 0.10,
                 _ => 0.03,
             };
-            let position_bonus = match player.player().position() {
+            let position_bonus = match player.position() {
                 Position::RD | Position::LD => 0.10,
                 _ => 0.04,
             };
@@ -83,10 +82,10 @@ fn defense_score(roster: &[PlayerRecord]) -> f32 {
     (total / roster.len() as f32).clamp(0.0, 1.5)
 }
 
-fn goaltending_score(roster: &[PlayerRecord]) -> f32 {
-    let goalies: Vec<&PlayerRecord> = roster
+fn goaltending_score(roster: &[Player]) -> f32 {
+    let goalies: Vec<&Player> = roster
         .iter()
-        .filter(|player| matches!(player.player().position(), Position::GOALIE))
+        .filter(|player| matches!(player.position(), Position::GOALIE))
         .collect();
 
     if goalies.is_empty() {
@@ -96,15 +95,15 @@ fn goaltending_score(roster: &[PlayerRecord]) -> f32 {
     let total = goalies
         .iter()
         .map(|goalie| {
-            let skating = goalie.player().skate_stats();
-            let movement = goalie.player().goalie_movement();
+            let skating = goalie.skate_stats();
+            let movement = goalie.goalie_movement();
             let movement_score = match movement {
                 Some(movement) => {
                     (movement.side() as f32 + movement.up_down() as f32 + movement.push() as f32) / 300.0
                 }
                 None => 0.30,
             };
-            let style_bonus = match goalie.player().play_type() {
+            let style_bonus = match goalie.play_type() {
                 PlayType::BUTTERFLY | PlayType::HYBRID | PlayType::REACTIVE => 0.12,
                 _ => 0.04,
             };
@@ -152,14 +151,14 @@ fn coaching_score(staff: &[StaffMember]) -> f32 {
     }
 }
 
-fn style_bias(roster: &[PlayerRecord], staff: &[StaffMember], settings: &SimulationSettings) -> f32 {
+fn style_bias(roster: &[Player], staff: &[StaffMember], settings: &SimulationSettings) -> f32 {
     if roster.is_empty() {
         return 0.0;
     }
 
     let player_bias = roster
         .iter()
-        .map(|player| match player.player().play_type() {
+        .map(|player| match player.play_type() {
             PlayType::SNIPER | PlayType::OFD | PlayType::PLAYMAKER| PlayType::TWD => 0.18,
             PlayType::PWF => 0.10,
             PlayType::DFD | PlayType::DF => -0.10,
@@ -181,7 +180,7 @@ fn style_bias(roster: &[PlayerRecord], staff: &[StaffMember], settings: &Simulat
 }
 
 fn standings_factor(team: &Team, league: Option<&League>) -> f32 {
-    match league.and_then(|league| league.standing_for_team(team.identity().abbreviation())) {
+    match league.and_then(|league| league.standing_for_team(team.abbreviation())) {
         Some(standing) => {
             let points = standing.point_percentage();
             let differential = standing.goal_differential() as f32 / 82.0;
@@ -347,9 +346,9 @@ impl TeamLevelClone for TeamLevel {
 }
 
 
-pub fn get_goalies(team:&Team)-> (&PlayerRecord,&PlayerRecord){
+pub fn get_goalies(team:&Team)-> (&Player,&Player){
 
-    let mut gs:Vec<&PlayerRecord> = Vec::new();
+    let mut gs:Vec<&Player> = Vec::new();
 
     for player in team.roster(){
 

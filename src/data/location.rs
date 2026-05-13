@@ -7,7 +7,7 @@ use crate::data::dates::GameDate;
 Represents A Full Place Someone Can Be Born
 
 */
-#[derive(Serialize,Deserialize)]
+#[derive(Serialize,Deserialize, Clone)]
 pub struct Location {
 
     country: String,
@@ -15,7 +15,7 @@ pub struct Location {
     date: GameDate
 }
 
-#[derive(Serialize,Deserialize)]
+#[derive(Serialize,Deserialize, Clone)]
 pub struct Places{
 
     country: String,
@@ -31,6 +31,17 @@ impl Location{
         Location {country: country.parse().unwrap(),location: location.parse().unwrap(), date}
     }
 
+    pub fn country(&self) -> &str {
+        &self.country
+    }
+
+    pub fn location(&self) -> &str {
+        &self.location
+    }
+
+    pub fn date(&self) -> &GameDate {
+        &self.date
+    }
 
 }
 

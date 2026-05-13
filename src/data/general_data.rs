@@ -116,13 +116,13 @@ static GROWTH_LOW: u8 = 0b0_00_00000;
 static GROWING: u8 = 0b0_01_00000;
 static NOT_GROWING: u8 = GROWTH_LOW;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub enum Type {
     SKATER,
     GOALIE,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub enum Position {
     CENTER,
     LW,
@@ -144,7 +144,16 @@ pub struct NameData{
 
 }
 
-#[derive(Serialize, Deserialize)]
+impl NameData {
+    pub(crate) fn random_name(&self) -> (String, String) {
+
+        (self.random_first_name().unwrap().to_string(),self.random_last_name().unwrap().to_string())
+
+
+    }
+}
+
+#[derive(Serialize, Deserialize, Clone)]
 pub enum PlayType {
     SNIPER,
     OFD,
